@@ -20,7 +20,6 @@ final class Plugin extends BasePlugin
     public const MODES = ['auto', 'light', 'dark'];
     /** Register optional AssetBundle classes after Dark Mode's core assets. */
     public const EVENT_REGISTER_COMPATIBILITY_ASSETS = 'registerCompatibilityAssets';
-    public string $schemaVersion = '1.0.0';
     public bool $hasCpSettings = false;
     public bool $hasCpSection = false;
 
