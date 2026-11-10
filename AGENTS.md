@@ -1,4 +1,4 @@
-# Dark Mode development
+# darkMode development
 
 - Support Craft CMS 5 only. Keep the Composer constraint below Craft 6.
 - Use Craft's layout hooks, asset bundles, user-preference API, classes, and semantic colour variables. Do not edit Craft vendor files or replace core templates.

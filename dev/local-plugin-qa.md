@@ -30,7 +30,7 @@ Site: `craft5.test`. Craft CMS 5.12.0.1, PHP 8.3.36. Paid plugin editions are lo
 | super-table | 4.0.9 | standard |
 | vite | 5.0.2 | standard |
 
-The requested selection consists of ten paid and ten free plugins. Commerce, Calendar, and Dark Mode are also installed. Calendar was updated to the latest available 5.x release, 5.0.33, and Craft migrations completed. MCP remains on 1.7.1: the attempted 1.8.1 upgrade requires `mcp/sdk ^0.9`, while Craft 5.12.0.1 requires exactly 0.8.1. Composer rejected that combination; no dependency aliases or core downgrade were used. The Craft constraint prevents the backtracking error.
+The requested selection consists of ten paid and ten free plugins. Commerce, Calendar, and darkMode are also installed. Calendar was updated to the latest available 5.x release, 5.0.33, and Craft migrations completed. MCP remains on 1.7.1: the attempted 1.8.1 upgrade requires `mcp/sdk ^0.9`, while Craft 5.12.0.1 requires exactly 0.8.1. Composer rejected that combination; no dependency aliases or core downgrade were used. The Craft constraint prevents the backtracking error.
 
 ## Sample data
 
@@ -72,7 +72,7 @@ Commerce's newly added order-item highlight uses a dark selection surface immedi
 
 ## Verification
 
-- Dark Mode: 29 Node tests passed, including Calendar major-version gating, on-demand Formie dialogs/editors, and email/HTML-preview lifecycle checks; changed PHP passed syntax check; Composer validation passed with the existing version-field warning.
+- darkMode: 29 Node tests passed, including Calendar major-version gating, on-demand Formie dialogs/editors, and email/HTML-preview lifecycle checks; changed PHP passed syntax check; Composer validation passed with the existing version-field warning.
 - Freeform: 24 focused builder tests and the full 937-test client suite passed. Client production and Sass builds passed. AI introduction artwork is now inline trusted SVG so semantic colours inherit correctly; shared AI/Form Monitor backgrounds use a faint ink mix in both modes.
 - Browser checks separately covered representative reported screens, including open Feed Me and SEOmatic menus, expanded log details, customer initials, immediate order-item highlights, selected cards, Formie builder/defaults/palette/report-dialog/provider controls, Calendar 5 controls/file lists/popovers, and icon/text alignment.
 - These are compatibility and fixture checks, not an exhaustive functional certification of every installed plugin.
@@ -128,7 +128,7 @@ Final automated verification: **37 Node tests passed**, including Commerce legen
 
 ## Freeform legacy adapter and 5.18 comparison — 2026-11-09
 
-The legacy runtime was Freeform **5.17.6** on `craft5upgrade.test` (Craft **5.11.5.1**, PHP **8.4.27**), with Dark Mode installed from this repository. The native reference was Freeform **5.18.0-dev**, built from `feat/v5.18` commit **fec31068f**, on `craft5.test` (Craft **5.12.0.1**, PHP **8.3.36**). An isolated source clone supplied the temporary native reference. The original Freeform source link, Composer files, and autoload paths were restored afterward; the primary Freeform checkout remains clean.
+The legacy runtime was Freeform **5.17.6** on `craft5upgrade.test` (Craft **5.11.5.1**, PHP **8.4.27**), with darkMode installed from this repository. The native reference was Freeform **5.18.0-dev**, built from `feat/v5.18` commit **fec31068f**, on `craft5.test` (Craft **5.12.0.1**, PHP **8.3.36**). An isolated source clone supplied the temporary native reference. The original Freeform source link, Composer files, and autoload paths were restored afterward; the primary Freeform checkout remains clean.
 
 The versioned registry now groups each plugin's CSS and JavaScript together, with optional release boundaries. Freeform's shared adapter covers 5.x, and the additional legacy assets cover 5.0 through 5.17. The entire 5.18 prerelease line is excluded from legacy assets. Version matching and asset inclusion are automated checks; releases such as 5.16 receive best-effort compatibility, not the same browser certification as the installed 5.17 runtime.
 
@@ -180,15 +180,15 @@ This is a broad appearance audit of the available pages and representative state
 
 ## Dashboard performance follow-up — 2026-11-09
 
-On `craft5.test` with Freeform `5.18.0-dev` (`feat/v5.18`, `fec31068f`), isolated Dark Mode CSS/JS and recorded Navigation Timing, Long Tasks, and Long Animation Frames. Freeform's page/portal stylesheet caused substantial forced style/layout during unrelated dashboard widget initialization; excluding Dark Mode JavaScript did not remove it. Keep widget CSS separate and use the registry's optional `sections` filter for page-only assets. The legacy editor assets are limited to Freeform's CP section, while the pre-5.18 dashboard chart adapter remains available elsewhere. All existing CSS rules were preserved exactly in the split.
+On `craft5.test` with Freeform `5.18.0-dev` (`feat/v5.18`, `fec31068f`), isolated darkMode CSS/JS and recorded Navigation Timing, Long Tasks, and Long Animation Frames. Freeform's page/portal stylesheet caused substantial forced style/layout during unrelated dashboard widget initialization; excluding darkMode JavaScript did not remove it. Keep widget CSS separate and use the registry's optional `sections` filter for page-only assets. The legacy editor assets are limited to Freeform's CP section, while the pre-5.18 dashboard chart adapter remains available elsewhere. All existing CSS rules were preserved exactly in the split.
 
 Five alternating original/optimized dashboard pairs produced medians of 2308.1/1298.1 ms (43.8% lower), with 6–7 original long tasks versus zero in each optimized measured load. Three complex-entry pairs produced 1640.6/836.8 ms (49.0% lower). These are warmed local Dev Mode navigation-load measurements, excluding subsequent AJAX readiness. Original controls restored the unchanged pre-fix Freeform CSS while retaining the other current assets. Data and methodology: `output/dark-mode-profile-2026-11-09/report.html` and `results.json`.
 
-Automated: 48 Node tests passed, changed PHP syntax passed, Composer valid with the existing version-field advisory. Browser: dashboard chart tooltip, Quick Form, native Freeform builder and bulk-label modal visually checked, including centered icons and matching control heights. No content was changed or saved. Temporary profiling/isolation code was removed by restoring the site config byte-for-byte; normal dashboard load confirmed dark appearance, widget CSS present, Freeform page CSS absent, and no probe attribute. Freeform remains on 5.18; Dark Mode remains enabled.
+Automated: 48 Node tests passed, changed PHP syntax passed, Composer valid with the existing version-field advisory. Browser: dashboard chart tooltip, Quick Form, native Freeform builder and bulk-label modal visually checked, including centered icons and matching control heights. No content was changed or saved. Temporary profiling/isolation code was removed by restoring the site config byte-for-byte; normal dashboard load confirmed dark appearance, widget CSS present, Freeform page CSS absent, and no probe attribute. Freeform remains on 5.18; darkMode remains enabled.
 
 ## Hyper entry-field appearance — 2026-11-10
 
-Hyper 3.0.5 on `craft5.test`, entry **12982**, **QA Freeform Link Integration**: extended the existing Hyper stylesheet to cover link headers, type controls, layout tabs, compact tab-menu triggers, portal-body backgrounds, and action icons. Plugin Kit palette overrides now also inherit within Hyper inputs and its bulk-dialog body. Overrides remain restricted to Dark Mode and Hyper's own chrome, without changing field content or control dimensions.
+Hyper 3.0.5 on `craft5.test`, entry **12982**, **QA Freeform Link Integration**: extended the existing Hyper stylesheet to cover link headers, type controls, layout tabs, compact tab-menu triggers, portal-body backgrounds, and action icons. Plugin Kit palette overrides now also inherit within Hyper inputs and its bulk-dialog body. Overrides remain restricted to darkMode and Hyper's own chrome, without changing field content or control dimensions.
 
 Chrome browser checks covered Content and Advanced panels, the Settings menu, the compact tab dropdown at a 500px viewport, and restoration of native Light colours. Header tabs retain their 31px height; adjacent action buttons remain 24×24px with vertically centred icons. The temporary viewport was reset and the user's Dark preference restored. No entry save or discard action was used.
 
