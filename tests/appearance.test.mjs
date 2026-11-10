@@ -120,7 +120,7 @@ test('key text roles meet WCAG AA normal-text contrast on their actual surfaces'
     }
 });
 
-test('Composer accepts Craft 5 only', () => {
+test('Composer requires Craft 5.9 or later within Craft 5', () => {
     const composer = JSON.parse(readFileSync(new URL('../composer.json', import.meta.url), 'utf8'));
-    assert.equal(composer.require['craftcms/cms'], '^5.0.0');
+    assert.equal(composer.require['craftcms/cms'], '^5.9');
 });

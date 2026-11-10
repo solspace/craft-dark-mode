@@ -1,8 +1,10 @@
 # Dark Mode development notes
 
-A control-panel appearance plugin with **Auto / Light / Dark** on an icon-only control in Craft’s top bar. Craft CMS 5 and PHP 8.2 or newer are required; Craft 6 is excluded by the Composer constraint.
+A control-panel appearance plugin with **Auto / Light / Dark** on an icon-only control in Craft’s top bar. Craft CMS 5.9 or later within 5.x and PHP 8.2 or newer are required; Craft 6 is excluded by the Composer constraint.
 
 This is the development checkout for Dark Mode 1.0.0, installed on `craft5.test`. It has been exercised on Craft 5.11.5.1 and 5.12.0.1. GitHub inspired the quiet neutral surfaces and list hierarchy; Craft retains its own typography, layout, controls, red primary actions, teal enabled state, and status meanings.
+
+The Craft 5.9 minimum matches Freeform's current Craft 5 requirement. Runtime and browser QA on Craft 5.9 remain a release check; Composer constraint validation alone does not verify that runtime.
 
 ## Installation
 

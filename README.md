@@ -8,7 +8,7 @@ Dark Mode preserves Craft’s layout, typography, keyboard controls and status m
 
 ## Requirements
 
-- Craft CMS 5.x (Craft 6 is not supported).
+- Craft CMS 5.9 or later within 5.x (Craft 6 is not supported).
 - PHP 8.2 or later, meeting the installed Craft version’s requirements.
 - A current version of Chrome, Edge, Firefox, or Safari. Legacy browser versions are not supported.
 
