@@ -2,7 +2,7 @@
 
 A free, MIT-licensed Solspace plugin with comfortable dark mode for Craft’s control panel, with an icon in Craft’s top bar that cycles through **Auto**, **Light**, and **Dark**. Each user chooses their own appearance; Auto follows their operating system.
 
-![Dark Mode icon](src/icon.svg)
+<img src="src/icon.svg" alt="Dark Mode icon" width="64" height="64">
 
 Dark Mode preserves Craft’s layout, typography, keyboard controls and status meanings, with quiet surfaces, readable colors and scoped compatibility styles. It affects the control panel; website content and authored images retain their colors.
 
