@@ -119,8 +119,19 @@
 }
 
 :root[data-dark-mode="dark"] #alerts {
-    /* Craft renders this surface as an inline style. */
-    background-color: var(--bg-error) !important;
+    /* Keep Craft's cached (inline) and asynchronously loaded alerts consistent.
+       Scope the red ramp here: other components may use it for authored content. */
+    --red-050: color-mix(in srgb, var(--fg-error) 8%, var(--dm-surface));
+    --red-100: color-mix(in srgb, var(--fg-error) 25%, var(--dm-surface));
+    background-color: var(--red-050) !important;
+}
+
+:root[data-dark-mode="dark"] #alerts > li :is(.btn, a.go) {
+    border-color: color-mix(in srgb, var(--fg-error) 50%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] #alerts > li :is(.btn, a.go):hover {
+    border-color: var(--fg-error);
 }
 
 :root[data-dark-mode="dark"] #devmode {
