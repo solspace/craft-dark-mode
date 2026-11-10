@@ -1,6 +1,6 @@
 # Solspace darkMode for Craft CMS 5
 
-A free Solspace plugin that adds comfortable dark mode to Craft’s control panel while preserving native layouts, controls, and authored content.
+A free Solspace plugin that adds dark mode to Craft’s control panel while preserving native layouts, controls, and authored content.
 
 <img src="src/icon.svg" alt="darkMode icon" width="64" height="64">
 
