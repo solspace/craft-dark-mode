@@ -1,0 +1,54 @@
+.account-toggle-wrapper:has(> .dm-appearance) {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dm-appearance {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#global-header .dm-appearance-trigger.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40px;
+    inline-size: 40px;
+    block-size: 40px;
+    min-block-size: 40px;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    color: var(--light-text-color);
+}
+
+#global-header .dm-appearance-trigger.btn:is(:hover, :active, :focus) {
+    background: transparent;
+    box-shadow: none;
+}
+
+#global-header .dm-appearance-trigger.btn:hover {
+    color: var(--link-color);
+}
+
+.dm-appearance-trigger svg {
+    display: block;
+    inline-size: 20px;
+    block-size: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.dm-appearance-trigger:focus-visible,
+.dm-appearance__retry:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+}
+
+.dm-appearance__retry[hidden] { display: none; }

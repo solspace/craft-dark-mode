@@ -1,0 +1,641 @@
+/* Narrow adapters for Craft 5 components that still compile literal light colors.
+   Kept separate from tokens so a Craft update can retire an adapter independently.
+   Recolor only known UI artwork; authored content and website previews stay intact. */
+:root[data-dark-mode="dark"] :is(.menu, .ui-datepicker, .ui-timepicker-wrapper, .selectize-dropdown) {
+    background-color: var(--dm-overlay);
+    color: var(--text-color);
+    border-color: var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+
+:root[data-dark-mode="dark"] :is(.menu, .selectize-dropdown) :is(a, .menu-item, .menu-option):not(.error, .delete, .disabled) {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] :is(.menu, .selectize-dropdown) :is(a, .menu-item, .menu-option):hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] :is(.menu, .selectize-dropdown) :is(.sel, .active):not(.status) {
+    background-color: var(--dm-selected);
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] :is(.datatablesorthelper, .editabletablesorthelper, .selectize-input) {
+    background-color: var(--dm-surface);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .selectize-control .selectize-input {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .selectize-control.single .selectize-input {
+    background-color: color-mix(in srgb, var(--text-color) 5%, var(--input-bg));
+}
+
+:root[data-dark-mode="dark"] .selectize-control .selectize-input.focus {
+    box-shadow: inset 0 0 0 1px var(--input-border-color), var(--focus-ring-light);
+}
+
+:root[data-dark-mode="dark"] .selectize-dropdown-content {
+    background: var(--dm-overlay);
+    color: var(--text-color);
+    box-shadow: var(--modal-shadow);
+}
+
+:root[data-dark-mode="dark"] .selectize-dropdown :is([data-selectable], .option) {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .selectize-dropdown .optgroup-header {
+    color: var(--light-text-color);
+    background-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] .selectize-dropdown :is(.active, .selected, .option:hover) {
+    --white: var(--dm-text);
+    color: var(--dm-text);
+    background-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] .select:not(.selectize) select {
+    color: var(--text-color);
+    background-color: color-mix(in srgb, var(--text-color) 5%, var(--input-bg));
+    border-color: var(--input-border-color);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .select:not(.selectize) select:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--input-border-color), var(--focus-ring-light);
+}
+
+:root[data-dark-mode="dark"] .ui-datepicker :is(.ui-datepicker-year, .ui-datepicker-month) {
+    color: var(--text-color);
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] #global-header #user-info {
+    --button-border: none;
+    --button-border--hover: none;
+    --button-border--active: none;
+}
+
+:root[data-dark-mode="dark"] :is(.text, .passwordwrapper, .CodeMirror, .selectize-input) {
+    caret-color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] :is(input, textarea)::placeholder {
+    color: var(--dm-muted);
+    opacity: 1;
+}
+
+:root[data-dark-mode="dark"] :is(input, textarea):-webkit-autofill {
+    -webkit-text-fill-color: var(--text-color);
+    box-shadow: inset 0 0 0 1000px var(--input-bg);
+    caret-color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] :is(.btn.submit, .btn.secondary, .lightswitch .handle) {
+    --white: #fff;
+}
+
+:root[data-dark-mode="dark"] .btn.submit {
+    color: var(--primary-button-text-color);
+}
+
+:root[data-dark-mode="dark"] .btn.danger {
+    color: var(--fg-error);
+    background-color: #f851491a !important;
+}
+
+:root[data-dark-mode="dark"] :is(.error, .errors, .error-message) {
+    color: var(--fg-error);
+}
+
+:root[data-dark-mode="dark"] #alerts {
+    /* Craft renders this surface as an inline style. */
+    background-color: var(--bg-error) !important;
+}
+
+:root[data-dark-mode="dark"] #devmode {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .elementselect .progress-shade {
+    background-color: color-mix(in srgb, var(--dm-canvas) 80%, transparent);
+}
+
+:root[data-dark-mode="dark"] .elements.busy::after {
+    background: color-mix(in srgb, var(--dm-surface) 75%, transparent);
+}
+
+:root[data-dark-mode="dark"] .preview-thumb-container {
+    background-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] table.editable td.disabled::after {
+    background-color: #161b22bf;
+}
+
+:root[data-dark-mode="dark"] .element-index .source-path .chevron-btns {
+    background-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] .element-index .source-path {
+    --ui-control-bg-color: var(--dm-raised);
+    --ui-control-hover-bg-color: var(--dm-hover);
+    --ui-control-active-bg-color: #30363d;
+}
+
+:root[data-dark-mode="dark"] .chevron-btns .btn {
+    --button-border: none;
+    --button-border--hover: none;
+    --button-border--active: none;
+}
+
+:root[data-dark-mode="dark"] .element-index .source-path .chevron-btns::before {
+    border-block-start-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] .element-index .source-path .chevron-btns::after {
+    border-block-end-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] .element-index .source-path .btn.settings {
+    box-shadow: 0 0 0 2px var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] .chevron-btns .btn:is(.current-step, .active-drop-target) {
+    --white: var(--dm-text);
+    --ui-control-bg-color: #30363d;
+    --ui-control-hover-bg-color: #3d444d;
+    --ui-control-active-bg-color: #454e59;
+}
+
+:root[data-dark-mode="dark"] .draft-notice {
+    --blue-800: var(--dm-link);
+    --blue-600: #5288bd;
+    --white: var(--dm-border-muted);
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] .draft-notice .draft-icon {
+    border-color: #5288bd66;
+    box-shadow: 0 0 0 1px var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .craft-tooltip {
+    --white: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] #notifications .copied-elements-notification .notification-inner {
+    background: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] #notifications .copied-elements-notification .copied-elements .chip:not(:first-child)::after {
+    background: rgb(from var(--dm-overlay) r g b / var(--overlay-opacity));
+}
+
+/* Craft's image-preview toolbar was authored as a dark-on-light gray ramp.
+   Give its background and foreground independent semantic roles. */
+:root[data-dark-mode="dark"] .button-fade .buttons .btn {
+    --ui-control-color: var(--dm-text);
+    --ui-control-hover-color: var(--dm-heading);
+    --ui-control-active-color: var(--dm-heading);
+    --interaction-background-color: var(--dm-hover);
+    --light-color: var(--dm-text);
+    --dark-color: var(--dm-canvas);
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .button-fade .buttons .btn:hover {
+    background-color: var(--dm-hover);
+}
+
+/* Image editing is its own dark workspace; remap its local background ramp
+   without touching the underlying image, crop mask, or exported pixels. */
+:root[data-dark-mode="dark"] .modal.imageeditor {
+    --gray-1000: var(--dm-border-muted);
+    --gray-900: var(--dm-canvas);
+    --gray-800: var(--dm-hover);
+    --gray-700: var(--dm-raised);
+    --gray-600: var(--dm-surface);
+    --white: var(--dm-text);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .btn:not(.submit, .noborder) {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .btn:not(.submit, .noborder):hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .btn:not(.submit, .noborder).active {
+    background-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .slide-rule .graduations li::before {
+    border-inline-start-color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .slide-rule .graduations li .label {
+    color: var(--dm-muted);
+}
+
+/* Fade scale markings into the image workspace without a darker edge strip. */
+:root[data-dark-mode="dark"] .modal.imageeditor .slide-rule .overlay {
+    background-image: linear-gradient(to right, var(--dm-surface) 0%, transparent 15%, transparent 85%, var(--dm-surface) 100%);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor :is(.sel div.radio, div.radio.checked, input.radio:checked + label)::after {
+    background-color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .body .tabs ul li.selected {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .body .tabs ul li.selected::before {
+    background-color: var(--dm-tab-accent);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .body .tabs ul li:hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .footer {
+    background-color: var(--dm-canvas);
+    border-block-start-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .modal.imageeditor .btn.submit {
+    --white: #fff;
+}
+
+/* Native pane headers need a distinct strip behind the selected content tab.
+   Keep nested Matrix titlebars and authored block colours independent. */
+:root[data-dark-mode="dark"] .pane-header:has(> .pane-tabs),
+:root[data-dark-mode="dark"] .pane > .pane-tabs {
+    background-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] :is(.pane-header, .pane) > .pane-tabs [role="tab"]:not(.sel):hover {
+    /* Leave the header's original bottom hairline exposed. Painting another
+       inset line here doubles the top edge and changes the bottom line's tint. */
+    background: linear-gradient(var(--dm-raised), var(--dm-raised)) top / 100% calc(100% - 1px) no-repeat;
+    border-radius: 0;
+    backdrop-filter: none;
+}
+
+/* Live Preview owns separate, compiled light toolbar fills. Theme only its
+   editor chrome, leaving the website iframe and device artwork untouched. */
+:root[data-dark-mode="dark"] :is(.lp-editor-header, .lp-preview-header) {
+    background-color: var(--dm-overlay);
+    color: var(--dm-text);
+    box-shadow: inset 0 -1px 0 var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .lp-editor-header .pane-tabs [role="tab"]:not(.sel):hover {
+    background: linear-gradient(var(--dm-raised), var(--dm-raised)) top / 100% calc(100% - 1px) no-repeat;
+    border-radius: 0;
+    backdrop-filter: none;
+}
+
+/* These are Craft's three monochrome device-control glyphs, not page images. */
+:root[data-dark-mode="dark"] .lp-device-type > .btn::before {
+    filter: grayscale(1) brightness(1.9);
+}
+
+:root[data-dark-mode="dark"] .pane-tabs [role="tablist"] [role="tab"].sel {
+    --highlight-color: var(--dm-tab-accent);
+    background-color: var(--dm-surface) !important;
+    box-shadow: inset 0 2px 0 var(--highlight-color), 0 0 0 1px var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.autosuggest__results-container, .menu.dark) {
+    background-color: var(--dm-overlay);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .menu.dark {
+    --white: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .menu.dark ul li a:not(.sel, .disabled):hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] :is(.lp-editor-container, .lp-preview-container, .fld-tab .fld-tabcontent, .fld-tab .tabs .tab, .layoutdesigner .fld-library, .entry-type-group) {
+    background-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] .fld-new-tab-btn,
+:root[data-dark-mode="dark"] .element-deletion-modal .body .edm-blockers .edm-details .element-index {
+    background-color: var(--dm-surface) !important;
+}
+
+:root[data-dark-mode="dark"] .card.sel:not([style*="--custom-bg-color"]) > .card-titlebar,
+:root[data-dark-mode="dark"] li.sel .card:not([style*="--custom-bg-color"]) > .card-titlebar {
+    --custom-sel-titlebar-bg-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] .video-transcript:focus-visible {
+    background-color: var(--dm-selected);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] :is(#sidebar, .sidebar) nav :is(a.sel, [data-source-item].sel, .active-drop-target),
+:root[data-dark-mode="dark"] .btngroup--exclusive .btn[aria-pressed="true"] {
+    background-color: var(--dm-raised);
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] #footer {
+    border-block-start-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] #footer.stuck {
+    background-color: #161b22ed;
+}
+
+:root[data-dark-mode="dark"] body.fixed-header #header {
+    background-color: color-mix(in srgb, var(--dm-canvas) 93%, transparent);
+    box-shadow: 0 1px 0 var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] ul.icons li a {
+    border-color: transparent;
+}
+
+:root[data-dark-mode="dark"] ul.icons li a:hover {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] #trial-info {
+    box-shadow: var(--pane-shadow);
+}
+
+:root[data-dark-mode="dark"] #global-footer #trial-info a { color: var(--dm-link); }
+
+:root[data-dark-mode="dark"] :is(input.checkbox + label, div.checkbox)::before {
+    background-color: var(--input-bg);
+    border-color: #626c78;
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] :is(input.radio + label, div.radio)::before {
+    background-color: var(--input-bg);
+    border-color: #6e7681;
+}
+
+/* Native radios otherwise inherit the browser's warm dark-control palette.
+   Craft's .radio inputs have their own label-based control above. */
+:root[data-dark-mode="dark"] input[type="radio"]:not(.radio) {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #6e7681;
+    border-radius: 50%;
+    background-color: var(--input-bg);
+    vertical-align: -2px;
+}
+:root[data-dark-mode="dark"] input[type="radio"]:not(.radio):checked {
+    border-color: var(--dm-muted);
+    background-image: radial-gradient(circle, var(--dm-text) 0 4px, transparent 4.5px);
+}
+:root[data-dark-mode="dark"] input[type="radio"]:not(.radio):focus-visible {
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] input[type="radio"]:not(.radio):disabled {
+    opacity: 0.5;
+}
+
+/* Status-label text otherwise uses the light theme's 700-shade color ramp. */
+:root[data-dark-mode="dark"] .status-label.red { --status-label-text-color: #ff7b72; }
+:root[data-dark-mode="dark"] .status-label:is(.amber, .yellow) { --status-label-text-color: #e3b341; }
+:root[data-dark-mode="dark"] .status-label.orange { --status-label-text-color: #ffa657; }
+:root[data-dark-mode="dark"] .status-label.lime { --status-label-text-color: #b1d168; }
+:root[data-dark-mode="dark"] .status-label:is(.green, .emerald) { --status-label-text-color: #7ee787; }
+:root[data-dark-mode="dark"] .status-label:is(.teal, .turquoise) { --status-label-text-color: #64c9bc; }
+:root[data-dark-mode="dark"] .status-label:is(.cyan, .sky, .blue) { --status-label-text-color: #79c0ff; }
+:root[data-dark-mode="dark"] .status-label:is(.indigo, .violet, .purple) { --status-label-text-color: #d2a8ff; }
+:root[data-dark-mode="dark"] .status-label:is(.fuchsia, .pink, .rose) { --status-label-text-color: #ff9bce; }
+:root[data-dark-mode="dark"] .status-label:is(.black, .gray, .grey, .light) { --status-label-text-color: #b1bac4; }
+
+/* Purpose-drawn dark diagrams have transparent canvases and readable outlines.
+   Match only Craft's settings illustrations; preserve native sizes and labels. */
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/list.svg"] { content: url("view-modes/list.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/list-inline.svg"] { content: url("view-modes/list-inline.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/thumbs.svg"] { content: url("view-modes/thumbs.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/cards.svg"] { content: url("view-modes/cards.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/cards-grid.svg"] { content: url("view-modes/cards-grid.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/blocks.svg"] { content: url("view-modes/blocks.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/view-modes/index.svg"] { content: url("view-modes/index.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/content-block/grouped.svg"] { content: url("view-modes/grouped.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/content-block/pane.svg"] { content: url("view-modes/pane.svg"); }
+:root[data-dark-mode="dark"] label:has(> input:is([name="viewMode"], [name$="[viewMode]"])) > img[src$="/images/content-block/inline.svg"] { content: url("view-modes/inline.svg"); }
+
+/* GraphiQL exposes an HSL theme API, including its portalled help panels. */
+:root[data-dark-mode="dark"] :is(.graphiql-container, .graphiql-dialog, .graphiql-dialog-overlay, .graphiql-tooltip, .CodeMirror-info, .CodeMirror-lint-tooltip, [data-radix-popper-content-wrapper]) {
+    --color-base: 215, 23%, 11%;
+    --color-neutral: 211, 17%, 82%;
+    --color-primary: 0, 65%, 58%;
+    --color-secondary: 265, 60%, 76%;
+    --color-tertiary: 175, 48%, 59%;
+    --popover-box-shadow: 0 0 0 1px var(--dm-border), 0 8px 24px #01040980;
+}
+:root[data-dark-mode="dark"] .graphiql-container :is(.graphiql-editors, .graphiql-doc-explorer-search) {
+    background-color: var(--dm-surface);
+}
+:root[data-dark-mode="dark"] .graphiql-container .graphiql-sessions {
+    background: var(--dm-canvas);
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] .cp-graphiql :is(.CodeMirror-hints, .CodeMirror-gutters) {
+    background-color: var(--dm-surface);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .graphiql-container .CodeMirror :is(.cm-comment, .cm-punctuation) { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .graphiql-container .CodeMirror :is(.cm-string, .cm-attribute, .cm-property) { color: #82b2e2; }
+:root[data-dark-mode="dark"] .graphiql-container .CodeMirror :is(.cm-keyword, .cm-def) { color: #cf9be3; }
+:root[data-dark-mode="dark"] :is(#sidebar, .sidebar) .badge {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .progressbar {
+    background: var(--dm-canvas);
+    border-color: var(--dm-border);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] .progressbar .progressbar-inner { background: var(--dm-link); }
+
+/* Routes use a light bitmap chevron in Craft 5; a CSS triangle keeps it themed. */
+:root[data-dark-mode="dark"] #routes .route {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .route .uri-container { background: var(--dm-overlay); }
+:root[data-dark-mode="dark"] .route .uri-container::after {
+    background-image: none;
+    background-color: var(--dm-overlay);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+:root[data-dark-mode="dark"] body.rtl .route .uri-container::after { clip-path: polygon(100% 0, 0 50%, 100% 100%); }
+:root[data-dark-mode="dark"] :is(.route, .route-settings) .token {
+    background-color: var(--dm-selected);
+    color: var(--dm-text);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] .route-settings .uri-tokens { box-shadow: inset 0 0 0 1px var(--dm-border); }
+/* Keep Craft's joined tab silhouette: an outer shadow can flow behind the tab,
+   while an inset outline would draw a seam across the top of its content. */
+:root[data-dark-mode="dark"] .fld-tab:not(.fld-insertion) :is(.fld-tabcontent, .tabs .tab) {
+    background-color: var(--dm-surface);
+    box-shadow: 0 0 0 1px var(--dm-border-muted), 0 2px 5px -2px #0005;
+}
+:root[data-dark-mode="dark"] .fld-container .fld-workspace {
+    background-color: var(--dm-overlay);
+    background-image:
+        linear-gradient(to right, color-mix(in srgb, var(--dm-border-muted) 45%, var(--dm-overlay)) 1px, transparent 1px),
+        linear-gradient(to bottom, color-mix(in srgb, var(--dm-border-muted) 45%, var(--dm-overlay)) 1px, transparent 1px);
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] .fld-element {
+    background-color: var(--dm-raised);
+    box-shadow: none;
+}
+
+/* Craft's Vue admin tables ship a scoped, important light pagination fill. */
+:root[data-dark-mode="dark"] .vuetable-pagination { background: var(--dm-surface) !important; }
+:root[data-dark-mode="dark"] table.editable :is(td, th) { border-color: var(--dm-border-muted); }
+
+/* A resizable native modal can leave a strip below its footer. */
+:root[data-dark-mode="dark"] .modal:has(> .footer) { background-color: var(--dm-canvas); }
+:root[data-dark-mode="dark"] .modal:has(> .footer) > .body { background-color: var(--modal-bg); }
+/* These four SVGs are Craft's transform-mode diagrams, never asset previews. */
+:root[data-dark-mode="dark"] #mode img[src$="/crop.svg"],
+:root[data-dark-mode="dark"] #mode img[src$="/fit.svg"],
+:root[data-dark-mode="dark"] #mode img[src$="/letterbox.svg"],
+:root[data-dark-mode="dark"] #mode img[src$="/stretch.svg"] { filter: invert(1) hue-rotate(180deg) brightness(2) contrast(.8); }
+:root[data-dark-mode="dark"] .vue-admin-table-footer {
+    background-color: var(--dm-surface);
+    border-top: 1px solid var(--dm-border-muted);
+    color: var(--dm-muted);
+}
+
+/* Craft 5.11 also applies pane footer negative margins to the nested element
+   index inside selector modals, clipping its count behind the modal buttons.
+   Correct that native layout in both appearances, without resizing the modal. */
+.elementselectormodal .element-index > .footer {
+    margin: 0;
+}
+.elementselectormodal .element-index > .main {
+    padding-block-end: calc(var(--content-padding, 24px) + 44px);
+}
+
+/* GraphiQL's editor already provides its own panel hierarchy. Avoid nesting
+   Craft input frames inside those panels, including each CodeMirror gutter. */
+:root[data-dark-mode="dark"] .graphiql-container .graphiql-editors {
+    background-color: var(--dm-surface);
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] .graphiql-container :is(.CodeMirror, .CodeMirror-gutters) {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] .graphiql-container .graphiql-response {
+    background-color: var(--dm-canvas);
+}
+:root[data-dark-mode="dark"] .graphiql-dialog-overlay {
+    background-color: var(--shade-bg);
+}
+
+:root[data-dark-mode="dark"] .fld-element.fld-field {
+    background-color: var(--dm-raised);
+    color: var(--text-color);
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] .fld-element:not(.sel, .active-drop-target):hover {
+    background-color: color-mix(in srgb, var(--dm-raised) 80%, var(--dm-hover));
+}
+:root[data-dark-mode="dark"] .fld-element:focus-visible {
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] .fld-add-btn.btn {
+    background-color: transparent;
+}
+:root[data-dark-mode="dark"] .fld-add-btn.btn:is(:hover, .active) {
+    background-color: color-mix(in srgb, var(--dm-surface) 75%, var(--dm-hover));
+}
+
+/* Craft's HUD pointers are white PNGs. Retain their native dimensions and
+   positioning, using a theme-colored triangle instead of recoloring imagery. */
+:root[data-dark-mode="dark"] .hud > .tip {
+    background-image: none;
+    background-color: transparent;
+    overflow: hidden;
+}
+:root[data-dark-mode="dark"] .hud > .tip::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 21.2132px;
+    height: 21.2132px;
+    background: var(--modal-bg);
+    border: 1px solid var(--dm-border);
+    transform: rotate(45deg);
+}
+:root[data-dark-mode="dark"] .hud > .tip-top::before { left: 4.3934px; top: 4.3934px; }
+:root[data-dark-mode="dark"] .hud > .tip-bottom::before { left: 4.3934px; top: -10.6066px; }
+:root[data-dark-mode="dark"] .hud > .tip-left::before { left: 4.3934px; top: 4.3934px; }
+:root[data-dark-mode="dark"] .hud > .tip-right::before { left: -10.6066px; top: 4.3934px; }
+:root[data-dark-mode="dark"] body.rtl .hud > .tip-left::before { left: -10.6066px; }
+:root[data-dark-mode="dark"] body.rtl .hud > .tip-right::before { left: 4.3934px; }
+
+:root[data-dark-mode="dark"] .menu hr {
+    border-color: var(--hairline-color);
+}
+
+/* Checked menu choices keep the menu surface; interaction alone adds a fill.
+   Selectize's active option and exclusive view buttons retain their own roles. */
+:root[data-dark-mode="dark"] .menu .sel:not(:hover, :focus-visible, .hover, .active) {
+    background-color: transparent;
+}
+:root[data-dark-mode="dark"] .menu :is(.active, .hover, a:hover, a:focus-visible):not(.status) {
+    background-color: var(--dm-hover);
+}
+
+/* Craft's legacy SVG charts are also used by plugin submission explorers. */
+:root[data-dark-mode="dark"] .cp-chart :is(.axis text, .ticks-axis g.tick text) {
+    fill: var(--dm-muted);
+}
+:root[data-dark-mode="dark"] .cp-chart :is(.axis line, .axis path, .grid-line .tick, .grid-line .tick line) {
+    stroke: var(--hairline-color);
+}
+:root[data-dark-mode="dark"] .tooltip {
+    color: var(--dm-text);
+    background: var(--dm-overlay);
+    box-shadow: 0 2px 8px #0006;
+}
+/* D3 duplicates tick text with a white stroke to create a light-theme halo. */
+:root[data-dark-mode="dark"] .cp-chart .tick text[stroke="#ffffff"] {
+    stroke: var(--dm-canvas);
+}
+
+/* Submenu selection needs more separation than its surrounding canvas. */
+:root[data-dark-mode="dark"] :is(#sidebar, .sidebar) nav :is(a.sel, [data-source-item].sel) {
+    background-color: #303943;
+    color: var(--dm-heading);
+}

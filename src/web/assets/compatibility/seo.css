@@ -1,0 +1,73 @@
+:root[data-dark-mode="dark"] .seo--sitemap-tag {
+    background-color: var(--dm-raised);
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .seo--custom-url-input {
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    border: 2px solid var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .seo--custom-url-input:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title {
+    --seo-token-accent: #c4b5fd;
+    --seo-token-text: #ded6ff;
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title:hover {
+    border-color: var(--dm-border);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title.focus {
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]) {
+    background-color: color-mix(in srgb, var(--seo-token-accent) 12%, var(--dm-surface));
+    color: var(--seo-token-text);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]) :is(input, button) {
+    color: var(--seo-token-text);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]) input::placeholder {
+    color: var(--seo-token-accent);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]) button:first-of-type {
+    border-right-color: color-mix(in srgb, var(--seo-token-accent) 35%, transparent);
+    color: var(--seo-token-accent);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]).locked button:first-of-type {
+    background-color: color-mix(in srgb, var(--seo-token-accent) 25%, var(--dm-surface));
+    border-right-color: transparent;
+    color: var(--seo-token-text);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token:not([data-static]) button:hover {
+    background-color: color-mix(in srgb, var(--seo-token-accent) 20%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title-token button svg [fill]:not([fill="none"]) {
+    fill: currentColor;
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title > button {
+    color: var(--seo-token-accent);
+    border-color: color-mix(in srgb, var(--seo-token-accent) 45%, transparent);
+}
+
+:root[data-dark-mode="dark"] .seo--meta-title > button:hover {
+    background-color: color-mix(in srgb, var(--seo-token-accent) 10%, var(--dm-surface));
+    border-color: var(--seo-token-accent);
+}
+

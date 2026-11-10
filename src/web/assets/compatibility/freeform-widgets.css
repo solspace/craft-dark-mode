@@ -1,0 +1,62 @@
+/* Freeform widgets can appear outside its own CP section. */
+/* Dashboard and usage charts share an external HTML tooltip. */
+:root[data-dark-mode="dark"] :is(.freeform-dashboard-chart, .freeform-usage-chart) .freeform-chart-tooltip {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] :is(.freeform-dashboard-chart, .freeform-usage-chart) .freeform-chart-tooltip-title {
+    color: var(--dm-heading);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.freeform-dashboard-chart, .freeform-usage-chart) .freeform-chart-tooltip-label {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] :is(.freeform-dashboard-chart, .freeform-usage-chart) .freeform-chart-tooltip-footer {
+    color: var(--dm-muted);
+    border-color: var(--dm-border-muted);
+}
+
+/* Quick Form owns these controls inside the Craft dashboard. */
+:root[data-dark-mode="dark"] .freeform-widget-quick-form .freeform-pages li {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-widget-quick-form .freeform-pages li.active {
+    color: var(--dm-heading);
+    background-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] .freeform-widget-quick-form .freeform-form-errors {
+    color: var(--error-color);
+    background-color: color-mix(in srgb, var(--error-color) 8%, var(--dm-surface));
+    border-color: var(--border-error);
+}
+
+:root[data-dark-mode="dark"] .freeform-widget-quick-form .freeform-column:has(> .freeform-has-errors, > .freeform-errors:not(:empty)) > .freeform-label {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] .freeform-widget-quick-form :is(.freeform-form-success, .freeform-quick-form-success) {
+    color: var(--fg-success);
+    background-color: color-mix(in srgb, var(--fg-success) 8%, var(--dm-surface));
+    border-color: color-mix(in srgb, var(--fg-success) 40%, var(--dm-border));
+}
+
+:root[data-dark-mode="dark"] .freeform-widget-quick-form .freeform-phone-country {
+    --ff-phone-background: var(--dm-overlay);
+    --ff-phone-selector-background: var(--input-bg);
+    --ff-phone-selector-overlay: transparent;
+    --ff-phone-color: var(--dm-text);
+    --ff-phone-border: var(--input-border-color);
+    --ff-phone-highlight: var(--dm-hover);
+    --ff-phone-dial-color: var(--dm-text);
+    --ff-phone-muted-color: var(--dm-muted);
+    --ff-phone-focus-color: var(--focus-ring-color);
+    color-scheme: dark;
+}
+

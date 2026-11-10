@@ -1,0 +1,108 @@
+/* Keep Plugin Kit menus scoped to Hyper's configurator and link fields. */
+:root[data-dark-mode="dark"] :is(.hc-wrapper, .hyper-input, .hyper-bulk-dialog) {
+    --pk-color-white: var(--dm-surface);
+    --pk-color-gray-50: var(--dm-canvas);
+    --pk-color-gray-100: var(--dm-raised);
+    --pk-color-gray-200: var(--dm-border-muted);
+    --pk-color-gray-300: var(--dm-border);
+    --pk-color-gray-400: var(--dm-muted);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-600: var(--dm-text);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-800: var(--dm-heading);
+    --pk-color-gray-900: var(--dm-heading);
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--input-border-color);
+    --pk-input-placeholder-color: var(--dm-muted);
+    --pk-input-focus-shadow: var(--focus-ring);
+    --pk-action-fill: var(--button-bg);
+    --pk-action-fill-hover: var(--button-bg--hover);
+    --pk-action-on: var(--dm-text);
+    --pk-color-blue-500: var(--dm-link);
+    --pk-color-sky-600: var(--dm-link);
+    --pk-shadow-popup: var(--menu-shadow);
+}
+
+/* Hyper's link-type configurator uses fixed light surfaces outside shadow DOM. */
+:root[data-dark-mode="dark"] .hc-wrapper {
+    color: var(--dm-text);
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar {
+    background-color: var(--dm-canvas);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar-item {
+    background-color: transparent;
+    box-shadow: 0 -1px 0 var(--dm-border-muted), inset 0 -1px 0 var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar-item:hover { background-color: var(--dm-raised); }
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar-item.sel { background-color: var(--dm-selected); }
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar-item.has-errors {
+    color: var(--fg-error);
+    background-color: var(--bg-error);
+}
+:root[data-dark-mode="dark"] .hc-wrapper .hc-sidebar-item-move { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .hc-wrapper .hyper-workspace {
+    background-color: var(--dm-canvas);
+    background-image: linear-gradient(to right, var(--dm-border-muted) 1px, transparent 1px), linear-gradient(to bottom, var(--dm-border-muted) 1px, transparent 1px);
+    box-shadow: inset 0 0 0 1px var(--dm-border-muted);
+}
+
+/* Entry fields have separate, hard-coded header and portal-body surfaces.
+   Change only their chrome; embedded field content retains its own colours. */
+:root[data-dark-mode="dark"] .hyper-link > .hyper-wrapper {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .hyper-body-wrapper > [data-hyper-portal] {
+    background-color: var(--pane-bg);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-type-btn {
+    background-color: var(--dm-selected);
+    color: var(--text-color);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-type-btn:is(:hover, :focus-visible):not(.is-static) {
+    background-color: var(--dm-hover);
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-tab {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-tab:hover {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .hyper-link :is(.hyper-header-tab.is-active, .hyper-header-tab-menu-btn) {
+    background-color: var(--pane-bg);
+    color: var(--dm-heading);
+    border-inline-color: var(--dm-border-muted);
+    border-bottom-color: var(--pane-bg);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-actions :is(.hyper-header-new-window, .hyper-header-settings, .hyper-header-move) {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-actions :is(.hyper-header-new-window, .hyper-header-settings):is(:hover, :focus-visible):not(:disabled) {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .hyper-link .hyper-header-actions .hyper-header-new-window.is-active {
+    color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] .hyper-link :is(.hyper-header-type-chevron, .hyper-header-tab-chevron, .hyper-header-actions .hyper-menu-icon) {
+    color: inherit;
+}

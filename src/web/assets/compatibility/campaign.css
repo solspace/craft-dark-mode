@@ -1,0 +1,58 @@
+/* Campaign report charts: soften the frame/grid while retaining readable axes. */
+:root[data-dark-mode="dark"] .report-chart {
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .report-chart :is(.apexcharts-gridline, .apexcharts-grid-borders line, .apexcharts-xaxis line, .apexcharts-yaxis line) {
+    stroke: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .report-chart :is(.apexcharts-xaxis-label, .apexcharts-yaxis-label) {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .report-chart :is(.apexcharts-tooltip, .apexcharts-menu) {
+    background: var(--dm-overlay);
+    color: var(--dm-text) !important;
+    border-color: var(--dm-border);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] .report-chart .apexcharts-tooltip-title {
+    background: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .report-chart :is(.apexcharts-xaxistooltip, .apexcharts-yaxistooltip) {
+    background: var(--dm-raised);
+    color: var(--dm-text);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .report-chart .apexcharts-menu-item:hover {
+    background: var(--dm-hover);
+}
+
+/* The report tables share a layout element with Campaign's chart. */
+:root[data-dark-mode="dark"] [data-layout-element]:has(> .report-chart) table.data thead :is(th, td) {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+    border-color: var(--dm-border-muted);
+}
+
+/* Subscription state stays semantic without solid neon badge fills. */
+:root[data-dark-mode="dark"] label.subscriptionStatus {
+    --dm-campaign-status: var(--dm-muted);
+    color: var(--dm-campaign-status);
+    background-color: color-mix(in srgb, var(--dm-campaign-status) 13%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] label.subscriptionStatus.subscribed { --dm-campaign-status: #5cc8bc; }
+:root[data-dark-mode="dark"] label.subscriptionStatus.unsubscribed { --dm-campaign-status: var(--error-color); }
+:root[data-dark-mode="dark"] label.subscriptionStatus:is(.pending, .complained) { --dm-campaign-status: var(--warning-color); }
+
+:root[data-dark-mode="dark"] #contacts:has(.subscriptionStatus) thead th {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+    border-color: var(--dm-border-muted);
+}

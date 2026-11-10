@@ -1,0 +1,62 @@
+/* Retour's ApexCharts labels ship literal light-theme text colors. */
+:root[data-dark-mode] .retour-button-container + a.btn.delete {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Retour's Vue table controls use a fixed light-theme gray for pagination,
+   per-page labels, filters, and selection counts. Keep these secondary labels
+   as readable as the table's empty-state text. */
+:root[data-dark-mode="dark"] #cp-nav-content > div:has(> :is(.retour-redirects, .retour-dashboard)) .text-gray-600 {
+    color: var(--light-text-color);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-title-text {
+    fill: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content :is(.apexcharts-subtitle-text, .apexcharts-xaxis-label, .apexcharts-yaxis-label) {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-tooltip {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-tooltip-title {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+/* The second series is handled hits, often flat at zero; keep it visible
+   without the light theme's near-white stroke and area fill. */
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-area-series > .apexcharts-series[rel="2"] .apexcharts-area[fill="none"] {
+    stroke: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-area-series > .apexcharts-series[rel="2"] .apexcharts-area:not([fill="none"]) {
+    fill: var(--dm-muted);
+    fill-opacity: 0.12;
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-series[rel="2"] .apexcharts-marker {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #cp-nav-content .apexcharts-marker {
+    stroke: var(--dm-surface);
+}
+
+/* Retour's dashboard widget owns a separate donut and inline legend colours. */
+:root[data-dark-mode="dark"] .widget[data-type*="RetourWidget"] .apexcharts-legend-text {
+    color: var(--dm-text) !important;
+}
+:root[data-dark-mode="dark"] .widget[data-type*="RetourWidget"] :is(.apexcharts-pie-area, path.apexcharts-legend-marker) {
+    stroke: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .widget[data-type*="RetourWidget"] .apexcharts-pie-series[rel="2"] .apexcharts-pie-area,
+:root[data-dark-mode="dark"] .widget[data-type*="RetourWidget"] span.apexcharts-legend-marker[rel="2"] path {
+    fill: var(--dm-muted);
+}

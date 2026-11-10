@@ -1,0 +1,73 @@
+/* Navigation 4 builder roots expose their own Plugin Kit/Tailwind palette. */
+:root[data-dark-mode="dark"] :is(#navigation-builder-app, #navigation-builder-header-root, #navigation-builder-instructions-root, #navigation-builder-actions-root, #navigation-builder-sidebar-root) {
+    --color-white: var(--dm-surface);
+    --color-black: var(--dm-text);
+    --color-orange-50: var(--bg-warning);
+    --color-amber-50: var(--bg-warning);
+    --color-red-50: var(--bg-error);
+    --color-sky-50: var(--dm-selected);
+    --color-gray-50: var(--dm-canvas);
+    --color-gray-100: var(--dm-raised);
+    --color-gray-200: var(--dm-border-muted);
+    --color-gray-300: var(--dm-border);
+    --color-gray-400: var(--dm-muted);
+    --color-gray-500: var(--dm-muted);
+    --color-gray-600: var(--dm-muted);
+    --color-gray-700: var(--dm-text);
+    --color-gray-800: var(--dm-heading);
+    --color-gray-900: var(--dm-heading);
+    --color-slate-50: var(--dm-canvas);
+    --color-slate-100: var(--dm-raised);
+    --color-slate-150: var(--dm-border-muted);
+    --color-slate-200: var(--dm-border-muted);
+    --color-slate-300: var(--dm-border);
+    --color-slate-400: var(--dm-border);
+    --color-slate-500: var(--dm-muted);
+    --color-slate-600: var(--dm-muted);
+    --color-slate-700: var(--dm-text);
+    --color-slate-800: var(--dm-heading);
+    --color-slate-900: var(--dm-heading);
+    --pk-color-link: var(--dm-link);
+    --pk-color-white: var(--dm-surface);
+    --pk-color-slate-50: var(--dm-canvas);
+    --pk-color-slate-100: var(--dm-raised);
+    --pk-color-slate-150: var(--dm-border-muted);
+    --pk-color-slate-200: var(--dm-border-muted);
+    --pk-color-slate-250: var(--dm-raised);
+    --pk-color-slate-300: var(--dm-hover);
+    --pk-color-slate-400: var(--dm-selected);
+    --pk-color-gray-50: var(--dm-canvas);
+    --pk-color-gray-100: var(--dm-raised);
+    --pk-color-gray-150: var(--dm-border-muted);
+    --pk-color-gray-200: var(--dm-border-muted);
+    --pk-color-gray-250: var(--dm-border);
+    --pk-color-gray-300: var(--dm-border);
+    --pk-color-gray-350: var(--dm-muted);
+    --pk-color-gray-400: var(--dm-muted);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-550: var(--dm-muted);
+    --pk-color-gray-600: var(--dm-text);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-800: var(--dm-heading);
+    --pk-color-gray-900: var(--dm-heading);
+    --pk-color-gray-1000: var(--dm-heading);
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--input-border-color);
+    --pk-input-placeholder-color: var(--dm-muted);
+    --pk-input-focus-shadow: var(--focus-ring);
+    --pk-action-fill: var(--button-bg);
+    --pk-action-fill-hover: var(--button-bg--hover);
+    --pk-action-fill-active: var(--button-bg--active);
+    --pk-action-on: var(--dm-text);
+    --pk-action-primary-on: #fff;
+    --pk-shadow-popup: var(--menu-shadow);
+    --pk-shadow-popover: var(--menu-shadow);
+    --pk-shadow-modal: var(--modal-shadow);
+    --pk-shadow-focus: var(--focus-ring);
+    --pk-shadow-focus-inset: inset 0 0 0 1px var(--focus-ring-color);
+}
+
+/* Native node-editor metadata keeps the Type control on the cell surface. */
+:root[data-dark-mode="dark"] .meta .field:has(select option[value="verbb\\navigation\\nodetypes\\Custom"]) :is(.select, select) {
+    background: transparent;
+}

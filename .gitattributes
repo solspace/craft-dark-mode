@@ -1,0 +1,12 @@
+# Keep development-only files out of Composer/GitHub release archives.
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.github export-ignore
+/AGENTS.md export-ignore
+/DEVELOPMENT.md export-ignore
+/tests export-ignore
+/output export-ignore
+/phpunit.xml export-ignore
+/phpunit.xml.dist export-ignore
+/.phpunit.cache export-ignore
+/dev export-ignore

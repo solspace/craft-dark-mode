@@ -1,0 +1,179 @@
+/* Vizy's add-group control otherwise retains its light-theme text colour. */
+:root[data-dark-mode="dark"] .vizy-add-group {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .vizy-add-group:hover {
+    color: var(--link-color);
+}
+
+/* Component variables also pass through Plugin Kit's nested shadow roots. */
+:root[data-dark-mode="dark"] :is(vizy-editor-config-settings, .vizy-configurator, vizy-editor, vizy-image-browser, vizy-color-input, .vizy-block-availability-dialog) {
+    --pk-color-white: var(--dm-surface);
+    --pk-color-gray-50: var(--dm-canvas);
+    --pk-color-gray-050: var(--dm-canvas);
+    --pk-color-gray-100: var(--dm-raised);
+    --pk-color-gray-150: var(--dm-border-muted);
+    --pk-color-gray-200: var(--dm-border-muted);
+    --pk-color-gray-300: var(--dm-border);
+    --pk-color-gray-350: var(--dm-muted);
+    --pk-color-gray-400: var(--dm-muted);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-550: var(--dm-muted);
+    --pk-color-gray-600: var(--dm-text);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-800: var(--dm-heading);
+    --pk-color-gray-900: var(--dm-heading);
+    --pk-color-slate-100: var(--dm-raised);
+    --pk-color-slate-250: var(--dm-raised);
+    --pk-color-slate-300: var(--dm-hover);
+    --pk-color-slate-400: var(--dm-border);
+    --pk-color-slate-800: var(--dm-border);
+    --pk-color-blue-500: var(--dm-link);
+    --pk-color-sky-600: var(--dm-link);
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--input-border-color);
+    --pk-checkbox-border-color: var(--input-border-color);
+    --pk-input-focus-shadow: var(--focus-ring);
+    --pk-shadow-popup: var(--modal-shadow);
+    --pk-shadow-modal: var(--modal-shadow);
+    --pk-action-fill: var(--button-bg);
+    --pk-action-fill-hover: var(--button-bg--hover);
+    --pk-action-on: var(--dm-text);
+}
+
+/* Field configuration and global block-type slideouts use separate components
+   from the editor configuration above. Keep these overrides on Vizy's hosts. */
+:root[data-dark-mode="dark"] .vizy-configurator .vizy-block-group {
+    background: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator .vizy-block-group-header {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator .vizy-block-rows {
+    background: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] vizy-image-browser pk-image-browser::part(panel) {
+    background: var(--dm-overlay);
+    border: 1px solid var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator pk-lightswitch::part(thumb) {
+    background: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator pk-lightswitch[checked]:not([disabled])::part(thumb) {
+    background: #fff;
+}
+
+:root[data-dark-mode="dark"] .vizy-block-availability-dialog::part(panel) {
+    background: var(--dm-overlay);
+    border: 1px solid var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .vizy-block-availability-dialog::part(header),
+:root[data-dark-mode="dark"] .vizy-block-availability-dialog::part(footer) {
+    background: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .vizy-block-availability-dialog::part(panel)::backdrop {
+    background: var(--shade-bg);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings :is(.vizy-editor-config-builder, .vizy-editor-config-icon-designer) {
+    --vizy-builder-bg: var(--dm-surface);
+    background: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings :is(.vizy-editor-config-active, .vizy-control, .vizy-editor-config-icon-option) {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings :is(.vizy-control:hover, .vizy-control:focus-visible, .vizy-editor-config-icon-option:hover) {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings :is(.vizy-control.is-selected, .vizy-editor-config-icon-option.is-selected) {
+    background-color: var(--dm-selected);
+    color: var(--dm-link);
+    border-color: var(--dm-link);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings :is(.vizy-editor-config-section .instructions, .vizy-editor-config-disclosure-count, .vizy-editor-config-subhead, .vizy-editor-config-tabs button) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings .vizy-editor-config-tabs button.active {
+    color: var(--dm-heading);
+    border-color: var(--dm-tab-accent);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings .vizy-editor-config-menu-item .preview-label {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings pk-lightswitch:not([checked])::part(thumb) {
+    background-color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings pk-lightswitch[checked]::part(thumb) {
+    background-color: #fff;
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings pk-lightswitch[disabled]::part(thumb) {
+    background-color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings .vizy-control.is-drag-helper {
+    background-color: var(--dm-overlay);
+}
+
+/* Configurator rows and block chrome retain their authored accent, mixed into
+   dark surfaces instead of the component's hard-coded white base. */
+:root[data-dark-mode="dark"] .vizy-configurator :is(.vizy-block-row, .vizy-block-group-dropzone) {
+    background-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator .vizy-block-row.has-color {
+    --custom-bg-color: color-mix(in srgb, var(--vizy-block-accent-color) 12%, var(--dm-surface));
+    background-color: var(--custom-bg-color);
+}
+
+:root[data-dark-mode="dark"] .vizy-configurator .vizy-block-row:hover {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] vizy-block {
+    --vizy-border: var(--dm-border);
+    --vizy-panel: var(--dm-raised);
+    --vizy-muted: var(--dm-muted);
+    --vizy-block-label-color: var(--dm-text);
+    background-color: var(--dm-surface);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] vizy-block[accent-color] {
+    --custom-bg-color: color-mix(in srgb, var(--vizy-block-accent-color) 8%, var(--dm-surface));
+    --custom-titlebar-bg-color: color-mix(in srgb, var(--vizy-block-accent-color) 16%, var(--dm-surface));
+    --custom-border-color: color-mix(in srgb, var(--vizy-block-accent-color) 35%, var(--dm-border));
+    --custom-text-color: var(--dm-text);
+    background-color: var(--custom-bg-color);
+}
+
+:root[data-dark-mode="dark"] vizy-block[accent-color]::part(header) {
+    background-color: var(--custom-titlebar-bg-color);
+}
+
+:root[data-dark-mode="dark"] vizy-editor-config-settings pk-code-editor {
+    border-color: var(--dm-border);
+}

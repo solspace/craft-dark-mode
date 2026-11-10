@@ -1,0 +1,19 @@
+/* Sprig Playground controls and its native output wrapper. Authored component
+   markup keeps its own explicit colors and styles. */
+:root[data-dark-mode="dark"] .playground :is(input.field, textarea.field) {
+    background-color: var(--input-bg);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .playground :is(input.field, textarea.field):focus {
+    border-color: var(--input-border-color);
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .playground input.field:disabled {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .playground .playground-output > #playground.sprig-component {
+    background-color: var(--dm-canvas);
+}

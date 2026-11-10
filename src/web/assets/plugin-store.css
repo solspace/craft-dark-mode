@@ -1,0 +1,201 @@
+/* Craft's embedded Plugin Store compiles a separate Tailwind palette.
+   Map only its neutral UI utilities; plugin artwork and ratings retain color. */
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) {
+    color: var(--text-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.tw-text-black, .tw-text-gray-900, .tw-text-gray-800, .tw-text-gray-700) {
+    color: var(--text-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.tw-text-gray-600, .tw-text-gray-500, .tw-text-gray-400) {
+    color: var(--light-text-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(a, .tw-text-blue-600) {
+    color: var(--link-color);
+}
+:root[data-dark-mode="dark"] .ps-wrapper :is(a.plugin-card, .nav-items a) {
+    color: var(--text-color);
+}
+:root[data-dark-mode="dark"] .ps-wrapper a.plugin-card:hover strong {
+    color: var(--link-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.tw-bg-white, .tw-bg-gray-50) {
+    background-color: var(--dm-canvas);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.tw-bg-gray-100, .tw-bg-gray-200, .tw-bg-gray-300) {
+    background-color: var(--dm-raised);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.tw-border-gray-100, .tw-border-gray-200, .tw-border-gray-300, .tw-border-gray-400, .tw-border, .tw-border-t, .tw-border-b, .tw-border-l, .tw-border-r, hr, .ps-sidebar, .readable :is(th, td, tr)) {
+    border-color: var(--hairline-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(pre, code) {
+    background-color: var(--dm-canvas);
+    color: var(--text-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(input, textarea) {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(input, textarea):focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn {
+    color: var(--link-color);
+    background-color: var(--button-bg);
+    border-color: transparent;
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn:hover {
+    color: var(--link-color);
+    background-color: var(--button-bg--hover);
+    border-color: transparent;
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn:active {
+    background-color: var(--button-bg--active);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn.primary {
+    background-color: var(--blue-600);
+    color: #fff;
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn.primary:hover {
+    background-color: var(--blue-700);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn.primary:active {
+    background-color: var(--blue-800);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn.danger {
+    color: var(--fg-error);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn.danger:hover {
+    background-color: var(--bg-error);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .c-btn.c-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] .ps-wrapper .category-selector-btn {
+    color: var(--button-text-color);
+    background-color: var(--button-bg);
+    border-color: transparent;
+}
+:root[data-dark-mode="dark"] .ps-wrapper .nav-items a.router-link-exact-active {
+    background-color: transparent;
+}
+:root[data-dark-mode="dark"] .ps-wrapper .nav-items a:hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .tw-bg-blue-50 {
+    background-color: var(--bg-selection-light);
+}
+:root[data-dark-mode="dark"] .ps-wrapper .tabs :is(a, button).router-link-exact-active {
+    color: var(--link-color);
+    border-block-end-color: var(--link-color);
+}
+:root[data-dark-mode="dark"] .ps-wrapper .track {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .ps-wrapper :is(.changelog-release, .ps-header) {
+    border-color: var(--hairline-color);
+}
+
+/* The neutral star layer is visible through fractional rating clips. */
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .rating-stars .stars--idle > div {
+    color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .rating-stars .stars--idle :is(svg, path) {
+    fill: currentColor;
+}
+
+:root[data-dark-mode="dark"] .ps-wrapper .changelog-release .version .anchor {
+    color: transparent;
+}
+:root[data-dark-mode="dark"] .ps-wrapper .changelog-release .version :is(.anchor svg, .anchor path) {
+    fill: currentColor;
+}
+:root[data-dark-mode="dark"] .ps-wrapper .changelog-release .version:is(:hover, :focus-within) .anchor {
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] .ps-wrapper .tabs :is(a, button):hover:not(.router-link-exact-active) {
+    border-block-end-color: var(--dm-border);
+}
+
+/* Semantic status borders take precedence over neutral Tailwind borders. */
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) :is(.error.tw-border, .tw-border-red-500, .tw-border-red-600) {
+    border-color: var(--border-error);
+}
+
+/* The Store portals its screenshot carousel outside the main wrapper. */
+:root[data-dark-mode="dark"] #screenshot-modal {
+    background-color: var(--dm-canvas);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] #screenshot-modal .screenshot-modal-button {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] #screenshot-modal .screenshot-modal-button:hover {
+    background-color: var(--dm-hover);
+    color: var(--dm-heading);
+}
+/* Compiled component styles do not expose their Tailwind border utilities. */
+:root[data-dark-mode="dark"] .ps-wrapper .cms-editions-edition {
+    border-color: var(--hairline-color);
+}
+:root[data-dark-mode="dark"] :where(.ps-wrapper, #pluginstore-modal) .edition-badge .edition-badge-name {
+    color: #fff;
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .ps-wrapper .cms-editions-edition .price-renewal-info {
+    color: var(--dm-muted);
+}
+
+/* ApexCharts consumes Craft's native chart role; its decorative fade is a
+   separate utility and must use the same dark fill. */
+:root[data-dark-mode="dark"] .ps-wrapper {
+    --chart-fill-color: var(--dm-selected);
+}
+:root[data-dark-mode="dark"] .ps-wrapper .tw-bg-gradient-to-b.tw-from-blue-100\/100 {
+    background-image: linear-gradient(to bottom, var(--chart-fill-color), transparent);
+}
+
+/* Pagination is portalled separately from the carousel's slide container. */
+:root[data-dark-mode="dark"] #screenshot-modal .carousel .pagination-wrapper .pagination-content .swiper-pagination {
+    background-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] #screenshot-modal .carousel .pagination-wrapper .pagination-content .swiper-pagination .swiper-pagination-bullet {
+    background-color: var(--dm-border-muted);
+    opacity: 1;
+}
+:root[data-dark-mode="dark"] #screenshot-modal .carousel .pagination-wrapper .pagination-content .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--dm-muted);
+}
+
+/* The cart uses a fixed neutral SVG fill rather than inherited text color. */
+:root[data-dark-mode="dark"] #pluginstore-actions #cart-button svg :is(circle, ellipse, line, path, polygon, polyline, rect, text) {
+    fill: var(--dm-text);
+}
+:root[data-dark-mode="dark"] #pluginstore-actions #cart-button:hover svg :is(circle, ellipse, line, path, polygon, polyline, rect, text) {
+    fill: var(--dm-link);
+}
+:root[data-dark-mode="dark"] #screenshot-modal .close.screenshot-modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Vue's portalled edition-help popovers use literal white arrow borders. */
+:root[data-dark-mode="dark"] .tooltip.popover.vue-popover-theme[x-placement^="right"] .popover-arrow {
+    border-right-color: var(--dm-overlay);
+}
+:root[data-dark-mode="dark"] .tooltip.popover.vue-popover-theme[x-placement^="left"] .popover-arrow {
+    border-left-color: var(--dm-overlay);
+}
+:root[data-dark-mode="dark"] .tooltip.popover.vue-popover-theme[x-placement^="top"] .popover-arrow {
+    border-top-color: var(--dm-overlay);
+}
+:root[data-dark-mode="dark"] .tooltip.popover.vue-popover-theme[x-placement^="bottom"] .popover-arrow {
+    border-bottom-color: var(--dm-overlay);
+}

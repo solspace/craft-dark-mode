@@ -1,0 +1,61 @@
+:root[data-dark-mode="dark"] .ck {
+    --ck-color-base-background: var(--dm-surface);
+    --ck-color-base-foreground: var(--dm-raised);
+    --ck-color-base-border: var(--dm-border);
+    --ck-color-text: var(--text-color);
+    --ck-color-toolbar-background: var(--dm-surface);
+    --ck-color-toolbar-border: var(--dm-border);
+    --ck-color-panel-background: var(--dm-overlay);
+    --ck-color-panel-border: var(--dm-border);
+    --ck-color-input-background: var(--input-bg);
+    --ck-color-input-border: var(--input-border-color);
+    --ck-color-input-text: var(--text-color);
+    --ck-color-dropdown-panel-background: var(--dm-overlay);
+    --ck-color-dropdown-panel-border: var(--dm-border);
+    --ck-color-list-background: var(--dm-overlay);
+    --ck-color-list-button-hover-background: var(--dm-hover);
+    --ck-color-list-button-on-background: var(--dm-selected);
+    --ck-color-list-button-on-text: var(--text-color);
+    --ck-color-button-default-background: transparent;
+    --ck-color-button-default-hover-background: var(--dm-hover);
+    --ck-color-button-default-active-background: var(--dm-selected);
+    --ck-color-button-on-background: var(--dm-selected);
+    --ck-color-button-on-color: var(--dm-link);
+    --ck-color-focus-border: var(--focus-ring-color);
+    --ck-color-shadow-drop: #01040966;
+    --ck-powered-by-background: var(--dm-raised);
+    --ck-powered-by-text-color: var(--dm-muted);
+    --ck-powered-by-border-color: var(--dm-border);
+    --ck-color-code-block-label-background: var(--dm-raised);
+    --ck-style-panel-button-label-background: var(--dm-raised);
+    --ck-style-panel-button-hover-label-background: var(--dm-hover);
+    --ck-style-panel-button-hover-border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .ckeditor-tb--item.draghelper {
+    background-color: var(--dm-raised) !important;
+    box-shadow: 0 0 0 1px var(--dm-border), 0 2px 6px -2px #01040966 !important;
+}
+
+:root[data-dark-mode="dark"] .ck-powered-by .ck-icon {
+    filter: grayscale(1) brightness(0) invert(0.8);
+}
+
+:root[data-dark-mode="dark"] .ck.ck-editor__editable pre:not([class], [style]) {
+    color: var(--dm-text);
+    background-color: var(--dm-canvas);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .ck.ck-editor__editable pre[data-language]::after {
+    color: var(--dm-muted);
+}
+
+/* CKEditor’s neutral setting diagrams, never content images. */
+:root[data-dark-mode="dark"] label:has(> input:is([name="imageMode"], [name$="[imageMode]"])) > img[src$="/img.svg"] {
+    content: url('../view-modes/image-tags.svg');
+}
+
+:root[data-dark-mode="dark"] label:has(> input:is([name="imageMode"], [name$="[imageMode]"])) > img[src$="/entries.svg"] {
+    content: url('../view-modes/image-entries.svg');
+}

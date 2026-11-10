@@ -1,0 +1,476 @@
+/* Craft components: only color roles change. Layout, density, hit targets,
+   element status shapes, drag handles, and native focus behavior stay with Craft. */
+:root[data-dark-mode="dark"] :is(h1, h2, h3, h4, h5, h6) {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .global-sidebar .nav-icon {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .global-sidebar .sidebar-action:is(.sel, [aria-current="page"], [aria-current="true"]) {
+    color: var(--dm-heading);
+    background-color: transparent;
+}
+
+:root[data-dark-mode="dark"] .global-sidebar .sidebar-action:is([aria-current="page"], [aria-current="true"])::before {
+    background-color: var(--dm-heading);
+}
+
+/* Native list hierarchy: quiet headers, continuous rows, neutral element titles,
+   and muted supporting values. Do not paint Craft's transparent row borders. */
+:root[data-dark-mode="dark"] table.data {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] table.data thead :is(th, td) {
+    background-color: var(--gray-050);
+    color: var(--dm-muted);
+    font-weight: 500;
+}
+
+:root[data-dark-mode="dark"] table.data thead th.ordered {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+
+/* Craft's light hover ramp becomes darker than the header in Dark Mode. */
+:root[data-dark-mode="dark"] body:not(.dragging) table.data thead th.orderable:hover {
+    background-color: var(--dm-hover);
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] table.data tbody tr {
+    --hover-bg-color: var(--dm-row-hover);
+    --selected-bg-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] table.data tbody tr :is(th, td) {
+    background-color: transparent;
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] table.data:not(.editable) tbody tr :is(th, td) {
+    border-block-color: transparent;
+}
+
+:root[data-dark-mode="dark"] body:not(.dragging) table.data > tbody > tr:not(.sel, .selected, .disabled, .active-drop-target, [aria-selected="true"]):hover > :is(th, td) {
+    background-color: var(--hover-bg-color);
+}
+
+/* Other CP table families use the same quiet hover without changing content
+   tables, calendar grids, selection colors, or disabled/dragged rows. */
+:root[data-dark-mode="dark"] body:not(.dragging) :is(table.editable, table.vuetable, table.seomatic-content-seo) > tbody > tr:not(.sel, .selected, .disabled, .active-drop-target, [aria-selected="true"]):hover > :is(th, td) {
+    background-color: var(--dm-row-hover);
+}
+
+:root[data-dark-mode="dark"] table.data tbody tr:is(.sel, .active-drop-target) {
+    --text-color: var(--dm-text);
+    --light-text-color: var(--dm-muted);
+    --fg-subtle: var(--dm-muted);
+    --link-color: var(--dm-link);
+    /* Craft explicitly uses --white for selected-row foregrounds. This local
+       alias affects only those rows, preserving real white everywhere else. */
+    --white: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] table.data tbody tr:is(.sel, .active-drop-target) :is(th, td) {
+    color: var(--dm-text);
+    background-color: var(--selected-bg-color);
+}
+
+:root[data-dark-mode="dark"] table.data .element .label a,
+:root[data-dark-mode="dark"] table.data a.label-link {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] table.data .element .label a:hover,
+:root[data-dark-mode="dark"] table.data a.label-link:hover {
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] :is(.chip, .card).sel {
+    --white: var(--dm-text);
+}
+
+/* Neutral relation/author chips need separation inside tinted metadata panels.
+   Preserve authored element colours and Craft's chromeless/selected variants. */
+:root[data-dark-mode="dark"] .element.chip:not(.chromeless, .hairline, .sel, [style*="--custom-bg-color"]) {
+    --custom-border-color: var(--dm-border);
+    background-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] table.data tbody tr:is(.sel, .active-drop-target) .chip {
+    --custom-sel-bg-color: var(--dm-canvas);
+    --custom-border-color: var(--dm-border);
+    --custom-text-color: var(--dm-text);
+}
+
+/* Shared exclusive choices (view modes, notification position, slideout side).
+   Keep Craft's control height and icon layout, with background-only states. */
+:root[data-dark-mode="dark"] .btngroup--exclusive .btn:not(.submit) {
+    border: none;
+    color: var(--dm-muted);
+    background-color: var(--dm-raised);
+    position: relative;
+}
+
+:root[data-dark-mode="dark"] .btngroup--exclusive .btn:is(.active, [aria-pressed="true"]):not(.submit, .disabled, [disabled]),
+:root[data-dark-mode="dark"] :is(.btngroup, [role="group"]) > button.btn:is(.active, [aria-pressed="true"]):not(.submit, .disabled, [disabled]) {
+    background-color: var(--dm-control-selected-bg);
+    color: var(--dm-control-selected-text);
+    z-index: 1;
+}
+
+:root[data-dark-mode="dark"] .btngroup--exclusive .btn:not(.submit, .active, [aria-pressed="true"]):hover {
+    background-color: var(--dm-hover);
+    color: var(--dm-text);
+}
+
+/* Dashed add controls use a pale compiled fill in Craft's pressed state. */
+:root[data-dark-mode="dark"] .btn.dashed:not(.disabled, [disabled], [aria-disabled="true"]):is(:hover, :focus-visible) {
+    background-color: color-mix(in srgb, var(--dm-raised) 50%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] .btn.dashed:not(.disabled, [disabled], [aria-disabled="true"]):is(:active, .active, [aria-expanded="true"]) {
+    background-color: var(--button-bg--active);
+}
+
+/* Craft puts selection on either the element or its containing list item.
+   Derive colored card and chip surfaces from the authored type's deep color ramp so the
+   header, body and outline stay related in both states. */
+:root[data-dark-mode="dark"] :is(.card, .chip)[style*="--custom-bg-color"] {
+    --custom-text-color: var(--dm-text) !important;
+}
+
+:root[data-dark-mode="dark"] :is(.card, .chip)[style*="--custom-bg-color"]:not(.sel, .chromeless) {
+    background-color: color-mix(in srgb, var(--custom-sel-bg-color) 12%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] :is(.card, .chip)[style*="--custom-bg-color"]:not(.chromeless)::before {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--custom-sel-bg-color) 40%, var(--dm-border-muted));
+}
+
+:root[data-dark-mode="dark"] :is(.card, .chip)[style*="--custom-bg-color"] > :is(.card-titlebar, .titlebar) {
+    background-color: color-mix(in srgb, var(--custom-sel-titlebar-bg-color) 20%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] :is(.card, .chip).sel[style*="--custom-bg-color"],
+:root[data-dark-mode="dark"] .sel > :is(.card, .chip)[style*="--custom-bg-color"] {
+    background-color: color-mix(in srgb, var(--custom-sel-bg-color) 65%, var(--dm-surface)) !important;
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] :is(.card, .chip).sel[style*="--custom-bg-color"] > :is(.card-titlebar, .titlebar),
+:root[data-dark-mode="dark"] .sel > :is(.card, .chip)[style*="--custom-bg-color"] > :is(.card-titlebar, .titlebar) {
+    background-color: color-mix(in srgb, var(--custom-sel-titlebar-bg-color) 75%, var(--dm-surface));
+}
+
+/* Matrix (including Super Table 4) supplies only the unselected colour ramp.
+   Its outline is a pseudo-element, and its body can contain nested fields. */
+:root[data-dark-mode="dark"] .matrixblock[style*="--custom-bg-color"] {
+    --custom-text-color: var(--dm-text) !important;
+    background-color: color-mix(in srgb, var(--custom-border-color) 6%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] .matrixblock[style*="--custom-bg-color"]::before {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--custom-border-color) 30%, var(--dm-border-muted));
+}
+
+:root[data-dark-mode="dark"] .matrixblock[style*="--custom-bg-color"] > .titlebar {
+    background-color: color-mix(in srgb, var(--custom-border-color) 18%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] .matrixblock[style*="--custom-bg-color"] > .titlebar .pane-tabs [role="tab"].sel {
+    background-color: var(--dm-surface) !important;
+}
+
+:root[data-dark-mode="dark"] .matrixblock.sel,
+:root[data-dark-mode="dark"] .sel > .matrixblock {
+    background-color: var(--selected-bg-color) !important;
+}
+
+/* Nested fields can sit on tinted block canvases. Give dropdowns the same
+   quiet boundary as text inputs without changing their native dimensions. */
+:root[data-dark-mode="dark"] :is(.matrixblock, .ni_block) :is(.selectize-control.single > .selectize-input, select.fieldtoggle) {
+    background-color: var(--input-bg);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+/* Selectize adds a literal pale separator while its menu is open. */
+:root[data-dark-mode="dark"] .selectize-input.dropdown-active::before {
+    background-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.selectize-dropdown, .selectize-input) .status.white {
+    background-color: var(--dm-muted);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .pane.tip {
+    background-color: var(--bg-notice) !important;
+    border-color: var(--border-notice) !important;
+}
+
+:root[data-dark-mode="dark"] .pane.warning {
+    background-color: var(--bg-warning) !important;
+    border-color: var(--border-warning) !important;
+}
+
+/* Preserve Craft's range geometry, with a quieter track and thumb outline. */
+:root[data-dark-mode="dark"] input.range::-webkit-slider-runnable-track {
+    background: var(--dm-raised);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] input.range::-moz-range-track {
+    background: var(--dm-raised);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] input.range::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] input.range::-moz-range-thumb {
+    box-shadow: 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] input.range:focus-visible::-webkit-slider-thumb {
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] input.range:focus-visible::-moz-range-thumb {
+    box-shadow: var(--focus-ring);
+}
+
+/* These inline SVGs are Craft's generated file/folder thumbnails. Uploaded
+   images use image nodes and retain their original pixels and colors. */
+:root[data-dark-mode="dark"] .element[data-kind]:not([data-kind="image"]) .thumb > svg[viewBox="0 0 100 100"] :is(path, polygon) {
+    fill: var(--dm-muted) !important;
+}
+:root[data-dark-mode="dark"] .element[data-kind]:not([data-kind="image"]) .thumb > svg[viewBox="0 0 100 100"] path[style*="fill:#FFFFFF"] {
+    fill: var(--dm-raised) !important;
+}
+:root[data-dark-mode="dark"] .element[data-kind]:not([data-kind="image"]) .thumb > svg[viewBox="0 0 100 100"] text {
+    fill: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .element .thumb > svg[viewBox="0 0 340 340"] path:first-child {
+    fill: var(--dm-raised) !important;
+}
+:root[data-dark-mode="dark"] .element .thumb > svg[viewBox="0 0 340 340"] path:last-child {
+    fill: var(--dm-muted) !important;
+}
+
+:root[data-dark-mode="dark"] .selectize-control.multi .selectize-input > .item {
+    color: var(--dm-text);
+    background: var(--dm-raised);
+    border: 1px solid var(--dm-border);
+}
+:root[data-dark-mode="dark"] .selectize-control.multi .selectize-input > .item.active {
+    background: var(--dm-selected);
+    border-color: var(--dm-link);
+}
+:root[data-dark-mode="dark"] .selectize-control.multi .selectize-input > .item .remove {
+    color: var(--dm-muted);
+    border-inline-start-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .selectize-control.multi .selectize-input > .item .remove:hover {
+    color: var(--dm-text);
+    background: var(--dm-hover);
+}
+
+/* Crumb disclosures are small chromeless controls, rather than bordered buttons. */
+:root[data-dark-mode="dark"] #crumb-list .crumb > .btn.menubtn {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] #crumb-list .crumb > .btn.menubtn:hover {
+    background: var(--dm-raised);
+}
+:root[data-dark-mode="dark"] #crumb-list .crumb > .btn.menubtn:focus-visible {
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .element.card:not(.chromeless, .sel, [style*="--custom-bg-color"]) {
+    --custom-border-color: var(--dm-border-muted);
+    background-color: var(--dm-canvas);
+}
+:root[data-dark-mode="dark"] .element.card:not(.chromeless, .sel, [style*="--custom-bg-color"]) > .card-titlebar {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .selectize-control .selectize-input > input {
+    color: var(--dm-text);
+    -webkit-text-fill-color: var(--dm-text);
+    caret-color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .selectize-control .selectize-input > input::placeholder {
+    color: var(--dm-muted);
+    -webkit-text-fill-color: var(--dm-muted);
+    opacity: 1;
+}
+
+/* Craft's inline action menus stay chromeless; retain their native hit areas. */
+:root[data-dark-mode="dark"] .btn.action-btn {
+    border-color: transparent;
+    box-shadow: none;
+}
+/* Preserve Craft's explicitly outlined actions, including source settings. */
+:root[data-dark-mode="dark"] .btn.action-btn.hairline {
+    border: 1px solid var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .btn.action-btn.hairline-dark {
+    border: 1px solid var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .btn.action-btn:hover {
+    background-color: var(--dm-hover);
+}
+:root[data-dark-mode="dark"] .btn.action-btn:focus-visible {
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .icon-picker-modal .body .icon-picker-modal--list.loading::after {
+    background-color: rgb(from var(--dm-overlay) r g b / 75%);
+}
+:root[data-dark-mode="dark"] .icon-picker-modal .body .icon-picker-modal--list .icon-picker--icon:hover {
+    background-color: var(--dm-selected);
+}
+
+/* Continue the row canvas through the native table pane's bottom padding.
+   Its separately styled header and footer retain their raised surfaces. */
+:root[data-dark-mode="dark"] #content.content-pane:has(> .element-index > .elements > .tableview) {
+    background-color: var(--dm-canvas);
+}
+
+/* Element selectors use one continuous canvas behind their rows, including
+   disabled checkboxes whose own opacity would expose a different parent fill. */
+:root[data-dark-mode="dark"] .elementselectormodal > .body {
+    background-color: var(--dm-surface);
+}
+:root[data-dark-mode="dark"] .elementselectormodal > :is(.header, .footer) {
+    background-color: var(--dm-surface);
+}
+:root[data-dark-mode="dark"] table.data tbody tr.disabled {
+    background-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] .global-sidebar .sidebar-action:hover:not(:has(.btn:hover)) {
+    background-color: var(--nav-item-bg-hover);
+}
+
+:root[data-dark-mode="dark"] :is(#content.content-pane, .pane):has(> :is(.tableview, .vue-admin-table, table.data)) {
+    background-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] .message .subject {
+    border-block-end-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .flex-fields > :not(h2, hr, .line-break)::before {
+    background-color: var(--dm-border-muted);
+}
+
+/* Native handle chips retain their quiet outline and native clipboard geometry. */
+:root[data-dark-mode="dark"] craft-copy-attribute button {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] craft-copy-attribute button:hover {
+    border-color: var(--dm-border);
+    background-color: var(--dm-raised);
+}
+:root[data-dark-mode="dark"] craft-copy-attribute button:focus-visible {
+    border-color: var(--dm-border);
+    box-shadow: var(--focus-ring);
+}
+
+/* Native caution buttons have a separately compiled pale-red ramp. */
+:root[data-dark-mode="dark"] .btn.caution {
+    background-color: var(--bg-error) !important;
+    color: var(--fg-error);
+}
+:root[data-dark-mode="dark"] .btn.caution:is(:hover, :focus, .hover) {
+    background-color: color-mix(in srgb, var(--fg-error) 18%, var(--dm-surface)) !important;
+}
+:root[data-dark-mode="dark"] .btn.caution:is(:active, .active, [aria-expanded="true"]) {
+    background-color: color-mix(in srgb, var(--fg-error) 24%, var(--dm-surface)) !important;
+}
+
+/* Metadata section headings and native address choosers still use fixed fills. */
+:root[data-dark-mode="dark"] .meta > .flex-fields :is(blockquote.note, h2) {
+    background-color: var(--dm-raised);
+}
+:root[data-dark-mode="dark"] .address-card {
+    background-color: var(--dm-canvas);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .address-card:hover {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .address-card.error,
+:root[data-dark-mode="dark"] .address-card.error:hover {
+    border-color: var(--fg-error);
+}
+:root[data-dark-mode="dark"] .address-card .address-card-label {
+    background-color: var(--dm-selected);
+    color: var(--dm-link);
+}
+
+/* Craft's editable UI tokens share a class name with some code highlighters.
+   Keep source-code tokens untouched while theming the native token pills. */
+:root[data-dark-mode="dark"] .token:not(pre .token, code .token) {
+    background-color: var(--dm-raised);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .token:not(pre .token, code .token):focus {
+    background-color: var(--dm-selected);
+}
+
+/* Craft's dashboard help icons are monochrome inline SVGs. */
+:root[data-dark-mode="dark"] .cs-opt-icon {
+    --gray-200: var(--dm-muted);
+}
+:root[data-dark-mode="dark"] .widget .front .pane .cs-screen-home .cs-opt:hover {
+    background-color: var(--dm-overlay);
+}
+
+/* Recolor only Craft's transparency backdrop, never the uploaded artwork. */
+:root[data-dark-mode="dark"] :is(.cp-current-image.checkered, .preview-thumb-container.checkered img, .chip > .thumb.checkered img) {
+    background-color: var(--dm-surface);
+    background-image:
+        linear-gradient(45deg, var(--dm-raised) 25%, transparent 25%),
+        linear-gradient(135deg, var(--dm-raised) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--dm-raised) 75%),
+        linear-gradient(135deg, transparent 75%, var(--dm-raised) 75%);
+}
+
+/* Installed plugin metadata uses fixed neutral-ramp colors in its own bundle.
+   Preserve native geometry and authored plugin artwork. */
+:root[data-dark-mode="dark"] #plugins .plugin-details {
+    --gray-300: var(--dm-muted);
+}
+:root[data-dark-mode="dark"] #plugins .plugin-details .plugin-id .edition {
+    --fg-subtle: var(--dm-hover);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] #plugins .plugin-details .plugin-id .edition > .edition-name {
+    color: #fff;
+}
+:root[data-dark-mode="dark"] #plugins .plugin-details .license-key .pane {
+    background-color: var(--dm-raised);
+}
+
+/* State lives in the track; both positions use the same outlined dark thumb. */
+:root[data-dark-mode="dark"] .lightswitch .lightswitch-container .handle {
+    background-color: var(--dm-surface);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .lightswitch.on .lightswitch-container .handle::before {
+    background-color: var(--dm-heading);
+}
+
+/* A lighter off track keeps the charcoal thumb distinct in both positions. */
+:root[data-dark-mode="dark"] .lightswitch:not(.on, .indeterminate) {
+    --lightswitch-border-color: var(--gray-350);
+    background-image: linear-gradient(to right, var(--gray-350), var(--gray-350));
+}

@@ -1,0 +1,53 @@
+.dm-comparison-frame,
+.dm-comparison-ring {
+    position: fixed;
+    pointer-events: none;
+    margin: 0;
+    border: 0;
+}
+.dm-comparison-frame {
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2147483644;
+    background: transparent;
+}
+.dm-comparison-ring {
+    z-index: 2147483645;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #8b949e99, 0 4px 24px #0003;
+}
+.dm-comparison-toolbar {
+    position: fixed;
+    inset-inline-end: 18px;
+    inset-block-end: 18px;
+    z-index: 2147483646;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100vw - 36px);
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--dm-overlay);
+    color: var(--dm-text);
+    box-shadow: var(--modal-shadow);
+}
+.dm-comparison-toolbar > span { padding-inline: 4px; }
+.dm-comparison-toolbar .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--ui-control-height, 34px);
+}
+.dm-comparison-toolbar input[type="range"] { width: 100px; margin: 0; }
+.dm-comparison-toggle.btn { margin-block-start: 12px; width: 100%; }
+
+.dm-comparison-hint {
+    margin-block: 8px 0;
+    max-inline-size: 260px;
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--light-text-color);
+}

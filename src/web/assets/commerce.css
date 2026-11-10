@@ -1,0 +1,128 @@
+/* Commerce 5's official CP source still contains literal light colors in its
+   Vue order editor. Scope these adapters to its native commerceordersedit body
+   class. Core element indexes inherit Craft's tokens/components automatically.
+   Uploaded customer photos and storefront previews retain their own colors. */
+:root[data-dark-mode="dark"] .commerceordersindex table.data a.label-link {
+    color: var(--dm-link);
+}
+
+/* The empty-order starter icon is decorative, quieter than the message. */
+:root[data-dark-mode="dark"] .commerceordersedit .starter > [data-icon="info"] {
+    color: var(--dm-border);
+}
+
+/* Keep Commerce's temporary new-item feedback on a dark surface. */
+:root[data-dark-mode="dark"] .commerceordersedit .line-item-bg.highlight-line-item:not(.error-bg) {
+    background-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit {
+    --vs-controls-color: var(--dm-muted);
+    --vs-border-color: var(--dm-border);
+    --vs-dropdown-bg: var(--dm-overlay);
+    --vs-dropdown-color: var(--dm-text);
+    --vs-dropdown-option-color: var(--dm-text);
+    --vs-dropdown-option--active-bg: var(--dm-selected);
+    --vs-dropdown-option--active-color: var(--dm-text);
+    --vs-selected-bg: var(--dm-raised);
+    --vs-selected-color: var(--dm-text);
+    --vs-search-input-color: var(--dm-text);
+    --vs-state-disabled-bg: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit :is(.snapshot, .customer-display, .customer-photo--initial, .customer-photo--email, .vue-admin-table-drag) {
+    background-color: var(--dm-surface);
+    color: var(--dm-text);
+    border-color: var(--dm-border-muted);
+}
+
+/* Commerce repeats the avatar color class on an inner initial wrapper. */
+:root[data-dark-mode="dark"] .commerceordersedit .customer-photo--initial {
+    background-color: color-mix(in srgb, var(--commerce-avatar-color, var(--dm-link)) 16%, var(--dm-surface));
+}
+:root[data-dark-mode="dark"] .commerceordersedit .customer-photo--initial > div {
+    background-color: transparent;
+}
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-green { --commerce-avatar-color: var(--fg-success); }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-orange { --commerce-avatar-color: #ffa657; }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-red { --commerce-avatar-color: var(--fg-error); }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-yellow { --commerce-avatar-color: var(--fg-warning); }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-pink { --commerce-avatar-color: #ff9bce; }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-purple { --commerce-avatar-color: #d2a8ff; }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-avatar-turquoise { --commerce-avatar-color: #7dcfc5; }
+:root[data-dark-mode="dark"] .commerceordersedit .customer-photo-wrapper .status {
+    border-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit :is(.order-total-summary, .orderedit-border-color, .order-block, .customer-select-option, .vue-admin-table-pagination) {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit :is(.line-item-option-key, .adjustment-type, .shipping-method-handle, .purchasable-select-option .sku, .purchasable-select-option.notAvailable .description) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit .adjustment .fields .field .input .readonly {
+    background-color: var(--dm-raised);
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit .btn-link { color: var(--dm-link); }
+:root[data-dark-mode="dark"] .commerceordersedit .btn-link--danger { color: var(--fg-error); }
+
+:root[data-dark-mode="dark"] .commerceordersedit .vs__dropdown-toggle {
+    background-color: var(--input-bg);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit .vs__dropdown-menu {
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+
+:root[data-dark-mode="dark"] .commerceordersedit .vs__dropdown-option { color: var(--dm-text); }
+:root[data-dark-mode="dark"] .commerceordersedit .vs__dropdown-option--highlight {
+    background-color: var(--dm-selected);
+    color: var(--dm-heading);
+}
+:root[data-dark-mode="dark"] .commerceordersedit .vs__dropdown-option--disabled { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .commerceordersedit .vs__selected {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .commerceordersedit .vs--single .vs__selected { background-color: transparent; }
+:root[data-dark-mode="dark"] .commerceordersedit .order-meta-container.loading::after { background-color: var(--dm-canvas); }
+:root[data-dark-mode="dark"] .commerceordersedit .error-bg { background-color: var(--bg-error); }
+
+:root[data-dark-mode="dark"] :is(.transaction-status-failed, .payment-status-unpaid) { color: var(--fg-error); }
+:root[data-dark-mode="dark"] :is(.transaction-status-success, .payment-status-paid) { color: var(--fg-success); }
+:root[data-dark-mode="dark"] .purchasable-card { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .purchasable-card:hover {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .purchasable-card.error { border-color: var(--border-error); }
+:root[data-dark-mode="dark"] ul.commerce-sales li a {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] ul.commerce-sales li a::after { border-inline-end-color: var(--dm-raised); }
+:root[data-dark-mode="dark"] ul.commerce-sales li a::before { border-inline-end-color: var(--dm-border); }
+
+/* Dashboard tables must fit a single widget column, including long emails. */
+.commerce-widget-table-wrapper .vuetable-th-total { width: 35%; }
+.commerce-widget-table-wrapper .vuetable-slot .flex,
+.commerce-widget-table-wrapper .vuetable-slot .cell-bold { min-width: 0; }
+.commerce-widget-table-wrapper .vuetable-slot .cell-bold { overflow-wrap: anywhere; }
+
+/* Commerce appends its shared HTML chart tooltip directly to the body. */
+:root[data-dark-mode="dark"] .commerce-widget-chart-tooltip {
+    background-color: var(--dm-overlay);
+    color: var(--dm-text);
+    border: 1px solid var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+:root[data-dark-mode="dark"] .commerce-widget-chart-tooltip h3 { color: var(--dm-heading); }

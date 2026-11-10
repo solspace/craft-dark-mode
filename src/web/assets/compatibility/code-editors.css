@@ -1,0 +1,23 @@
+/* Shared code-editor chrome. Preview documents retain their authored styles. */
+:root[data-dark-mode="dark"] .CodeMirror {
+    background: var(--input-bg);
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .CodeMirror-gutters {
+    background: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .CodeMirror-linenumber { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .CodeMirror-cursor { border-left-color: var(--text-color); }
+:root[data-dark-mode="dark"] .CodeMirror-selected { background: var(--dm-selected); }
+:root[data-dark-mode="dark"] .cm-s-default .cm-comment { color: #9198a1; }
+:root[data-dark-mode="dark"] .cm-s-default :is(.cm-string, .cm-string-2) { color: #a5d6ff; }
+:root[data-dark-mode="dark"] .cm-s-default :is(.cm-keyword, .cm-tag, .cm-operator) { color: #ff7b72; }
+:root[data-dark-mode="dark"] .cm-s-default :is(.cm-number, .cm-atom, .cm-attribute) { color: #79c0ff; }
+:root[data-dark-mode="dark"] .cm-s-default :is(.cm-def, .cm-variable-2) { color: #d2a8ff; }
+
+:root[data-dark-mode="dark"] .monaco-editor-background-frame {
+    border-color: var(--dm-border);
+}

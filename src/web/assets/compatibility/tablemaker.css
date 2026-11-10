@@ -1,0 +1,63 @@
+/* Table Maker: Plugin Kit tokens stay on its field and dialog hosts. */
+:root[data-dark-mode="dark"] :is(.tablemaker-field, .tm-field-heading, .tm-toolbar, .tm-columns-schema-dialog, .tm-options-dialog, .tm-richtext-dialog) {
+    --pk-color-link: var(--dm-link);
+    --pk-color-white: var(--dm-surface);
+    --pk-color-slate-50: var(--dm-canvas);
+    --pk-color-slate-100: var(--dm-raised);
+    --pk-color-slate-150: var(--dm-border-muted);
+    --pk-color-slate-200: var(--dm-border-muted);
+    --pk-color-slate-250: var(--dm-raised);
+    --pk-color-slate-300: var(--dm-hover);
+    --pk-color-slate-400: var(--dm-selected);
+    --pk-color-gray-50: var(--dm-canvas);
+    --pk-color-gray-100: var(--dm-raised);
+    --pk-color-gray-150: var(--dm-border-muted);
+    --pk-color-gray-200: var(--dm-border-muted);
+    --pk-color-gray-250: var(--dm-border);
+    --pk-color-gray-300: var(--dm-border);
+    --pk-color-gray-350: var(--dm-muted);
+    --pk-color-gray-400: var(--dm-muted);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-550: var(--dm-muted);
+    --pk-color-gray-600: var(--dm-text);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-800: var(--dm-heading);
+    --pk-color-gray-900: var(--dm-heading);
+    --pk-color-gray-1000: var(--dm-heading);
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--input-border-color);
+    --pk-input-placeholder-color: var(--dm-muted);
+    --pk-input-focus-shadow: var(--focus-ring);
+    --pk-action-fill: var(--button-bg);
+    --pk-action-fill-hover: var(--button-bg--hover);
+    --pk-action-fill-active: var(--button-bg--active);
+    --pk-action-on: var(--dm-text);
+    --pk-action-primary-on: #fff;
+    --pk-shadow-popup: var(--pane-shadow);
+    --pk-shadow-popover: var(--pane-shadow);
+    --pk-shadow-modal: var(--modal-shadow);
+    --pk-shadow-focus: var(--focus-ring);
+    --pk-shadow-focus-inset: inset 0 0 0 1px var(--focus-ring-color);
+    --pk-checkbox-border-color: var(--input-border-color);
+    --pk-color-sky-600: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] :is(.tm-columns-schema-dialog, .tm-options-dialog, .tm-richtext-dialog)::part(panel) {
+    background: var(--dm-overlay);
+    color: var(--dm-text);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] :is(.tm-columns-schema-dialog, .tm-options-dialog, .tm-richtext-dialog)::part(panel)::backdrop {
+    background: var(--shade-bg);
+}
+:root[data-dark-mode="dark"] :is(.tm-columns-schema-dialog, .tm-options-dialog, .tm-richtext-dialog)::part(header),
+:root[data-dark-mode="dark"] :is(.tm-columns-schema-dialog, .tm-options-dialog, .tm-richtext-dialog)::part(footer) {
+    background: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .tablemaker-field .tm-caption-field { color: var(--dm-text); }
+:root[data-dark-mode="dark"] .tm-edit-columns::part(base) { color: var(--dm-text); background: var(--dm-raised); }
+:root[data-dark-mode="dark"] .tm-edit-columns:hover::part(base) { background: var(--dm-hover); }
+:root[data-dark-mode="dark"] .tm-richtext-preview.is-truncated::after {
+    background: linear-gradient(to bottom, transparent, var(--dm-surface));
+}

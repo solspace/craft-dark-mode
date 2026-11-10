@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="60" viewBox="0 0 80 60" fill="none">
+<rect x="0.5" y="0.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="6.5" cy="5.5" r="1.6" fill="#8b949e"/>
+<path d="M3.5 14.5 L9.5 7.5 L13.5 11.5 L17.5 5.5 L22.5 14.5 Z" fill="#8b949e"/>
+<rect x="0.5" y="21.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="6.5" cy="26.5" r="1.6" fill="#8b949e"/>
+<path d="M3.5 35.5 L9.5 28.5 L13.5 32.5 L17.5 26.5 L22.5 35.5 Z" fill="#8b949e"/>
+<rect x="0.5" y="42.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="6.5" cy="47.5" r="1.6" fill="#8b949e"/>
+<path d="M3.5 56.5 L9.5 49.5 L13.5 53.5 L17.5 47.5 L22.5 56.5 Z" fill="#8b949e"/>
+<rect x="28" y="0.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="34" cy="5.5" r="1.6" fill="#8b949e"/>
+<path d="M31 14.5 L37 7.5 L41 11.5 L45 5.5 L50 14.5 Z" fill="#8b949e"/>
+<rect x="28" y="21.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="34" cy="26.5" r="1.6" fill="#8b949e"/>
+<path d="M31 35.5 L37 28.5 L41 32.5 L45 26.5 L50 35.5 Z" fill="#8b949e"/>
+<rect x="28" y="42.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="34" cy="47.5" r="1.6" fill="#8b949e"/>
+<path d="M31 56.5 L37 49.5 L41 53.5 L45 47.5 L50 56.5 Z" fill="#8b949e"/>
+<rect x="55.5" y="0.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="61.5" cy="5.5" r="1.6" fill="#8b949e"/>
+<path d="M58.5 14.5 L64.5 7.5 L68.5 11.5 L72.5 5.5 L77.5 14.5 Z" fill="#8b949e"/>
+<rect x="55.5" y="21.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="61.5" cy="26.5" r="1.6" fill="#8b949e"/>
+<path d="M58.5 35.5 L64.5 28.5 L68.5 32.5 L72.5 26.5 L77.5 35.5 Z" fill="#8b949e"/>
+<rect x="55.5" y="42.5" width="24" height="17" rx="4" fill="#21262d" stroke="#626c78"/>
+<circle cx="61.5" cy="47.5" r="1.6" fill="#8b949e"/>
+<path d="M58.5 56.5 L64.5 49.5 L68.5 53.5 L72.5 47.5 L77.5 56.5 Z" fill="#8b949e"/>
+</svg>

@@ -1,0 +1,122 @@
+/* Formie's isolated builder/settings roots expose Plugin Kit and Tailwind
+   palettes on their hosts. Theme those roots, never rendered website previews. */
+:root[data-dark-mode="dark"] .formie-form-builder__placeholder_wrap {
+    color: var(--dm-muted);
+    background-color: var(--dm-surface);
+    box-shadow: 0 0 0 1px var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .formie-form-builder__placeholder_tabs {
+    background-color: var(--dm-canvas);
+    box-shadow: inset 0 -1px var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.formie-defaults, .formie-field-palette, .formie-form-builder, .formie-reports-dashboard, .formie-reports-editor, .formie-reports-viewer, [id^="formie-send-notification-"], [id^="formie-resend-"], [id^="formie-submission-export-"]) {
+    --color-white: var(--dm-surface);
+    --color-black: var(--dm-text);
+    --color-gray-50: var(--dm-canvas);
+    --color-gray-100: var(--dm-raised);
+    --color-gray-200: var(--dm-border-muted);
+    --color-gray-300: var(--dm-border);
+    --color-gray-400: var(--dm-muted);
+    --color-gray-500: var(--dm-muted);
+    --color-gray-600: var(--dm-muted);
+    --color-gray-700: var(--dm-text);
+    --color-gray-800: var(--dm-heading);
+    --color-gray-900: var(--dm-heading);
+    --color-slate-50: var(--dm-canvas);
+    --color-slate-100: var(--dm-raised);
+    --color-slate-150: var(--dm-border-muted);
+    --color-slate-200: var(--dm-border-muted);
+    --color-slate-300: var(--dm-border);
+    --color-slate-400: var(--dm-border);
+    --color-slate-500: var(--dm-muted);
+    --color-slate-600: var(--dm-muted);
+    --color-slate-700: var(--dm-text);
+    --color-slate-800: var(--dm-heading);
+    --color-slate-900: var(--dm-heading);
+    --pk-color-link: var(--dm-link);
+    --pk-color-warning: var(--fg-warning);
+    --pk-color-error: var(--fg-error);
+    --pk-color-success: var(--fg-success);
+    --pk-color-white: var(--dm-surface);
+    --pk-color-slate-50: var(--dm-canvas);
+    --pk-color-slate-100: var(--dm-raised);
+    --pk-color-slate-150: var(--dm-border-muted);
+    --pk-color-slate-200: var(--dm-border-muted);
+    --pk-color-slate-250: var(--dm-raised);
+    --pk-color-slate-300: var(--dm-hover);
+    --pk-color-slate-400: var(--dm-selected);
+    --pk-color-gray-50: var(--dm-canvas);
+    --pk-color-gray-100: var(--dm-raised);
+    --pk-color-gray-150: var(--dm-border-muted);
+    --pk-color-gray-200: var(--dm-border-muted);
+    --pk-color-gray-250: var(--dm-border);
+    --pk-color-gray-300: var(--dm-border);
+    --pk-color-gray-350: var(--dm-muted);
+    --pk-color-gray-400: var(--dm-muted);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-550: var(--dm-muted);
+    --pk-color-gray-600: var(--dm-text);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-800: var(--dm-heading);
+    --pk-color-gray-900: var(--dm-heading);
+    --pk-color-gray-1000: var(--dm-heading);
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--input-border-color);
+    --pk-input-placeholder-color: var(--dm-muted);
+    --pk-input-focus-shadow: var(--focus-ring);
+    --pk-action-fill: var(--button-bg);
+    --pk-action-fill-hover: var(--button-bg--hover);
+    --pk-action-fill-active: var(--button-bg--active);
+    --pk-action-on: var(--dm-text);
+    --pk-action-primary-on: #fff;
+    --pk-shadow-popup: var(--menu-shadow);
+    --pk-shadow-popover: var(--menu-shadow);
+    --pk-shadow-modal: var(--modal-shadow);
+    --pk-shadow-focus: var(--focus-ring);
+    --pk-shadow-focus-inset: inset 0 0 0 1px var(--focus-ring-color);
+}
+
+/* Saved notification chrome; the email frame keeps explicit authored colours. */
+:root[data-dark-mode="dark"] .fui-body .fui-email-preview { color: var(--dm-text); background: var(--dm-surface); box-shadow: 0 0 0 1px var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .fui-body :is(.fui-email-header, .fui-email-footer) { background: var(--dm-raised); border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .fui-body .fui-email-meta { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .fui-body .fui-email-meta-label { color: var(--dm-muted); }
+
+:root[data-dark-mode="dark"] :is(.formie-field-builder-settings, .formie-field-palette-section) {
+    color: var(--dm-text);
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .formie-settings-migrate-log .log-label {
+    color: var(--dm-muted);
+}
+:root[data-dark-mode="dark"] .formie-settings-migrate-log :is(.log-label.color-32, .log-label--success) { color: var(--fg-success); }
+:root[data-dark-mode="dark"] .formie-settings-migrate-log :is(.log-label.color-31, .log-label--error) { color: var(--fg-error); }
+:root[data-dark-mode="dark"] .formie-settings-migrate-log :is(.log-label.color-33, .log-label--warning) { color: var(--fg-warning); }
+
+:root[data-dark-mode="dark"] .fui-integrations-settings #details .meta :is(.select, .select select) {
+    background-color: transparent;
+}
+
+/* Native Plugin Kit controls on Formie's integration settings pages. */
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect__action::part(base) {
+    color: var(--dm-text);
+    background: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect__action:hover::part(base) { background: var(--dm-hover); }
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog::part(panel),
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog__content {
+    color: var(--dm-text);
+    background: var(--dm-overlay);
+}
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog pk-state-panel::part(title) { color: var(--dm-heading); }
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog pk-state-panel::part(body) { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog pk-state-panel::part(icon-shell) { background: var(--bg-error); }
+:root[data-dark-mode="dark"] .fui-integrations-settings .pk-connect-dialog pk-state-panel::part(icon) { color: var(--fg-error); }
+
+/* Only known monochrome artwork; coloured provider logos retain their colours. */
+:root[data-dark-mode="dark"] #integrations-vue-admin-table img:is([src*="/icons/elements/entry.svg"], [src*="/icons/elements/user.svg"]) { filter: grayscale(1) brightness(0) invert(.8); }
+:root[data-dark-mode="dark"] #integrations-vue-admin-table img[src*="/icons/email-marketing/mailchimp.svg"] { filter: grayscale(1) invert(.85); }

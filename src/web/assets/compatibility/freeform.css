@@ -1,0 +1,499 @@
+/* Shared Freeform 5 control-panel compatibility; legacy release fixes are separate. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-floating-ui-portal] [role="tooltip"] {
+    background-color: var(--dm-overlay);
+    color: var(--dm-heading);
+    border-color: var(--dm-border);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .paginator a svg {
+    fill: currentColor;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .react-loading-skeleton {
+    --base-color: var(--dm-raised) !important;
+    --highlight-color: var(--dm-hover) !important;
+}
+
+/* Token controls include calculations and sample-data expressions. */
+:root[data-dark-mode="dark"] :is(#freeform-client, #pop-up-portal, .freeform-slideout, .freeform-slideout-popups) .tagify {
+    --tag-bg: var(--dm-selected);
+    --tag-hover: var(--dm-hover);
+    --tag-text-color: var(--dm-text);
+    --tag-remove-bg: var(--dm-selected);
+    --tag-remove-btn-color: var(--dm-muted);
+    --tag-remove-btn-bg--hover: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, #pop-up-portal, .freeform-slideout, .freeform-slideout-popups) .tagify__tag__removeBtn:hover {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .tagify__dropdown {
+    --tagify-dd-bg-color: var(--dm-overlay);
+    --tagify-dd-color-primary: var(--dm-selected);
+    color: var(--dm-text);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .tagify__dropdown__item {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .tagify__dropdown__item--active {
+    background-color: var(--dm-selected);
+    color: var(--dm-heading);
+}
+
+/* Credit-plan cards and their payment-history placeholders render in a portal.
+   The card's direct name/description pair identifies this dialog in both lines. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] div:has(> header) div:has(> strong + p) {
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] div:has(> header):has(div > strong + p) table > thead,
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] div:has(> header):has(div > strong + p) table > thead th {
+    background-color: var(--dm-overlay);
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] div:has(> header):has(div > strong + p) table > tbody > tr:nth-child(even) {
+    background-color: var(--dm-raised);
+}
+
+/* Highlight.js logs can contain arbitrary payloads; recolour their chrome and
+   syntax tokens without changing the content or level/status colours. */
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table .hljs {
+    background: var(--dm-canvas);
+    color: var(--dm-text);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table :is(.hljs-punctuation, .hljs-attr) { color: var(--dm-text); }
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table :is(.hljs-string, .hljs-regexp) { color: #a5d6ff; }
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table :is(.hljs-number, .hljs-literal) { color: #79c0ff; }
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table .hljs-keyword { color: #ff7b72; }
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .log-table .hljs-comment { color: var(--dm-muted); }
+
+/* Keep the A/B winner callout quiet and readable on both release lines. */
+:root[data-dark-mode="dark"] #freeform-client section:has(.recharts-wrapper) {
+    --dm-freeform-winner: color-mix(in srgb, var(--green-400) 65%, var(--dm-muted));
+}
+
+:root[data-dark-mode="dark"] #freeform-client section div:has(> article.winner) > div {
+    background-color: var(--dm-freeform-winner);
+    color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] #freeform-client section article.winner {
+    border-color: var(--dm-freeform-winner);
+}
+
+/* Freeform injects an !important pale row specifically when Ace loses focus. */
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) #editor .ace_marker-layer .ace_active-line {
+    background: var(--dm-raised) !important;
+}
+
+/* Freeform's canvas previews already own a real 1px select border. */
+:root[data-dark-mode="dark"] #freeform-client :is([data-field-type="dropdown"], [data-field-type="multiple-select"]) select {
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] #freeform-client :is([data-field-type="dropdown"], [data-field-type="multiple-select"]) select:focus-visible {
+    box-shadow: var(--focus-ring-light);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="opinion-scale"] .opinion-scale-scales > li > label {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="opinion-scale"] .opinion-scale-scales > li > input:checked ~ label {
+    background-color: var(--dm-selected);
+    color: var(--dm-heading);
+    border-color: var(--dm-muted);
+}
+
+/* Searchable multi-select preview chips ship their light paints inline. */
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="multiple-select"] .ff-multi-select-preview [data-preview-tags] > span {
+    background-color: var(--dm-selected) !important;
+    color: var(--dm-text) !important;
+    border-color: var(--dm-border) !important;
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="group"] > div > div:not(:has(*)) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="cards"] .ff-cards__card {
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="cards"] .ff-cards__card__image > svg {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type="image"] [data-ff-asset-fetch] > svg {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #freeform-client [data-field-type] > .label + div:not(:has(*)):not(:last-child) {
+    color: var(--dm-muted);
+}
+
+/* Editable data grids in property slideouts; rendered content stays separate. */
+:root[data-dark-mode="dark"] .freeform-slideout table:has(input):not(.content-preview table, [contenteditable] table) :is(table, td) {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .freeform-slideout table:has(input):not(.content-preview table, [contenteditable] table) :is(thead, th) {
+    background-color: var(--dm-raised);
+    color: var(--dm-heading);
+    border-color: var(--dm-border);
+}
+
+/* Freeform's Craft 5.8+ switch component also renders in body-level portals. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) .craft-5_8 > div {
+    background-color: var(--dm-surface);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .craft-5_8.on > div::before {
+    background-color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .craft-5_8:not(.on, .error) {
+    --lightswitch-border-color: var(--gray-350);
+    background-image: linear-gradient(to right, var(--gray-350), var(--gray-350));
+}
+
+/* The help button's circle keeps its muted fill; its two white glyphs invert. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) button[aria-expanded][aria-controls] > svg[viewBox="0 0 16 16"] > circle[fill="#fff"] {
+    fill: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) button[aria-expanded][aria-controls] > svg[viewBox="0 0 16 16"] > path[stroke="#fff"] {
+    stroke: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) label[for]:not(.errors label) {
+    color: var(--dm-heading);
+}
+
+/* Freeform notification-template dialogs render their tab list after the header. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) header + ul > li.active::after {
+    background-color: var(--dm-tab-accent);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) header + ul:has(> li.active) {
+    box-shadow: inset 0 -1px 0 var(--dm-border-muted), 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) div:has(> button.submit + input[inputmode="email"] + button) > input {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+
+/* Freeform's builder supplies its own primary and page-tab indicators. */
+:root[data-dark-mode="dark"] #freeform-client [title][draggable="true"]:has(> div > svg):has(> span) {
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client .main-tabs, [data-revealing][inert] .main-tabs, .freeform-tabs) > :is(a, button).active {
+    box-shadow: inset 0 2px 0 var(--dm-tab-accent), 0 0 0 1px var(--dm-border) !important;
+}
+
+:root[data-dark-mode="dark"] #freeform-client .page-tab > .active {
+    border-bottom-color: var(--link-color);
+}
+
+/* Validation stays visible on active, inactive and hovered builder tabs. */
+:root[data-dark-mode="dark"] :is(#freeform-client, [data-revealing][inert]) .main-tabs > :is(a, button).errors,
+:root[data-dark-mode="dark"] :is(#freeform-client, [data-revealing][inert]) .main-tabs > :is(a, button).errors:is(.active, :hover, :focus-visible) {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, [data-revealing][inert]) .main-tabs > .errors > span {
+    color: inherit;
+}
+
+/* Label diffs need distinct additions/removals without pale blocks of ink. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) .utility-label-current mark {
+    background: color-mix(in srgb, var(--error-color) 22%, var(--dm-surface));
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .utility-label-updated mark {
+    background: color-mix(in srgb, var(--enabled-color) 28%, var(--dm-surface));
+    color: var(--dm-heading);
+}
+
+/* Sample-data controls and their Floating UI panel own literal light fills. */
+:root[data-dark-mode="dark"] #freeform-client .sample-picker-trigger {
+    background: var(--button-bg);
+    border-color: var(--input-border-color);
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] #freeform-client .sample-picker-trigger:is(:hover, :focus-visible, [aria-expanded="true"]) {
+    background: var(--button-bg--hover);
+    color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout) button[aria-pressed="false"][aria-description]:has(> svg[viewBox="0 0 16 16"] > defs):is(:hover, :focus-visible) {
+    background-color: var(--dm-hover);
+    color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .dropdown-rollout:has(> header input[type="search"]):has(> footer) {
+    background: var(--dm-overlay);
+    color: var(--dm-text);
+    border-color: var(--dm-border);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .dropdown-rollout:has(> header input[type="search"]) > footer {
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .dropdown-rollout:has(> header input[type="search"]) > footer > button {
+    background: var(--button-bg);
+    color: var(--button-text-color);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .dropdown-rollout:has(> header input[type="search"]) button:is(:hover, :focus-visible, [aria-pressed="true"]) {
+    background: var(--dm-selected);
+    color: var(--dm-heading);
+}
+
+/* Freeform's segmented controls use a neutral selected fill. */
+:root[data-dark-mode="dark"] .freeform-button-group > button[aria-pressed="true"] {
+    color: var(--dm-control-selected-text);
+    background-color: var(--dm-control-selected-bg);
+}
+
+:root[data-dark-mode="dark"] .freeform-add-button-area {
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .freeform-field-group-title > button {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-field-group-title > button:hover {
+    color: var(--dm-heading);
+}
+
+/* Limited-user permission chips share Craft's enabled-toggle teal. */
+:root[data-dark-mode="dark"] #freeform-client #content > div:has(> [data-upsell]) li.selected:has(> i.fa-check) {
+    background-color: var(--bg-enabled);
+    color: var(--dm-canvas);
+}
+
+/* Keep card surfaces neutral; the selected radio carries the teal accent. */
+:root[data-dark-mode="dark"] .ff-choice-card {
+    --choice-accent: var(--gray-350);
+    --choice-selected-background: var(--dm-hover);
+    --choice-selected-heading: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .ff-choice-card:has(input:checked) {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .ff-choice-card input {
+    accent-color: var(--teal-400);
+}
+
+:root[data-dark-mode="dark"] .ff-choice-card input[type="radio"]:not(.radio):checked {
+    background-image: radial-gradient(circle, var(--teal-400) 0 4px, transparent 4.5px);
+}
+
+:root[data-dark-mode="dark"] .ff-settings-choice {
+    --choice-color: var(--gray-350);
+}
+
+:root[data-dark-mode="dark"] .ff-settings-choice:has(.radio:checked) {
+    border-color: var(--choice-color);
+    background: var(--dm-hover);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .ff-settings-choice .radio:checked + label::before {
+    border-color: var(--teal-400);
+    background: var(--teal-400);
+}
+
+
+/* Submission chrome still shared by both release lines. */
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .fields-row fieldset.group {
+    box-shadow: 0 0 0 1px var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .fields-row fieldset.group legend {
+    background-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) .chart-explorer {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#nav-freeform-link.sel) #content .stripe-payment {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+    box-shadow: var(--pane-shadow);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-summary [data-freeform-summary] {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-summary [data-summary-field] + [data-summary-field] {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-summary [data-summary-field] > dt {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-summary [data-summary-field] > dd {
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-opinion-scale ul.opinion-scale-scales label {
+    color: var(--text-color) !important;
+    background-color: var(--input-bg);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-opinion-scale ul.opinion-scale-scales input:not(:disabled) + label:hover {
+    background-color: var(--dm-hover);
+    border-color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-opinion-scale ul.opinion-scale-scales input:checked + label {
+    color: var(--dm-control-selected-text) !important;
+    background-color: var(--dm-control-selected-bg);
+    border-color: var(--dm-muted);
+    box-shadow: inset 0 0 0 1px var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .freeform-submission-opinion-scale ul.opinion-scale-legends {
+    color: var(--dm-muted);
+}
+
+/* Freeform validation chrome shares Craft's semantic error ink. Keep these
+   rules outside authored field content and rendered preview documents. */
+:root[data-dark-mode="dark"] :is(#freeform-client, [data-revealing][inert], .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type] *),
+:root[data-dark-mode="dark"] :is(#freeform-client, [data-revealing][inert], .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:is(.active, :hover, :focus-visible):not([data-field-type] *),
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) :is(p, span, li, div).error:not([data-field-type] *, .lightswitch, .craft-5_8) {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type], [data-field-type] *) :is(label, label > span, h1 > span),
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type] *) > ul,
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type], [data-field-type] *) > div > ul,
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type] *) > :is(span, div):has(> svg),
+:root[data-dark-mode="dark"] #freeform-client [data-field-type].errors > .label,
+:root[data-dark-mode="dark"] #freeform-client [data-field-type].errors > .label > div {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type] *) > :is(span, div):has(> svg) > svg:not([fill]),
+:root[data-dark-mode="dark"] #freeform-client [data-field-type].errors > .label svg:not([fill]) {
+    fill: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups, #pop-up-portal, body:has(#freeform-client) > div[class^="sc-"]) .errors:not([data-field-type], [data-field-type] *) :is(input, textarea, select),
+:root[data-dark-mode="dark"] #freeform-client [data-field-type].errors :is(input, textarea, select, div.select, .ff-signature-preview__pad),
+:root[data-dark-mode="dark"] #freeform-client [data-field-type].errors input.checkbox ~ label::before {
+    border-color: var(--error-color) !important;
+}
+
+/* Error sidebars use neutral selection fills with pink text, never pink on red. */
+:root[data-dark-mode="dark"] #freeform-client a.errors:not(.main-tabs > a, [data-field-type] *),
+:root[data-dark-mode="dark"] #freeform-client a.errors:is(.active, :hover):not(.main-tabs > a, [data-field-type] *),
+:root[data-dark-mode="dark"] #freeform-client button.errors:not(.main-tabs > button, [data-field-type] *),
+:root[data-dark-mode="dark"] #freeform-client button.errors:is(.active, :hover):not(.main-tabs > button, [data-field-type] *) {
+    background-color: var(--dm-selected);
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, body:has(#freeform-client) > div[class^="sc-"]) label.is-required > span:empty::after,
+:root[data-dark-mode="dark"] #freeform-client .field-required,
+:root[data-dark-mode="dark"] #freeform-client .required > span::after {
+    color: var(--error-color);
+}
+
+/* The shared error banner has an icon followed by its message container. */
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups) [role="alert"]:has(> svg + div),
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] [role="alert"]:has(> svg + div) {
+    color: var(--error-color);
+    background-color: color-mix(in srgb, var(--error-color) 8%, var(--dm-surface));
+    border-color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, .freeform-slideout-popups) [role="alert"]:has(> svg + div) > svg,
+:root[data-dark-mode="dark"] body:has(#freeform-client) > div[class^="sc-"] [role="alert"]:has(> svg + div) > svg {
+    fill: currentColor;
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, body:has(#freeform-client) > div[class^="sc-"]) div.error:not([data-field-type] *) > span > svg {
+    fill: currentColor;
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout, body:has(#freeform-client) > div[class^="sc-"]) div.error:not([data-field-type] *) > span:empty {
+    background-color: var(--error-color);
+    border-color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] .freeform-slideout li:has(> div > .drag-handle) > .error > div {
+    color: var(--error-color);
+    background-color: color-mix(in srgb, var(--error-color) 8%, var(--dm-surface));
+    border-color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-preview-field[data-error="true"] :is(label, .wizard-preview-field-error) {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-preview-field[data-error="true"] :is(input, textarea, select) {
+    border-color: var(--error-color);
+}
+
+/* Property preview cues are controls, while the preview body may be authored. */
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout) [role="button"][aria-expanded] > div:last-child:not(:first-child):not(:has(*)) {
+    color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] :is(#freeform-client, .freeform-slideout) [role="button"][aria-expanded] li:has(> span:nth-child(3):empty):has(> span:nth-child(5):empty):not([data-edit] li) > span:first-child {
+    color: #56d4c7;
+}
+
+:root[data-dark-mode="dark"] .freeform-slideout li:has(> div > .drag-handle) {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .freeform-slideout li:has(> div > .drag-handle):hover {
+    border-color: var(--input-border-color);
+}
+
+
+/* Legacy UI tables; Freeform 5.18 owns these hover states natively. */
+:root[data-dark-mode="dark"] body:not(.dragging) table.freeform-ui-table > tbody > tr:not(.sel, .selected, .disabled, .active-drop-target, [aria-selected="true"]):hover > :is(th, td) {
+    background-color: var(--dm-row-hover);
+}
+
+/* Full-cell inputs otherwise mask the row fill in Freeform's UI editors. */
+:root[data-dark-mode="dark"] body:not(.dragging) table.freeform-ui-table > tbody > tr:not(.sel, .disabled, [aria-selected="true"]):hover > td > :is(input:not([type="checkbox"], [type="radio"], [type="color"], [type="range"]), textarea):not(:focus) {
+    background-color: var(--dm-row-hover);
+}
+

@@ -1,0 +1,15 @@
+/* Field Manager's audit group and tab headings use fixed dark text. */
+:root[data-dark-mode="dark"] #fieldmanager-audit .group-heading a,
+:root[data-dark-mode="dark"] #fieldmanager .group a {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] #fieldmanager-audit .tab-heading th {
+    color: var(--dm-muted);
+    opacity: 1;
+}
+
+:root[data-dark-mode="dark"] #fieldmanager-audit .group-heading a:hover,
+:root[data-dark-mode="dark"] #fieldmanager .group a:hover {
+    color: var(--dm-link);
+}

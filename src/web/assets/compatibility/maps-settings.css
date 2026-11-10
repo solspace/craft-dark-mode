@@ -1,0 +1,21 @@
+/* Maps' standalone settings screen uses its own card and label system. */
+:root[data-dark-mode="dark"] #content:has(.maps-header) { background-color: var(--dm-surface) !important; }
+:root[data-dark-mode="dark"] .maps-header { color: var(--dm-text); background-color: var(--dm-surface); }
+/* This wrapper overlaps the map; only its cards should paint a background. */
+:root[data-dark-mode="dark"] .maps-settings { color: var(--dm-text); background-color: transparent; }
+:root[data-dark-mode="dark"] .maps-map { background-color: var(--dm-canvas); }
+:root[data-dark-mode="dark"] .maps-card { color: var(--dm-text); background-color: var(--dm-overlay); box-shadow: var(--pane-shadow); }
+/* Vue leaves an empty API-key card for map styles that need no credentials. */
+:root[data-dark-mode="dark"] .maps-map > .maps-card:not(.maps-style):not(:has(*)) { box-shadow: none; }
+:root[data-dark-mode="dark"] .maps-card h2 { color: var(--dm-heading); border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .maps-settings > hr { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .maps-label { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .maps-label :is(strong, input, textarea, select),
+:root[data-dark-mode="dark"] .maps-style select { color: var(--dm-text); background-color: transparent; }
+:root[data-dark-mode="dark"] .maps-label strong { opacity: 1; }
+:root[data-dark-mode="dark"] :is(.maps-label > span, .maps-style > span) { color: var(--dm-muted); opacity: 1; }
+:root[data-dark-mode="dark"] :is(.maps-select, .maps-style)::before,
+:root[data-dark-mode="dark"] :is(.maps-select, .maps-style)::after { border-bottom-color: var(--dm-muted); opacity: 1; }
+:root[data-dark-mode="dark"] .maps-help { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .maps-help a { color: var(--dm-text); background-color: var(--dm-raised); border-color: var(--dm-border-muted); opacity: 1; }
+:root[data-dark-mode="dark"] .maps-help a:hover { background-color: var(--dm-hover); }

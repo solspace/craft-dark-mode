@@ -1,0 +1,18 @@
+/* Maps (SimpleMap): theme its controls, never filter tiles or marker artwork. */
+:root[data-dark-mode="dark"] [class^="App_wrap_"] {
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] [class^="App_wrap_"] :is([class*="Search_input_"], [class^="Search_results_"], [class^="Address_grid_"], [class^="Map_control_"] button) {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] [class^="App_wrap_"] :is([class^="Label_label_"], [class^="Address_btn_"]) { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] [class^="Input_input_"] { color: var(--dm-text); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] [class^="Label_name_"] { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] [class*="Search_input_"]::placeholder { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] :is([class^="Search_wrap_"] > svg path, [class^="Map_control_"] svg path, [class^="Address_btn_"] svg path) { fill: var(--dm-muted); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] [class^="Search_results_"] li[class*="highlighted"],
+:root[data-dark-mode="dark"] [class^="App_wrap_"] [class^="Map_control_"] button:hover { background-color: var(--dm-hover); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] .leaflet-control-attribution { color: var(--dm-muted); background: var(--dm-surface); }
+:root[data-dark-mode="dark"] [class^="App_wrap_"] .leaflet-control-attribution a { color: var(--dm-link); }

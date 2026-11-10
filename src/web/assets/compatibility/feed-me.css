@@ -1,0 +1,85 @@
+/* Feed Me's parser errors use a literal pale surface outside Craft's tokens. */
+:root[data-dark-mode="dark"] .feedme-fullpage .fullpage-error-message {
+    background-color: var(--dm-canvas);
+    border-color: var(--dm-border-muted);
+    color: var(--dm-text);
+}
+:root[data-dark-mode="dark"] .feedme-fullpage .fullpage-error-message code {
+    background: transparent;
+    color: inherit;
+}
+
+/* Mapping controls sit on Feed Me's own literal white gradient. */
+.feedme-mapping :is(.select, .selectize-control, .selectize-input, .selectize-dropdown) {
+    border-radius: var(--large-border-radius, 5px);
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .select {
+    color: var(--dm-text);
+    background: var(--button-bg);
+    border-radius: var(--large-border-radius, 5px);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .select :is(select, .selectize-input) {
+    color: var(--dm-text);
+    border-color: transparent;
+    border-radius: inherit;
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .select select {
+    background-color: transparent;
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .selectize-input :is(input, [data-value]) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .selectize-input div[data-value="noimport"] {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .select:focus-within {
+    box-shadow: var(--focus-ring);
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .selectize-dropdown {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    border-radius: var(--large-border-radius, 5px);
+    box-shadow: 0 4px 12px #01040966;
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .selectize-dropdown :is(.active, .selected) {
+    color: var(--dm-text);
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .feedme-mapping .selectize-dropdown .optgroup-header {
+    color: var(--dm-muted);
+    background-color: var(--dm-surface);
+}
+
+/* Import log severity and linked element IDs. */
+:root[data-dark-mode="dark"] .feed-me-logs-table .log-result {
+    color: var(--dm-text) !important;
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .feed-me-logs-table .log-result.type-error {
+    color: var(--fg-error) !important;
+    background-color: var(--bg-error);
+}
+
+:root[data-dark-mode="dark"] .feed-me-logs-table .log-result.type-warning {
+    color: var(--fg-warning) !important;
+    background-color: var(--bg-warning);
+}
+
+:root[data-dark-mode="dark"] .feed-me-logs-table .col-label code {
+    color: var(--dm-text);
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border-muted);
+}
+

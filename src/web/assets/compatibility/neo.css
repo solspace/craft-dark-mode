@@ -1,0 +1,100 @@
+/* Neo's block configurator uses a white active tab and hard-coded group labels. */
+:root[data-dark-mode="dark"] .neo-configurator .nc_main_tabs_tab.is-selected {
+    background-color: var(--dm-surface);
+    color: var(--text-color);
+    border-color: var(--hairline-color);
+}
+
+:root[data-dark-mode="dark"] .neo-configurator :is(.nc_sidebar_buttons > .btn.type-heading, .nc_sidebar_list_item.type-heading > .label) {
+    color: var(--medium-text-color);
+}
+
+:root[data-dark-mode="dark"] .neo-configurator .nc_main_tabs_tab:hover {
+    color: var(--link-color);
+}
+
+/* Neo's coloured headers use inline light-palette values. Keep the colour cue
+   on the block chrome without recolouring fields or authored content. */
+:root[data-dark-mode="dark"] .ni_block {
+    --dm-neo-accent: var(--dm-border);
+    background-color: var(--dm-surface);
+    border-color: color-mix(in srgb, var(--dm-neo-accent, var(--dm-border)) 35%, var(--dm-surface)) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block > .ni_block_topbar {
+    --custom-text-color: var(--dm-text) !important;
+    background-color: color-mix(in srgb, var(--dm-neo-accent, var(--dm-raised)) 12%, var(--dm-surface)) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block .ni_block_topbar_left::before {
+    background-image: linear-gradient(to left,
+        color-mix(in srgb, var(--dm-neo-accent) 12%, var(--dm-surface)),
+        transparent 40px) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block[style*="--red-100"] { --dm-neo-accent: var(--red-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--orange-100"] { --dm-neo-accent: var(--orange-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--amber-100"] { --dm-neo-accent: var(--amber-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--yellow-100"] { --dm-neo-accent: var(--yellow-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--lime-100"] { --dm-neo-accent: var(--lime-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--green-100"] { --dm-neo-accent: var(--green-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--emerald-100"] { --dm-neo-accent: var(--emerald-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--teal-100"] { --dm-neo-accent: var(--teal-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--cyan-100"] { --dm-neo-accent: var(--cyan-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--sky-100"] { --dm-neo-accent: var(--sky-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--blue-100"] { --dm-neo-accent: var(--blue-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--indigo-100"] { --dm-neo-accent: var(--indigo-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--violet-100"] { --dm-neo-accent: var(--violet-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--purple-100"] { --dm-neo-accent: var(--purple-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--fuchsia-100"] { --dm-neo-accent: var(--fuchsia-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--pink-100"] { --dm-neo-accent: var(--pink-400); }
+
+:root[data-dark-mode="dark"] .ni_block[style*="--rose-100"] { --dm-neo-accent: var(--rose-400); }
+
+/* Child boundaries and collapsed previews retain hard-coded light borders. */
+:root[data-dark-mode="dark"] .ni_block_body > .ni_block_children:not(:first-child) {
+    border-top-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .ni_block_collapsed-children_child {
+    background-color: var(--dm-raised);
+    border-top-color: var(--dm-border-muted);
+}
+
+/* Keep error and preview highlighting distinct from the type colour. */
+:root[data-dark-mode="dark"] .ni_block.has-errors {
+    border-color: var(--error-color) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block.is-preview-highlighted {
+    border-color: var(--focus-ring-color) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block .ni_block_topbar .preview_section {
+    border-inline-start-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body.rtl .ni_block .ni_block_topbar_left::before {
+    background-image: linear-gradient(to right,
+        color-mix(in srgb, var(--dm-neo-accent) 12%, var(--dm-surface)),
+        transparent 40px) !important;
+}
+
+:root[data-dark-mode="dark"] .ni_block_topbar .preview {
+    color: var(--dm-muted);
+}

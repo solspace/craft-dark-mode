@@ -1,0 +1,330 @@
+/* Freeform <5.18 creation flows expose stable, purpose-specific hooks.
+   Change only chrome colours; keep layout, controls and preview frames native. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-review] > footer {
+    background: var(--dm-overlay);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [role="status"]:has(> svg) {
+    background: color-mix(in srgb, var(--link-color) 6%, var(--dm-surface));
+    color: var(--text-color);
+    border-color: var(--dm-border);
+    border-inline-start-color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [role="status"] > svg {
+    color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-review] .wizard-field div:has(> span):not(:has(> div), .missing) {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-review] > div > aside {
+    background: var(--dm-overlay);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-revealing][inert] {
+    background: var(--dm-surface);
+    border-color: var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [data-review] :is(input:not([type="checkbox"], [type="radio"]), textarea, select) {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-status-picker div:has(> span) {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-row-fields, .wizard-field-content) {
+    background: var(--dm-surface);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-type-picker svg:not([fill]) { fill: currentColor; }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-fields-info,
+:root[data-dark-mode="dark"] body:has(#freeform-client) div:has(> .wizard-fields-info) {
+    color: var(--link-color);
+    background: var(--dm-raised);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.form-start-card, .wizard-purpose) {
+    --method-color: var(--link-color);
+    --method-wash: var(--dm-raised);
+    --method-border: var(--dm-border);
+    background: var(--dm-surface);
+    color: var(--text-color);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-card[data-method="ai"] { --method-color: var(--purple-300); }
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-card[data-method="blank"] { --method-color: var(--teal-300); }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-steps li::before { background: var(--dm-border); }
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-steps li[data-reached="true"]::before { background: var(--dm-muted); }
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-steps [aria-current="step"] .wizard-step-number {
+    background: #3478b9;
+    border-color: #3478b9;
+    color: #fff;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-card:is(:hover, [data-selected="true"]) {
+    background: var(--dm-hover);
+    border-color: var(--method-color);
+    box-shadow: var(--pane-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-card[data-unavailable="true"] {
+    background: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.form-start-description, .form-start-note, .form-start-close, .wizard-hint, .wizard-intro, .wizard-footer-note, .wizard-toggle-instructions, .wizard-step-info, .wizard-field-kind, .wizard-field-handle, .wizard-preview-note, .wizard-preview-guidance, .wizard-preview-status, .ai-configured-model, .reference-size, .generation-model, .form-limit-edition) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) div:has(> .form-start-options) > header p,
+:root[data-dark-mode="dark"] body:has(#freeform-client) header:has(.form-heading-icon, .ai-intro-icon) p {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-art {
+    color: var(--method-color);
+    background: var(--method-wash);
+    border-color: var(--method-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-art [fill="white"] { fill: var(--dm-overlay); }
+:root[data-dark-mode="dark"] body:has(#freeform-client) .form-start-art [stroke="white"] { stroke: var(--dm-heading); }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is([data-review], [data-complete]) {
+    background: var(--modal-bg);
+    color: var(--text-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is([data-review], [data-complete]) > header,
+:root[data-dark-mode="dark"] body:has(#freeform-client) header:has(.form-heading-icon, .ai-intro-icon) {
+    background: var(--dm-overlay);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-heading-icon, .form-heading-icon, .ai-intro-icon, .reference-symbol, .wizard-step-number, .wizard-purpose-icon, .wizard-preview-size) {
+    background: var(--dm-raised);
+    color: var(--link-color);
+    border-color: var(--dm-border);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-editor, .wizard-page, .wizard-sites, .wizard-email-template, .wizard-embed, .wizard-row-editor, .wizard-field-item, .wizard-advanced-content, .wizard-field-type-picker, .wizard-preview-paper, .wizard-preview-stage, .generation-heading, .generation-summary, .form-limit-upgrade) {
+    background: var(--dm-surface);
+    color: var(--text-color);
+    border-color: var(--dm-border-muted);
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-steps, .wizard-step-label, .wizard-preview-header, .wizard-preview-controls, .wizard-preview-tabs, .wizard-field-tools, .wizard-row-handle, .wizard-advanced, .wizard-fields-info) {
+    background: var(--dm-overlay);
+    color: var(--text-color);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-heading, .wizard-toggle-text, .wizard-field-title, .wizard-purpose strong, .wizard-preview-header strong) { color: var(--dm-heading); }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-select select, .wizard-field-label-input, .wizard-preview-field input:not([type="checkbox"], [type="radio"]), .wizard-preview-field textarea, .wizard-preview-field select) {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-field-small-action, .wizard-field-actions button, .wizard-insert-field, .wizard-preview-toggle, .wizard-preview-controls button, .wizard-preview-size button) {
+    background: var(--button-bg);
+    color: var(--button-text-color);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-purpose[aria-pressed="true"], .wizard-step-number.wizard-step-done, .wizard-field-chosen, .wizard-row-chosen, .wizard-purpose[data-selected="true"]) {
+    color: var(--dm-control-selected-text);
+    background: var(--dm-control-selected-bg);
+    border-color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-preview-error, .wizard-error, .wizard-field-item[data-invalid="true"]) {
+    color: var(--error-color);
+    background: color-mix(in srgb, var(--error-color) 8%, var(--dm-surface));
+    border-color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-progress, .wizard-build-progress, .wizard-field-ghost, .wizard-row-ghost, .wizard-row-gap, .wizard-new-row) {
+    background: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) div:has(> .reference-picker) {
+    background: var(--dm-overlay);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.reference-copy p, .reference-note, .wizard-preview-field > label, .wizard-preview-field > p) { color: var(--dm-muted); }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .reference-note { border-color: var(--dm-border-muted); }
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) li:has(> .reference-file-type) {
+    color: var(--dm-text);
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .reference-file-type {
+    color: var(--link-color);
+    background-color: var(--dm-selected);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [role="status"]:has(> .generation-heading) {
+    color: var(--dm-text);
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [role="status"]:has(> .generation-heading) :is(p, dt) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [role="status"]:has(> .generation-heading) dl {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .generation-heading > div:first-child:has(> svg) {
+    color: var(--link-color);
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .generation-heading > div:first-child:has(> svg)::before {
+    border-color: var(--dm-border);
+    border-top-color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .generation-heading > div:first-child:has(> svg > path[d="m6 12 4 4 8-8"]) {
+    color: var(--enabled-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .generation-activity {
+    background-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.builder-field-flight, .builder-pointer) > span {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--link-color);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-build-progress, .wizard-purpose small) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] [data-revealing][inert] [title][draggable="true"] > span {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-purpose-icon {
+    background-color: transparent;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-purpose:is([aria-pressed="true"], [data-selected="true"]) {
+    color: var(--dm-heading);
+    background-color: var(--dm-selected);
+    border-color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-advanced {
+    background-color: transparent;
+}
+
+/* Insertion hit areas must remain invisible until their own buttons appear. */
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-row-gap, .wizard-new-row, .wizard-insert-row, .wizard-row-inserts, .wizard-inline-insert, .wizard-field-tools, .wizard-field-type-picker) {
+    background-color: transparent;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-field-menu, .wizard-field-options) {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    box-shadow: var(--menu-shadow);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-field-menu, .wizard-field-options) :is(label, textarea, button) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-options textarea {
+    color: var(--dm-text);
+    background-color: var(--input-bg);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-options textarea[aria-invalid="true"] {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--error-color) 20%, transparent);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-field-menu, .wizard-field-options) p {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-menu button:is(:hover, :focus-visible) {
+    color: var(--dm-heading);
+    background-color: var(--dm-hover);
+    outline-color: var(--link-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-menu button span {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-preview-stage {
+    background-color: var(--dm-overlay);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-required[aria-pressed="true"],
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-remove:hover {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-item[data-invalid="true"] :is(.wizard-field-title, .wizard-field-title strong, .wizard-field-type-picker, .wizard-field-type-picker > span, .wizard-field-tools button[aria-haspopup="dialog"]),
+:root[data-dark-mode="dark"] body:has(#freeform-client) .wizard-field-options label:has(textarea[aria-invalid="true"]) {
+    color: var(--error-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) :is(.wizard-field-handle, .wizard-row-handle):is(:hover, :focus, :active) {
+    color: var(--dm-heading);
+    background-color: var(--dm-hover);
+}
+:root[data-dark-mode="dark"] body:has(#freeform-client) .starting-point-trigger > div > div:has(> span) {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) .starting-point-trigger > div > div > span {
+    color: inherit;
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [aria-label="Prompt examples"] > button {
+    color: var(--text-color);
+    background-color: var(--button-bg);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] body:has(#freeform-client) [aria-label="Prompt examples"] > button:hover {
+    background-color: var(--dm-hover);
+}
+

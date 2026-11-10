@@ -1,0 +1,135 @@
+/* SEOmatic preview chrome and its explicit empty-image graphic. Real preview
+   images retain their original pixels and background-image declarations. */
+.displaypreview .metadata-title-separator > span {
+    color: var(--light-text-color);
+    background-color: var(--ui-control-bg-color);
+}
+
+:root[data-dark-mode="dark"] table.seomatic-content-seo thead th {
+    background-color: color-mix(in srgb, var(--dm-raised) 55%, var(--dm-surface));
+}
+
+:root[data-dark-mode="dark"] .displaypreview .metadata-title-separator > span {
+    background-color: var(--dm-raised);
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .displaypreview {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .displaypreview :is(.card-seo-twitter, .card-seo-facebook, .card-seo-facebook__text) {
+    background-color: var(--dm-surface);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .displaypreview :is(.card-seo-twitter__title, .card-seo-facebook__title) {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .displaypreview :is(.card-seo-twitter__description, .card-seo-twitter__link, .card-seo-facebook__description, .card-seo-facebook__link) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .displaypreview :is(.card-seo-twitter__image, .card-seo-facebook__image) {
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .displaypreview .js-preview-image[style*="/no_image_set.png"] {
+    background-color: var(--dm-canvas);
+    background-image: url('../seo-empty-image.svg') !important;
+}
+
+:root[data-dark-mode="dark"] .displaypreview .card-seo-google__title a {
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] .displaypreview .card-seo-google__url-title {
+    color: var(--fg-success);
+}
+
+:root[data-dark-mode="dark"] .displaypreview .card-seo-google__url-arrow {
+    border-top-color: var(--fg-success);
+}
+
+:root[data-dark-mode="dark"] .displaypreview .card-seo-google__description {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] :is(#GlobalSEOChart, #ContentSEOChart, #SiteSettingsChart) .apexcharts-radialbar-hollow {
+    fill: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] :is(#GlobalSEOChart, #ContentSEOChart, #SiteSettingsChart) .apexcharts-radialbar-track path {
+    stroke: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(#GlobalSEOChart, #ContentSEOChart, #SiteSettingsChart) .apexcharts-datalabel-value {
+    fill: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] :is(#GlobalSEOChart, #ContentSEOChart, #SiteSettingsChart) .apexcharts-datalabel-label {
+    filter: brightness(1.7);
+}
+
+:root[data-dark-mode="dark"] li.checkboxChecklist {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] li.checkboxChecklist.checked {
+    color: var(--fg-success);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__control, .vue-treeselect__menu) {
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__single-value, .vue-treeselect__input, .vue-treeselect__label) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect .vue-treeselect__input {
+    background-color: transparent;
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__placeholder, .vue-treeselect__tip) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__option--highlight, .vue-treeselect__option--selected) {
+    background-color: var(--dm-hover);
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__control-arrow, .vue-treeselect__option-arrow, .vue-treeselect__x) {
+    fill: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect .vue-treeselect__multi-value-item {
+    color: var(--dm-text);
+    background-color: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect .vue-treeselect__value-remove {
+    color: var(--dm-muted);
+    background-color: transparent;
+    border-left-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect .vue-treeselect__value-remove:hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect .vue-treeselect__checkbox {
+    background-color: var(--input-bg);
+    border-color: var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .vue-treeselect :is(.vue-treeselect__checkbox--checked, .vue-treeselect__checkbox--indeterminate) {
+    background-color: var(--bg-enabled);
+    border-color: var(--bg-enabled);
+}
+

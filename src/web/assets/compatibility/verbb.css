@@ -1,0 +1,12 @@
+/* Verbb's shared footer credit. Keep the logo shape and hover animation. */
+:root[data-dark-mode="dark"] #plugin-footer .plugin-credit .credit-pill {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] #plugin-footer .plugin-credit:hover .credit-pill {
+    background-color: #4b308c;
+}
+
+:root[data-dark-mode="dark"] #plugin-footer .plugin-credit .credit-love {
+    color: var(--dm-muted);
+}

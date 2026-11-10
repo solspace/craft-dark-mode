@@ -1,0 +1,170 @@
+/* Calendar 5 only: this sheet is version-gated in DarkModeAsset.
+   Calendar 6 must use a separate adapter even if component names overlap. */
+:root[data-dark-mode="dark"] .tippy-box[data-theme~="calendar-event"] {
+    color: var(--dm-text);
+    background-color: var(--dm-overlay);
+    border-color: var(--dm-border);
+    box-shadow: var(--modal-shadow);
+}
+:root[data-dark-mode="dark"] .sc-event-popup__titlebar,
+:root[data-dark-mode="dark"] .sc-event-popup__body div.buttons {
+    background: var(--dm-raised);
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .sc-event-popup__title { color: var(--dm-heading); }
+:root[data-dark-mode="dark"] .sc-event-popup__close { color: var(--dm-muted); }
+:root[data-dark-mode="dark"] .sc-event-popup__close:hover { color: var(--dm-text); }
+:root[data-dark-mode="dark"] .sc-event-popup__body div.separator { border-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .tippy-box[data-theme~="calendar-event"][data-placement^="top"] > .tippy-arrow::before { border-top-color: var(--dm-raised); }
+:root[data-dark-mode="dark"] .tippy-box[data-theme~="calendar-event"][data-placement^="bottom"] > .tippy-arrow::before { border-bottom-color: var(--dm-raised); }
+:root[data-dark-mode="dark"] .tippy-box[data-theme~="calendar-event"][data-placement^="left"] > .tippy-arrow::before { border-left-color: var(--dm-overlay); }
+:root[data-dark-mode="dark"] .tippy-box[data-theme~="calendar-event"][data-placement^="right"] > .tippy-arrow::before { border-right-color: var(--dm-overlay); }
+
+/* Calendar 5's React recurrence editor predates Craft's semantic controls. */
+:root[data-dark-mode="dark"] [data-event-builder] :is(input, select) {
+    color: var(--dm-text);
+    background: var(--input-bg);
+    border-color: var(--input-border-color);
+    box-shadow: none;
+}
+:root[data-dark-mode="dark"] [data-event-builder] :is(input, select):focus-visible {
+    border-color: var(--focus-ring-color);
+    box-shadow: var(--focus-ring);
+}
+:root[data-dark-mode="dark"] [data-event-builder] label { color: var(--dm-text); }
+:root[data-dark-mode="dark"] [data-event-builder] li[data-value] {
+    color: var(--dm-text);
+    background: transparent;
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] [data-event-builder] li[data-value].selected {
+    background: var(--dm-selected);
+    border-color: var(--dm-link);
+}
+:root[data-dark-mode="dark"] [data-event-builder] .date-list > li > div {
+    color: var(--dm-text);
+    background: var(--dm-raised);
+    border-color: var(--dm-border);
+}
+:root[data-dark-mode="dark"] [data-event-builder] [role="checkbox"][aria-checked="false"] {
+    background: var(--dm-raised);
+    box-shadow: inset 0 0 0 1px var(--dm-border);
+}
+:root[data-dark-mode="dark"] [data-event-builder] [role="checkbox"][aria-checked="false"] > div {
+    background: var(--dm-muted);
+}
+
+/* The demo installer lists files; these are UI boxes, not template previews. */
+:root[data-dark-mode="dark"] #components-wrapper .directory-structure {
+    color: var(--dm-text);
+    background: transparent;
+    border-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] #components-wrapper .directory-structure .template { color: var(--dm-muted); }
+
+/* Calendar 5 uses FullCalendar 3's legacy classes. */
+:root[data-dark-mode="dark"] :is(.calendar-agenda, .calendar-mini-cal).fc-unthemed {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed :is(th, td, tbody, .fc-divider, .fc-row, .fc-popover) {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc.fc-unthemed .fc-body > tr > td.fc-widget-content {
+    border-top-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-divider {
+    background-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-bg .fc-day {
+    background-color: var(--dm-canvas);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-bg :is(.fc-sun, .fc-sat) {
+    background-color: var(--dm-surface);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-day-grid .fc-other-month {
+    background-color: var(--dm-surface) !important;
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-bg .fc-day.fc-today {
+    background-color: color-mix(in srgb, var(--dm-link) 9%, var(--dm-canvas));
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc.fc-unthemed :is(.fc-day-header, .fc-day-header > a, td.fc-event-container a.fc-event.fc-event-single-day .fc-title) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc.fc-unthemed td.fc-event-container a.fc-event.fc-event-single-day .fc-time {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-toolbar .fc-button {
+    background: var(--dm-raised);
+    color: var(--dm-text);
+    border: none;
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-toolbar .fc-button:is(:hover, .fc-state-hover) {
+    background: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-button-group :is(.fc-next-button, .fc-Today-button) {
+    border-left: none !important;
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc.fc-unthemed .fc-head .fc-head-container .fc-row {
+    border-bottom-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] .calendar-agenda.fc-unthemed .fc-toolbar .fc-button:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+}
+
+:root[data-dark-mode="dark"] .calendar-mini-cal .fc-has-event {
+    background-color: var(--dm-raised);
+}
+
+:root[data-dark-mode="dark"] .calendar-mini-cal .fc-day-number:hover {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] .calendar-mini-cal .fc-toolbar button {
+    color: var(--dm-muted);
+}
+:root[data-dark-mode="dark"] .calendar-mini-cal .fc-toolbar button:hover {
+    color: var(--dm-text);
+}
+
+/* Dashboard widgets share Calendar 5's grid, but have their own chrome. */
+:root[data-dark-mode="dark"] .widget .calendar-mini-cal .fc-row.fc-widget-header {
+    border-bottom-color: var(--dm-border-muted);
+}
+:root[data-dark-mode="dark"] .widget .calendar-mini-cal .fc-content-skeleton td:not(.fc-today):hover {
+    color: var(--dm-text);
+    background: var(--dm-hover);
+}
+:root[data-dark-mode="dark"] .widget .upcoming-events tbody tr:not(:first-child) td { border-top-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .widget .upcoming-events tbody tr:not(:last-child) td { border-bottom-color: var(--dm-border-muted); }
+:root[data-dark-mode="dark"] .widget .upcoming-events tbody td span:not(.color-indicator) { color: var(--dm-muted) !important; }
+
+/* Craft 5 wraps each date/time input separately; keep the pair aligned in
+   both appearances, allowing narrow dashboard columns to wrap with a gap. */
+.widget .event-creator > .field > .input:has(> .datetimewrapper) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.widget .event-creator > .field > .input > .datetimewrapper {
+    flex: 1 1 7rem;
+    min-width: 0;
+}
+.widget .event-creator .datetimewrapper > :is(.datewrapper, .timewrapper),
+.widget .event-creator .datetimewrapper input:not([type="hidden"]) { width: 100%; }
+
