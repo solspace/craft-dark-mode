@@ -1,5 +1,5 @@
 # Changelog
 
-## 1.0.0-beta.1
+## 1.0.0 - 2026-11-10
 
 - Initial release.

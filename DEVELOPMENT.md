@@ -2,21 +2,29 @@
 
 A control-panel appearance plugin with **Auto / Light / Dark** on an icon-only control in Craft’s top bar. Craft CMS 5 and PHP 8.2 or newer are required; Craft 6 is excluded by the Composer constraint.
 
-This is a development beta, installed on `craft5.test`. It has been exercised on Craft 5.11.5.1 and 5.12.0.1. GitHub inspired the quiet neutral surfaces and list hierarchy; Craft retains its own typography, layout, controls, red primary actions, teal enabled state, and status meanings.
+This is the development checkout for Dark Mode 1.0.0, installed on `craft5.test`. It has been exercised on Craft 5.11.5.1 and 5.12.0.1. GitHub inspired the quiet neutral surfaces and list hierarchy; Craft retains its own typography, layout, controls, red primary actions, teal enabled state, and status meanings.
 
 ## Installation
 
-For another local project, place this directory somewhere persistent and add a Composer path repository pointing to it:
+Clone the `v1` branch into a persistent directory:
 
 ```sh
-composer config repositories.dark-mode path /absolute/path/to/dark-mode
-composer require solspace/craft-dark-mode:1.0.0-beta.1
+git clone --branch v1 https://github.com/solspace/craft-dark-mode.git /absolute/path/to/craft-dark-mode
+```
+
+From the Craft project, add a Composer path repository pointing to the checkout's actual location:
+
+```sh
+composer config repositories.dark-mode path /absolute/path/to/craft-dark-mode
+composer require solspace/craft-dark-mode:1.0.0
 php craft plugin/install dark-mode
 ```
 
 Open the control panel and click the appearance icon beside your avatar to cycle Auto → Light → Dark → Auto. Auto follows the operating system immediately when it changes. Each signed-in user has their own Craft user preference, synchronized across tabs on the same installation. The server preference takes precedence when a page loads.
 
-No asset compilation is required for this package. Composer must permit the normal Craft Composer installer. This package has not been published to Packagist or the Craft Plugin Store.
+No asset compilation is required for this package. Composer must permit the normal Craft Composer installer. The package is registered on Packagist; until the `1.0.0` tag is published, use the local checkout. The plugin is not yet listed in the Craft Plugin Store.
+
+The package version is maintained explicitly in `composer.json`; keep it synchronized with the changelog and release tags. Local path installs use this explicit version. Existing local beta projects should update their checkout and run `composer require solspace/craft-dark-mode:1.0.0` to update the project's requirement without uninstalling the plugin.
 
 The early local beta used `kmartens/craft-dark-mode` and the `Kmartens\DarkMode` PHP namespace. Update those Composer requirements and developer API imports to `solspace/craft-dark-mode` and `Solspace\DarkMode` together. Keep the plugin installed under the same `dark-mode` handle; no preference or content migration is needed. Do not uninstall it as part of the rename.
 

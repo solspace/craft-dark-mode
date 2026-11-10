@@ -14,15 +14,23 @@ Dark Mode preserves Craft’s layout, typography, keyboard controls and status m
 
 ## Installation
 
-This is an unpublished development beta. Keep the checkout in a persistent directory, then run these commands from your Craft project:
+The package is registered on [Packagist](https://packagist.org/packages/solspace/craft-dark-mode). Until the `1.0.0` release tag is published, install it from a local checkout of the `v1` branch:
+
+```sh
+git clone --branch v1 https://github.com/solspace/craft-dark-mode.git /absolute/path/to/craft-dark-mode
+```
+
+Keep the checkout in a persistent directory. From your Craft project, replace the path below with that checkout's actual location and run:
 
 ```sh
 composer config repositories.dark-mode path /absolute/path/to/craft-dark-mode
-composer require solspace/craft-dark-mode:1.0.0-beta.1
+composer require solspace/craft-dark-mode:1.0.0
 php craft plugin/install dark-mode
 ```
 
-The package has not yet been published to Packagist or the Plugin Store. Composer must permit the normal Craft Composer installer. No asset compilation is required.
+Composer uses the local package's explicit `1.0.0` version. The plugin has not yet been listed in the Craft Plugin Store. Composer must permit the normal Craft Composer installer. No asset compilation is required.
+
+For an existing local beta installation, update the checkout and run the same `composer require` command to change the project's version constraint to `1.0.0`. Keep the plugin installed under its existing `dark-mode` handle.
 
 After installation, click the appearance icon beside your account avatar. Each click cycles **Auto → Light → Dark → Auto**.
 
@@ -45,6 +53,8 @@ To uninstall, remove **Dark Mode** through Craft's Settings → Plugins, then re
 - [Dark Mode documentation](https://docs.solspace.com/craft/dark-mode/v1/)
 - [Plugin compatibility](https://docs.solspace.com/craft/dark-mode/v1/compatibility/)
 - [Changelog](CHANGELOG.md)
+- [Source code](https://github.com/solspace/craft-dark-mode)
+- [Report an issue](https://github.com/solspace/craft-dark-mode/issues)
 - [Private support ticket](https://docs.solspace.com/support/)
 - [Craft Stack Exchange](https://craftcms.stackexchange.com/questions/tagged/solspace)
 
