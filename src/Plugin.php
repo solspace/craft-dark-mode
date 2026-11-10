@@ -18,7 +18,7 @@ final class Plugin extends BasePlugin
 {
     public const PREFERENCE = 'darkModeAppearance';
     public const MODES = ['auto', 'light', 'dark'];
-    /** Register optional AssetBundle classes after Dark Mode's core assets. */
+    /** Register optional AssetBundle classes after darkMode's core assets. */
     public const EVENT_REGISTER_COMPATIBILITY_ASSETS = 'registerCompatibilityAssets';
     public bool $hasCpSettings = false;
     public bool $hasCpSection = false;
@@ -49,8 +49,8 @@ final class Plugin extends BasePlugin
                 $config = Json::htmlEncode([
                     'developerTools' => $developerTools,
                     'comparisonLabels' => $developerTools ? [
-                        'compare' => Craft::t('dark-mode', 'Compare appearance'),
-                        'hint' => Craft::t('dark-mode', 'Hold Alt + Shift to compare. Escape to close.'),
+                        'compare' => Craft::t('darkmode', 'Compare appearance'),
+                        'hint' => Craft::t('darkmode', 'Hold Alt + Shift to compare. Escape to close.'),
                         'refresh' => Craft::t('app', 'Refresh'),
                         'close' => Craft::t('app', 'Close'),
                         'size' => Craft::t('app', 'Size'),
@@ -59,10 +59,10 @@ final class Plugin extends BasePlugin
                     // Storage is scoped to this installation AND user (never just hostname).
                     'storageKey' => 'craft-dark-mode:' . sha1(UrlHelper::cpUrl()) . ':' . ($user?->uid ?? 'guest'),
                     'authenticated' => $user !== null,
-                    'saveAction' => 'dark-mode/preferences/save',
+                    'saveAction' => 'darkmode/preferences/save',
                     'labels' => array_combine(
                         ['appearance', 'auto', 'light', 'dark', 'saved', 'saving', 'failed', 'retry'],
-                        array_map(fn(string $label): string => Craft::t('dark-mode', $label), [
+                        array_map(fn(string $label): string => Craft::t('darkmode', $label), [
                             'Appearance', 'Auto', 'Light', 'Dark',
                             'Appearance saved.', 'Saving appearance…',
                             'Could not save. Your appearance is applied in this tab.', 'Retry',

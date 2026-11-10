@@ -10,7 +10,7 @@ const locales = 'ar cs cy da de de-CH el en en-GB en-US es fa fr fr-CA he hu id 
 const root = fileURLToPath(new URL('../src/translations/', import.meta.url));
 const catalogs = JSON.parse(execFileSync('php', ['-r', `
     $result = [];
-    foreach (glob($argv[1] . '/*/dark-mode.php') as $file) {
+    foreach (glob($argv[1] . '/*/darkmode.php') as $file) {
         $result[basename(dirname($file))] = require $file;
     }
     echo json_encode($result, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
@@ -38,6 +38,6 @@ test('every catalog has every UI and validation message, with no empty or placeh
 test('controller errors use the same translatable category as the picker', () => {
     const controller = readFileSync(new URL('../src/controllers/PreferencesController.php', import.meta.url), 'utf8');
     for (const key of ['Control panel access required.', 'Appearance must be auto, light, or dark.']) {
-        assert.ok(controller.includes(`Craft::t('dark-mode', '${key}')`));
+        assert.ok(controller.includes(`Craft::t('darkmode', '${key}')`));
     }
 });

@@ -18,7 +18,14 @@ test('comparison assets and labels require the environment opt-in as well as dev
         }
         namespace craft\\web { class View { const POS_HEAD = 1; } }
         namespace {
-            class Craft { public static $app; public static function t($category, $label) { return $label; } }
+            class Craft {
+                public static $app;
+                public static function t($category, $label) {
+                    if ($category === 'app') return $label;
+                    $messages = require dirname($GLOBALS['argv'][1]) . '/translations/de/' . $category . '.php';
+                    return $messages[$label] ?? $label;
+                }
+            }
             $view = new class {
                 public array $assets = []; public string $js = '';
                 public function hook($name, $callback) { $context = []; $callback($context); }
@@ -57,13 +64,17 @@ test('comparison assets and labels require the environment opt-in as well as dev
                 $config = json_decode($match[1], true);
                 $results[] = [$config['developerTools'], $config['comparisonLabels'] !== null, in_array('Solspace\\\\DarkMode\\\\web\\\\ComparisonAsset', $view->assets, true)];
             }
-            echo json_encode($results);
+            echo json_encode(['checks' => $results, 'config' => $config]);
         }
     `;
     const plugin = fileURLToPath(new URL('../src/Plugin.php', import.meta.url));
     const results = JSON.parse(execFileSync('php', ['-r', stub, plugin], { encoding: 'utf8' }));
+    const composer = JSON.parse(readFileSync(new URL('../composer.json', import.meta.url), 'utf8'));
     const absent = [false, false, false], present = [true, true, true];
-    assert.deepEqual(results, [absent, absent, absent, absent, present, present, absent, absent]);
+    assert.deepEqual(results.checks, [absent, absent, absent, absent, present, present, absent, absent]);
+    assert.equal(results.config.saveAction, `${composer.extra.handle}/preferences/save`);
+    assert.equal(results.config.labels.appearance, 'Erscheinungsbild');
+    assert.match(results.config.storageKey, /^craft-dark-mode:/);
 });
 
 function setup({ developerTools = true, authenticated = true, theme = 'dark' } = {}) {

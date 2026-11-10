@@ -1,8 +1,8 @@
-# Solspace Dark Mode for Craft CMS 5
+# Solspace darkMode for Craft CMS 5
 
 A free Solspace plugin that adds comfortable dark mode to Craft’s control panel while preserving native layouts, controls, and authored content.
 
-<img src="src/icon.svg" alt="Dark Mode icon" width="64" height="64">
+<img src="src/icon.svg" alt="darkMode icon" width="64" height="64">
 
 ## Requirements
 
@@ -12,11 +12,11 @@ A free Solspace plugin that adds comfortable dark mode to Craft’s control pane
 
 ## Installation
 
-Install from the [Craft Plugin Store](https://plugins.craftcms.com/dark-mode), or run these commands from your Craft project:
+Install from the [Craft Plugin Store](https://plugins.craftcms.com/darkmode), or run these commands from your Craft project:
 
 ```sh
 composer require solspace/craft-dark-mode -w
-php craft plugin/install dark-mode
+php craft plugin/install darkmode
 ```
 
 No asset compilation is required. Local setup instructions are in [Development](DEVELOPMENT.md).
@@ -35,7 +35,7 @@ composer update solspace/craft-dark-mode --with-dependencies
 
 Follow Craft’s normal backup and deployment process, and check your plugins’ control-panel screens after updating.
 
-To uninstall, remove **Dark Mode** through Settings → Plugins, then remove its Composer package.
+To uninstall, remove **darkMode** through Settings → Plugins, then remove its Composer package.
 
 ## Documentation and support
 

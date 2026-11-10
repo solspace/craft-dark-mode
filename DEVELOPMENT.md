@@ -1,8 +1,8 @@
-# Dark Mode development notes
+# darkMode development notes
 
 A control-panel appearance plugin with **Auto / Light / Dark** on an icon-only control in Craft’s top bar. Craft CMS 5.9 or later within 5.x and PHP 8.2 or newer are required; Craft 6 is excluded by the Composer constraint.
 
-This is the development checkout for Dark Mode 1.0.0, installed on `craft5.test`. It has been exercised on Craft 5.11.5.1 and 5.12.0.1. GitHub inspired the quiet neutral surfaces and list hierarchy; Craft retains its own typography, layout, controls, red primary actions, teal enabled state, and status meanings.
+This is the development checkout for darkMode 1.0.0, installed on `craft5.test`. It has been exercised on Craft 5.11.5.1 and 5.12.0.1. GitHub inspired the quiet neutral surfaces and list hierarchy; Craft retains its own typography, layout, controls, red primary actions, teal enabled state, and status meanings.
 
 The Craft 5.9 minimum matches Freeform's current Craft 5 requirement. Runtime and browser QA on Craft 5.9 remain a release check; Composer constraint validation alone does not verify that runtime.
 
@@ -19,16 +19,29 @@ From the Craft project, add a Composer path repository pointing to the checkout'
 ```sh
 composer config repositories.dark-mode path /absolute/path/to/craft-dark-mode
 composer require solspace/craft-dark-mode:1.0.0
-php craft plugin/install dark-mode
+php craft plugin/install darkmode
 ```
 
 Open the control panel and click the appearance icon beside your avatar to cycle Auto → Light → Dark → Auto. Auto follows the operating system immediately when it changes. Each signed-in user has their own Craft user preference, synchronized across tabs on the same installation. The server preference takes precedence when a page loads.
 
 No asset compilation is required for this package. Composer must permit the normal Craft Composer installer. The package is registered on Packagist; until the `1.0.0` tag is published, use the local checkout. The plugin is not yet listed in the Craft Plugin Store.
 
-The package version is maintained explicitly in `composer.json`; keep it synchronized with the changelog and release tags. Local path installs use this explicit version. Existing local beta projects should update their checkout and run `composer require solspace/craft-dark-mode:1.0.0` to update the project's requirement without uninstalling the plugin.
+The package version is maintained explicitly in `composer.json`; keep it synchronized with the changelog and release tags. Local path installs use this explicit version.
 
-The early local beta used `kmartens/craft-dark-mode` and the `Kmartens\DarkMode` PHP namespace. Update those Composer requirements and developer API imports to `solspace/craft-dark-mode` and `Solspace\DarkMode` together. Keep the plugin installed under the same `dark-mode` handle; no preference or content migration is needed. Do not uninstall it as part of the rename.
+### Existing local installations
+
+The pre-release handle was `dark-mode`. The submitted Plugin Store identity is now **darkMode**, handle **`darkmode`**. Before updating a local installation that still uses the old handle, uninstall that registration while its Composer metadata is still available. From the Craft project:
+
+```sh
+php craft plugin/uninstall dark-mode
+git -C /absolute/path/to/craft-dark-mode pull --ff-only origin v1
+composer require solspace/craft-dark-mode:1.0.0
+php craft plugin/install darkmode
+```
+
+The package name and PHP namespace remain `solspace/craft-dark-mode` and `Solspace\DarkMode`. The early local beta used `kmartens/craft-dark-mode` and `Kmartens\DarkMode`; update those old requirements and imports when moving to the current package.
+
+Existing user appearance preferences remain under `darkModeAppearance`. Browser storage keys, `data-dark-mode` attributes, `window.CraftDarkMode`, and the `craft-dark-mode:change` event also retain their original names. They are integration identifiers, independent of the plugin handle. Translation catalogs and controller routes use `darkmode`.
 
 Public user documentation belongs at `https://docs.solspace.com/craft/dark-mode/v1/`. Before publishing a release, verify that the hosted guide and compatibility page are available and contain the installation, appearance, troubleshooting, and performance guidance. The former local guides are preserved in the pre-cleanup recovery branch and an ignored `output/docs-before-removal/` copy; their removal from this package does not publish them to the documentation site.
 
@@ -65,7 +78,7 @@ document.addEventListener('craft-dark-mode:change', ({ detail }) => {
 });
 ```
 
-An integration can register a compatibility AssetBundle after Dark Mode’s core assets:
+An integration can register a compatibility AssetBundle after darkMode’s core assets:
 
 ```php
 use Solspace\DarkMode\Plugin;

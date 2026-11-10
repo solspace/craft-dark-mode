@@ -28,7 +28,7 @@ function picker({ header = true } = {}) {
     const root = { dataset: {}, style: {} };
     const context = {
         window: {
-            CraftDarkModeConfig: { mode: 'auto', authenticated: true, storageKey: 'installation:user', saveAction: 'dark-mode/preferences/save', labels: {appearance: 'Appearance',auto: 'Auto',light: 'Light',dark: 'Dark',saving: 'Saving',saved: 'Saved',failed: 'Failed',retry: 'Retry'} },
+            CraftDarkModeConfig: { mode: 'auto', authenticated: true, storageKey: 'installation:user', saveAction: 'darkmode/preferences/save', labels: {appearance: 'Appearance',auto: 'Auto',light: 'Light',dark: 'Dark',saving: 'Saving',saved: 'Saved',failed: 'Failed',retry: 'Retry'} },
             matchMedia: () => ({matches: false, addEventListener() {}}), addEventListener() {},
         },
         document: {
@@ -98,7 +98,7 @@ test('rapid appearance selections apply immediately and save only the latest pen
     await flush();
     assert.deepEqual(ui.requests.map(r => r.mode), ['light']);
     assert.equal(ui.requests[0].method, 'POST');
-    assert.equal(ui.requests[0].action, 'dark-mode/preferences/save');
+    assert.equal(ui.requests[0].action, 'darkmode/preferences/save');
     ui.requests[0].resolve({data: {success: true}}); await flush();
     assert.equal(ui.status, 'Saved');
     assert.deepEqual(ui.writes, [['installation:user', 'light']]);

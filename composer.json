@@ -15,8 +15,8 @@
   },
   "extra": {
     "schemaVersion": "1.0.0",
-    "name": "Dark Mode",
-    "handle": "dark-mode",
+    "name": "darkMode",
+    "handle": "darkmode",
     "class": "Solspace\\DarkMode\\Plugin",
     "developer": "Solspace",
     "developerUrl": "https://solspace.com",

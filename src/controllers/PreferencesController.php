@@ -20,12 +20,12 @@ final class PreferencesController extends Controller
         $this->requireLogin();
         $user = Craft::$app->getUser()->getIdentity();
         if (!$user->can('accessCp')) {
-            throw new \yii\web\ForbiddenHttpException(Craft::t('dark-mode', 'Control panel access required.'));
+            throw new \yii\web\ForbiddenHttpException(Craft::t('darkmode', 'Control panel access required.'));
         }
 
         $mode = $this->request->getRequiredBodyParam('mode');
         if (!is_string($mode) || !in_array($mode, Plugin::MODES, true)) {
-            throw new BadRequestHttpException(Craft::t('dark-mode', 'Appearance must be auto, light, or dark.'));
+            throw new BadRequestHttpException(Craft::t('darkmode', 'Appearance must be auto, light, or dark.'));
         }
 
         // No user ID is accepted from the client. Craft merges unrelated preferences.
