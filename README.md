@@ -14,23 +14,16 @@ Dark Mode preserves Craft’s layout, typography, keyboard controls and status m
 
 ## Installation
 
-The package is registered on [Packagist](https://packagist.org/packages/solspace/craft-dark-mode). Until the `1.0.0` release tag is published, install it from a local checkout of the `v1` branch:
+Install **Dark Mode** from the [Craft Plugin Store](https://plugins.craftcms.com/dark-mode). In your control panel, open the Plugin Store, search for **Dark Mode**, and click **Install**.
+
+You can also install the [Composer package](https://packagist.org/packages/solspace/craft-dark-mode) from your Craft project:
 
 ```sh
-git clone --branch v1 https://github.com/solspace/craft-dark-mode.git /absolute/path/to/craft-dark-mode
-```
-
-Keep the checkout in a persistent directory. From your Craft project, replace the path below with that checkout's actual location and run:
-
-```sh
-composer config repositories.dark-mode path /absolute/path/to/craft-dark-mode
-composer require solspace/craft-dark-mode:1.0.0
+composer require solspace/craft-dark-mode -w
 php craft plugin/install dark-mode
 ```
 
-Composer uses the local package's explicit `1.0.0` version. The plugin has not yet been listed in the Craft Plugin Store. Composer must permit the normal Craft Composer installer. No asset compilation is required.
-
-For an existing local beta installation, update the checkout and run the same `composer require` command to change the project's version constraint to `1.0.0`. Keep the plugin installed under its existing `dark-mode` handle.
+Composer must permit the normal Craft Composer installer. No asset compilation is required. See [Development](DEVELOPMENT.md) for local checkout installation instructions.
 
 After installation, click the appearance icon beside your account avatar. Each click cycles **Auto → Light → Dark → Auto**.
 
@@ -38,7 +31,7 @@ Preferences belong to each signed-in user and synchronize across tabs on the sam
 
 ## Updating and uninstalling
 
-Back up the database, Composer files and project config, update the local checkout, then run:
+Back up the database, Composer files and project config. Update through Craft's Updates screen, or run:
 
 ```sh
 composer update solspace/craft-dark-mode --with-dependencies
