@@ -7,6 +7,10 @@
     color: var(--link-color);
 }
 
+:root[data-dark-mode="dark"] vizy-editor .vizy-editor-surface {
+    background-color: var(--dm-editor-bg);
+}
+
 /* Component variables also pass through Plugin Kit's nested shadow roots. */
 :root[data-dark-mode="dark"] :is(vizy-editor-config-settings, .vizy-configurator, vizy-editor, vizy-image-browser, vizy-color-input, .vizy-block-availability-dialog) {
     --pk-color-white: var(--dm-surface);
@@ -176,4 +180,15 @@
 
 :root[data-dark-mode="dark"] vizy-editor-config-settings pk-code-editor {
     border-color: var(--dm-border);
+}
+
+/* Tooltips use a foreground role even when Plugin Kit white is remapped to
+   a dark panel. Toolbar/bubble shadow roots receive the same public-part rule. */
+:root[data-dark-mode="dark"] :is(vizy-editor-config-settings, .vizy-configurator, vizy-editor, vizy-image-browser, vizy-color-input, .vizy-block-availability-dialog) pk-tooltip::part(content) {
+    color: var(--dm-text);
+    background: var(--dm-tooltip-bg);
+}
+
+:root[data-dark-mode="dark"] :is(vizy-editor-config-settings, .vizy-configurator, vizy-editor, vizy-image-browser, vizy-color-input, .vizy-block-availability-dialog) pk-tooltip::part(content)::after {
+    background: var(--dm-tooltip-bg);
 }

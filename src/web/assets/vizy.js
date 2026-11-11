@@ -2,6 +2,8 @@
     'use strict';
     const hosts = new WeakSet();
     const editors = new Map();
+    const tooltips = new Map();
+    const tooltipSelector = 'vizy-toolbar, vizy-bubble';
     const selector = 'vizy-editor-config-settings';
     const styles = `
         .cm-editor.cm-editor { background: var(--dm-canvas); color: var(--dm-text); }
@@ -13,6 +15,22 @@
         .cm-editor.cm-editor .cm-line span { color: inherit; }
     `;
 
+    const tooltipStyles = 'pk-tooltip::part(content) { color: var(--dm-text); background: var(--dm-tooltip-bg); } pk-tooltip::part(content)::after { background: var(--dm-tooltip-bg); }';
+
+    function mountTooltipStyles(event) {
+        // The toolbar's manual tooltip opens shortly after pointerover. Attach
+        // through its own root before it opens, including portaled bubbles.
+        // This also covers late mounts without observing editor content.
+        for (const host of event.composedPath()) {
+            if (!host.matches?.(tooltipSelector) || !host.shadowRoot || tooltips.has(host)) continue;
+            const style = document.createElement('style');
+            style.dataset.darkModeVizyTooltip = '';
+            host.shadowRoot.append(style);
+            tooltips.set(host, style);
+        }
+        sync();
+    }
+
     function sync() {
         const dark = document.documentElement.dataset.darkMode === 'dark';
         for (const [host, style] of editors) {
@@ -21,6 +39,14 @@
                 continue;
             }
             const next = dark ? styles : '';
+            if (style.textContent !== next) style.textContent = next;
+        }
+        for (const [host, style] of tooltips) {
+            if (!host.isConnected) {
+                tooltips.delete(host);
+                continue;
+            }
+            const next = dark ? tooltipStyles : '';
             if (style.textContent !== next) style.textContent = next;
         }
     }
@@ -48,6 +74,8 @@
         }
     }
 
+    document.addEventListener('pointerover', mountTooltipStyles, true);
+    document.addEventListener('focusin', mountTooltipStyles, true);
     document.addEventListener('craft-dark-mode:change', sync);
     document.addEventListener('load', event => {
         if (event.target?.tagName === 'SCRIPT') attach();

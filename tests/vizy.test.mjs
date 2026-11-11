@@ -58,3 +58,61 @@ test('Vizy themes only configuration code editors, handles late mounts, and rest
     events.get('craft-dark-mode:change')();
     assert.equal(observed.some(({ root }) => root === document), false);
 });
+
+test('Vizy tooltip roots stay readable across late mounts and theme changes without observing authored content', async () => {
+    const events = new Map();
+    const observed = [];
+    const makeHost = tag => {
+        const styles = [];
+        return {
+            styles,
+            isConnected: true,
+            matches: selector => {
+                assert.equal(selector, 'vizy-toolbar, vizy-bubble');
+                return tag === 'vizy-toolbar' || tag === 'vizy-bubble';
+            },
+            shadowRoot: { append: style => styles.push(style) },
+        };
+    };
+    const document = {
+        documentElement: { dataset: { darkMode: 'dark' } },
+        readyState: 'complete',
+        querySelectorAll: () => [],
+        createElement: () => ({ dataset: {}, textContent: '' }),
+        addEventListener: (event, callback) => events.set(event, callback),
+    };
+    class MutationObserver {
+        observe(root) { observed.push(root); }
+    }
+    vm.runInNewContext(source, {
+        document, MutationObserver, window: {},
+        customElements: { whenDefined: () => Promise.resolve() },
+    });
+    await Promise.resolve();
+    const toolbar = makeHost('vizy-toolbar');
+    const hover = host => events.get('pointerover')({ composedPath: () => [host] });
+    hover(toolbar);
+    assert.equal(toolbar.styles.length, 1);
+    assert.match(toolbar.styles[0].textContent, /pk-tooltip::part\(content\).*color: var\(--dm-text\)/);
+    hover(toolbar);
+    assert.equal(toolbar.styles.length, 1);
+    document.documentElement.dataset.darkMode = 'light';
+    events.get('craft-dark-mode:change')();
+    assert.equal(toolbar.styles[0].textContent, '');
+    const bubble = makeHost('vizy-bubble');
+    events.get('focusin')({ composedPath: () => [bubble] });
+    assert.equal(bubble.styles[0].textContent, '');
+    document.documentElement.dataset.darkMode = 'dark';
+    events.get('craft-dark-mode:change')();
+    assert.match(bubble.styles[0].textContent, /var\(--dm-text\)/);
+    const authoredContent = makeHost('div');
+    hover(authoredContent);
+    assert.equal(authoredContent.styles.length, 0);
+    assert.equal(observed.length, 0);
+    bubble.isConnected = false;
+    events.get('craft-dark-mode:change')();
+    document.documentElement.dataset.darkMode = 'light';
+    events.get('craft-dark-mode:change')();
+    assert.match(bubble.styles[0].textContent, /var\(--dm-text\)/);
+    assert.equal(toolbar.styles[0].textContent, '');
+});

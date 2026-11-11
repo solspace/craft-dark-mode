@@ -3,6 +3,15 @@
     --ck-color-base-foreground: var(--dm-raised);
     --ck-color-base-border: var(--dm-border);
     --ck-color-text: var(--text-color);
+    --ck-color-widget-blurred-border: var(--dm-border);
+    --ck-color-widget-hover-border: var(--dm-muted);
+    --ck-color-widget-type-around-button: var(--dm-raised);
+    --ck-color-widget-type-around-button-blurred-editable: var(--dm-raised);
+    --ck-color-widget-type-around-button-hover: var(--dm-border);
+    --ck-color-widget-type-around-button-active: var(--dm-selected);
+    --ck-color-widget-type-around-button-icon: var(--dm-text);
+    --ck-color-tooltip-background: var(--dm-tooltip-bg);
+    --ck-color-tooltip-text: var(--dm-text);
     --ck-color-toolbar-background: var(--dm-surface);
     --ck-color-toolbar-border: var(--dm-border);
     --ck-color-panel-background: var(--dm-overlay);
@@ -30,6 +39,14 @@
     --ck-style-panel-button-label-background: var(--dm-raised);
     --ck-style-panel-button-hover-label-background: var(--dm-hover);
     --ck-style-panel-button-hover-border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    background-color: var(--dm-editor-bg);
+}
+
+:root[data-dark-mode="dark"] .ck.ck-balloon-panel.ck-tooltip {
+    --ck-color-panel-background: var(--dm-tooltip-bg);
 }
 
 :root[data-dark-mode="dark"] .ckeditor-tb--item.draghelper {
