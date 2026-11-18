@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.2 - Unreleased
+## 1.0.2 - 2026-11-17
 
 ### Added
 - Added and verified dark-mode support for Comments, Control Panel Nav, Sherlock, Wishlist, and Workflow.

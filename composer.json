@@ -1,8 +1,8 @@
 {
   "name": "solspace/craft-dark-mode",
-  "description": "Give Craft’s control panel a darker look, with support for your favorite plugins.",
+  "description": "Give Craft's control panel a darker look, with support for your favorite plugins.",
   "type": "craft-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "require": {
     "php": "^8.2",
@@ -19,7 +19,7 @@
     "handle": "darkmode",
     "class": "Solspace\\DarkMode\\Plugin",
     "developer": "Solspace",
-    "developerUrl": "https://solspace.com",
+    "developerUrl": "https://docs.solspace.com",
     "documentationUrl": "https://docs.solspace.com/craft/dark-mode/v1/"
   },
   "homepage": "https://solspace.com",
