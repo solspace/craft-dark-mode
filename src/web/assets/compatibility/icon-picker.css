@@ -1,0 +1,52 @@
+:root[data-dark-mode="dark"] .ipui-input-component {
+    --pk-input-bg: var(--input-bg);
+    --pk-input-border-color: var(--dm-border);
+    --pk-input-placeholder-color: var(--dm-muted);
+    --pk-color-white: var(--dm-overlay);
+    --pk-color-gray-100: var(--dm-hover);
+    --pk-color-gray-500: var(--dm-muted);
+    --pk-color-gray-550: var(--dm-selected);
+    --pk-color-gray-700: var(--dm-text);
+    --pk-color-gray-1000: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .ipui-input-component .ipui-icon-input-search::part(input) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .ipui-input-component .ipui-icons-popover::part(panel) {
+    color: var(--dm-text);
+    background: var(--dm-overlay);
+    border-color: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .ipui-input-component .ipui-icon-input-clear:hover {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .ipui-input-component .ipui-icons-pane pk-tooltip::part(content) {
+    color: var(--dm-heading);
+    background: var(--dm-tooltip-bg);
+}
+
+:root[data-dark-mode="dark"] .ipui-input-component .ipui-icons-pane pk-tooltip::part(content)::after {
+    background: var(--dm-tooltip-bg);
+}
+
+:root[data-dark-mode="dark"] #iconpicker-troubleshooter .iconpicker-result.success {
+    color: var(--fg-success);
+    background: var(--bg-success);
+    border-color: var(--border-success);
+}
+
+:root[data-dark-mode="dark"] #iconpicker-troubleshooter .iconpicker-result.warning {
+    color: var(--fg-warning);
+    background: var(--bg-warning);
+    border-color: var(--border-warning);
+}
+
+:root[data-dark-mode="dark"] #iconpicker-troubleshooter .iconpicker-result.error {
+    color: var(--fg-error);
+    background: var(--bg-error);
+    border-color: var(--border-error);
+}

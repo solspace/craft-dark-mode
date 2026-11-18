@@ -1,0 +1,96 @@
+/* Adapt Prism's light themes for the dark control panel. */
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter {
+    background: var(--dm-editor-bg);
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter code {
+    color: var(--dm-text);
+    text-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter .token {
+    text-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter :is(.comment, .block-comment, .prolog, .doctype, .cdata, .punctuation) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter :is(.property, .tag, .boolean, .number, .constant, .symbol, .deleted) {
+    color: var(--fg-error);
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter :is(.selector, .attr-name, .string, .char, .builtin, .inserted) {
+    color: var(--fg-success);
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter :is(.operator, .entity, .url, .language-css .token.string, .style .token.string) {
+    color: var(--fg-warning);
+    background: transparent;
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy) .prism-syntax-highlighter :is(.atrule, .attr-value, .keyword, .function, .class-name, .regex, .important, .variable) {
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy, .prism-solarizedlight) .prism-syntax-highlighter code::selection,
+:root[data-dark-mode="dark"] .js--prism:is(.prism, .prism-coy, .prism-solarizedlight) .prism-syntax-highlighter code ::selection {
+    color: var(--dm-heading);
+    background: var(--dm-selected);
+}
+
+/* Retain Coy's alternating rows and blue gutter on a dark surface. */
+:root[data-dark-mode="dark"] .js--prism.prism-coy .prism-syntax-highlighter > code {
+    --dm-prism-coy-gutter: color-mix(in srgb, var(--dm-link) 42%, var(--dm-editor-bg));
+    border-left-color: var(--dm-prism-coy-gutter);
+    box-shadow: -1px 0 0 var(--dm-prism-coy-gutter), 0 0 0 1px var(--dm-border);
+    background-color: var(--dm-editor-bg);
+    background-image: linear-gradient(transparent 50%, var(--dm-raised) 50%);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-coy .prism-syntax-highlighter::before,
+:root[data-dark-mode="dark"] .js--prism.prism-coy .prism-syntax-highlighter::after {
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-coy .prism-syntax-highlighter .token.variable {
+    background: transparent;
+}
+
+/* Keep Solarized's cool surface and its distinct syntax color groups. */
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .prism-syntax-highlighter {
+    background: color-mix(in srgb, #002b36 60%, var(--dm-editor-bg));
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .prism-syntax-highlighter code {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.comment, .prolog, .doctype, .cdata, .punctuation) {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.property, .tag, .boolean, .number, .constant, .symbol, .deleted) {
+    color: var(--dm-link);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.selector, .attr-name, .string, .char, .builtin, .url, .inserted) {
+    color: var(--fg-success);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.atrule, .attr-value, .keyword) {
+    color: #b7cb68;
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.function, .class-name) {
+    color: var(--fg-warning);
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token:is(.regex, .important, .variable) {
+    color: #f0a277;
+}
+
+:root[data-dark-mode="dark"] .js--prism.prism-solarizedlight .token.entity {
+    color: var(--dm-heading);
+    background: var(--dm-selected);
+}

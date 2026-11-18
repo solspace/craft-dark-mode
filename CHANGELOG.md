@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.3 (Unreleased)
+
+### Added
+- Verified dark-mode compatibility for Cloudflare, Control Panel CSS, Control Panel JS, CP Clear Cache, CP Site Icons, Default Dashboard, Environment Label, Icon Picker, Prism, and Template Select.
+
+### Fixed
+- Improved dark-mode contrast in Icon Picker fields, popups, tooltips, and troubleshooting results.
+- Adapted Prism’s Default, Coy, and Solarized Light editor themes for Dark mode.
+
 ## 1.0.2 - 2026-11-17
 
 ### Added
