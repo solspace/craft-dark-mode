@@ -1,0 +1,14 @@
+/* Wishlist's embedded item index has a fixed pale border in its template. */
+:root[data-dark-mode="dark"] #items #elementindex-items > .main > .content-pane {
+    border-color: var(--dm-border) !important;
+}
+
+/* Match Craft's borderless metadata selectors without changing their geometry. */
+:root[data-dark-mode="dark"] .meta select[name="elementType"] {
+    background: transparent;
+    box-shadow: none;
+}
+
+:root[data-dark-mode="dark"] .meta select[name="elementType"]:focus-visible {
+    box-shadow: var(--focus-ring);
+}

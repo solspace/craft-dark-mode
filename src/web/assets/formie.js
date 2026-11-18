@@ -32,11 +32,21 @@
         }
         .text-gray-500[class~="[&_a]:text-blue-600"] a { color: var(--dm-link); }
         .text-gray-500[class~="[&_a]:text-blue-600"] a:hover { color: var(--dm-heading); }
+        .form-builder-section-tabs > pk-tab-panel[id$="-panel-usage"] table a[href] { color: var(--dm-link); }
+        .form-builder-section-tabs > pk-tab-panel[id$="-panel-usage"] table a[href]:hover { color: var(--dm-heading); }
         pk-button:is([variant="primary"], [variant="secondary"]) { --pk-color-white: #fff; }
         pk-button[variant="secondary"]::part(base) { color: var(--dm-text); background: var(--dm-raised); border-color: var(--dm-border); }
         pk-button[variant="secondary"]:hover::part(base) { background: var(--dm-hover); }
         pk-button[variant="outline"]::part(base) { color: var(--dm-text); border-color: var(--dm-border); }
         pk-button[variant="outline"]:hover::part(base) { background: var(--dm-hover); }
+        /* Formie's selected-element chips use a fixed pale fill, outside Craft's native chips. */
+        pk-field > [id$="-control"] > .flex.flex-wrap > [class~="bg-[rgb(243,247,252)]"]:has(> pk-button) {
+            color: var(--dm-text); background: var(--dm-overlay); border-color: var(--dm-border); box-shadow: none;
+        }
+        pk-field > [id$="-control"] > .flex.flex-wrap > [class~="bg-[rgb(243,247,252)]"]:has(> pk-button) a { color: var(--dm-text); }
+        pk-field > [id$="-control"] > .flex.flex-wrap > [class~="bg-[rgb(243,247,252)]"]:has(> pk-button) a:hover { color: var(--dm-link); }
+        pk-field > [id$="-control"] > .flex.flex-wrap > [class~="bg-[rgb(243,247,252)]"] > pk-button::part(base) { color: var(--dm-muted); }
+        pk-field > [id$="-control"] > .flex.flex-wrap > [class~="bg-[rgb(243,247,252)]"] > pk-button:hover::part(base) { color: var(--dm-heading); background: var(--dm-hover); }
         pk-button[aria-pressed=""]::part(base), pk-button[aria-pressed="true"]::part(base) { color: var(--dm-link); background: var(--dm-selected); }
         pk-popover[flush] pk-button-group pk-button[aria-pressed]::part(base) { border-color: transparent; }
         .border-sky-200.bg-sky-50 { color: var(--dm-text); background: var(--dm-selected); border-color: var(--dm-border); }

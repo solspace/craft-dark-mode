@@ -1,0 +1,37 @@
+/* Separate the comment status control from its metadata panel. */
+:root[data-dark-mode="dark"] .comments-meta .statusmenubtn {
+    --button-bg: var(--dm-hover);
+    --button-bg--hover: var(--dm-selected);
+    --button-bg--active: var(--dm-selected);
+    --button-text-color: var(--dm-heading);
+    box-shadow: inset 0 0 0 1px var(--input-border-color);
+}
+
+:root[data-dark-mode="dark"] .comments-meta .statusmenubtn:focus-visible {
+    box-shadow: var(--focus-ring), inset 0 0 0 1px var(--input-border-color);
+}
+
+/* Replies are a reading table, so keep their headings and values distinct. */
+:root[data-dark-mode="dark"] #comment #items > .elementindex.elements {
+    background-color: var(--dm-overlay);
+    box-shadow: 0 0 0 1px var(--dm-border-muted);
+    border-radius: var(--large-border-radius);
+    overflow: hidden;
+}
+
+:root[data-dark-mode="dark"] #comment #items table.data thead th {
+    background-color: var(--dm-raised);
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] #comment #items table.data tbody :is(th, td) {
+    color: var(--dm-text);
+}
+
+:root[data-dark-mode="dark"] #comment #items table.data > tbody > tr:not(.sel, .selected, .disabled, .active-drop-target, [aria-selected="true"]):hover > :is(th, td) {
+    background-color: var(--dm-hover);
+}
+
+:root[data-dark-mode="dark"] #comment #items .comment-block small {
+    color: var(--dm-text);
+}

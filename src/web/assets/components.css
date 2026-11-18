@@ -212,9 +212,15 @@
     border-color: var(--border-notice) !important;
 }
 
-:root[data-dark-mode="dark"] .pane.warning {
+:root[data-dark-mode="dark"] :is(.pane.warning, .meta.warning) {
     background-color: var(--bg-warning) !important;
     border-color: var(--border-warning) !important;
+}
+
+/* Craft's draft-merge notice uses a legacy pale background and glowing edge. */
+:root[data-dark-mode="dark"] .meta.warning {
+    color: var(--fg-warning) !important;
+    box-shadow: 0 0 0 1px var(--border-warning);
 }
 
 /* Preserve Craft's range geometry, with a quieter track and thumb outline. */

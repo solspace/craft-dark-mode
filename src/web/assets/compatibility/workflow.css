@@ -1,0 +1,54 @@
+/* Workflow review cards, comparison panels, and entry-sidebar history. */
+:root[data-dark-mode="dark"] :is(.workflow-reviews-stat, .workflow-single-review-content, .workflow-compare-review-content) {
+    background: var(--dm-surface);
+    color: var(--dm-text);
+    box-shadow: 0 0 0 1px var(--dm-border-muted), 0 2px 12px rgb(0 0 0 / 18%);
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-single-review-heading, .workflow-compare-review-heading, .workflow-history-pane-heading-wrap, .workflow-settings-pane .pane-toolbar) {
+    background: var(--dm-overlay);
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-history, .workflow-history-action, .workflow-settings-pane) {
+    border-color: var(--dm-border-muted);
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-reviews-stat-heading, .workflow-single-review-heading .review-count, .workflow-compare-review-heading .review-count) {
+    color: var(--dm-muted);
+    opacity: 1;
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-submission-heading label, .workflow-history-heading label, .workflow-settings-pane .pane-toolbar-title) {
+    color: var(--dm-heading);
+}
+
+:root[data-dark-mode="dark"] .workflow-pane .instructions {
+    color: var(--dm-muted);
+}
+
+:root[data-dark-mode="dark"] .workflow-single-review-indicator::before {
+    background: var(--dm-border);
+}
+
+:root[data-dark-mode="dark"] .workflow-single-review-indicator-icon {
+    color: var(--dm-canvas);
+    border-color: var(--dm-surface);
+    box-shadow: 0 0 0 1px var(--dm-border), 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-single-review-heading, .workflow-compare-review-heading) .review-status-badge.approved {
+    --status-color: 92, 200, 188;
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-single-review-heading, .workflow-compare-review-heading) .review-status-badge.revoked {
+    --status-color: 139, 148, 158;
+}
+
+:root[data-dark-mode="dark"] :is(.workflow-single-review-heading, .workflow-compare-review-heading) .review-status-badge.rejected {
+    --status-color: 255, 123, 114;
+}
+
+:root[data-dark-mode="dark"] .workflow-single-review-heading .menubtn:is(:hover, :focus) {
+    background-color: var(--dm-hover) !important;
+}

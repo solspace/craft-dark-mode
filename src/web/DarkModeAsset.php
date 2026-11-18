@@ -16,6 +16,8 @@ final class DarkModeAsset extends AssetBundle
         'campaign' => [['css' => ['compatibility/campaign.css']]],
         'calendar' => [['css' => ['compatibility/calendar.css'], 'from' => '5.0', 'before' => '6.0']],
         'ckeditor' => [['css' => ['compatibility/ckeditor.css']]],
+        'comments' => [['css' => ['compatibility/comments.css'], 'sections' => ['comments']]],
+        'cp-nav' => [['css' => ['compatibility/cp-nav.css'], 'js' => ['cp-nav.js'], 'from' => '6.0', 'before' => '7.0', 'sections' => ['cp-nav']]],
         'feed-me' => [['css' => ['compatibility/feed-me.css']]],
         'field-manager' => [['css' => ['compatibility/field-manager.css']]],
         'formie' => [['css' => ['compatibility/formie.css'], 'js' => ['formie.js']]],
@@ -39,6 +41,7 @@ final class DarkModeAsset extends AssetBundle
         'neo' => [['css' => ['compatibility/neo.css']]],
         'seo' => [['css' => ['compatibility/seo.css']]],
         'seomatic' => [['css' => ['compatibility/seomatic.css']]],
+        'sherlock' => [['css' => ['compatibility/sherlock.css'], 'sections' => ['sherlock']]],
         'simplemap' => [
             // Map fields can render in editors and slideouts throughout the CP.
             ['css' => ['compatibility/maps.css']],
@@ -50,6 +53,8 @@ final class DarkModeAsset extends AssetBundle
         'sprig' => [['css' => ['compatibility/sprig.css']]],
         'retour' => [['css' => ['compatibility/retour.css']]],
         'vizy' => [['css' => ['compatibility/vizy.css'], 'js' => ['vizy.js']]],
+        'wishlist' => [['css' => ['compatibility/wishlist.css'], 'sections' => ['wishlist']]],
+        'workflow' => [['css' => ['compatibility/workflow.css']]],
     ];
 
     public function init(): void

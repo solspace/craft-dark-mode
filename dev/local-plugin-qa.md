@@ -2,6 +2,34 @@
 
 Site: `craft5.test`. Craft CMS 5.12.0.1, PHP 8.3.36. Paid plugin editions are local trials; no purchases or live payment processing were performed.
 
+## Additional review plugins and fixtures — 2026-11-17
+
+Installed and enabled Comments **3.0.26**, Workflow **3.0.27**, Control Panel Nav **6.0.5**, Sherlock **5.3.1**, and Wishlist **3.0.28**. Craft remains **5.12.0.1**, constrained below Craft 6. Paid editions use local trials. Composer refreshed the existing path-repository metadata for darkMode 1.0.1 and Freeform 5.18.4; both source checkouts were already present. Database, Composer files, and project config were backed up before installation; another database backup precedes the fixtures.
+
+- Comments: 24 labeled comments across four new, non-public QA Plugin Playground entries. Includes three-level threads, approved/pending/spam/trashed states, multilingual text, long author labels, 15 votes, and three flag records.
+- Workflow: eight submissions with eight native drafts and 16 review-history records, covering pending, reviewer-approved, rejected, publisher-approved, revoked, and resubmitted examples. Historical approvals are synthetic records; no draft was applied or live content published. Notes are plain text, including multilingual examples.
+- Wishlist: two dedicated QA list types, six lists, and 24 product/entry items. Includes a guest-owned list, a disabled list, long/multilingual labels, and populated list/item note fields. Existing synthetic Commerce users and QA products are referenced without changing their content.
+- Control Panel Nav: separate **QA Dark Mode Review — demo navigation** layout, ID **2**, with nine custom nodes including a divider, nested review links, multilingual labels, and a disabled item. It is not the default and has no group assignments. Preview through `/admin/cp-nav?layoutId=2`.
+- Sherlock: real local security scan, ID **2**, populates the report. It fails the standard scan because Dev Mode is enabled and includes update/configuration warnings. No security configuration was changed to alter the result.
+
+Repeatable seed/finish scripts, an independent verifier, and JSON reports are in the site's `storage/qa-fixtures/tools/darkmode-review-*` files. Project configuration is explicitly flushed and verified in a fresh Craft process. Runtime notification switches are disabled for comment seeding, and the seed processes block outbound mail; no email was sent.
+
+The screenshot follow-up adds scoped Wishlist styles for its fixed pale item-table border and Element Type metadata selector. Workflow review statistics, timelines, comparison panels, and entry-history chrome use semantic dark surfaces, borders, and text roles. Timeline glyphs retain their status fills with darker ink and subdued rings. Craft's native `.meta.warning` draft-merge notice now uses its semantic warning palette without the pale glow. Vendor files and core templates are unchanged.
+
+Comments' status dropdown now has a stronger semantic fill and inset edge. Its Replies table has a subdued frame, raised header, and brighter reading text. The closed/open dropdown and reply status-dot/text alignment were checked in Dark; native Light styling was also verified. The adapter is limited to the Comments CP section.
+
+### Expanded Comments fixtures and CP Nav follow-up
+
+Added six **QA Comments Article** entries with populated summary/body fields in the existing, non-public QA Plugin Playground section, plus **96 additional comments** (120 seeded comments in total). The new batch contains 68 approved, 16 pending, six spam, and six trashed comments. It extends the four original discussions as well as the six new articles, with three-level threads, long messages/author names, and French, Japanese, and Arabic examples. The article topics cover a community garden, winter workshops, studio accessibility, a reusable travel kit, a photo walk, and a community cookbook. Existing comments and entries are preserved. A separate database backup precedes the expansion; the repeatable script and manifest are `storage/qa-fixtures/tools/comments-expanded-*`. Mail was blocked throughout seeding. A fresh Craft process verified all 96 records and all six populated articles without public URLs; a representative discussion and article were also checked in the browser.
+
+Control Panel Nav 6 now has a section- and version-scoped adapter for its three named builder roots. Plugin Kit/Tailwind tokens, public popover parts, and isolated component styles cover hover rows and matching sticky action cells, headers, labels/type badges, action menus, new/edit popovers, arrows, and footer separators. Styles attach on module load and clear in Light; no page-wide observer or polling is used. Browser checks confirmed an unselected hovered row and its action cell both use `rgb(27, 33, 41)`, and covered open action/new/edit menus, dimmed disabled actions, centred icons, and matching Cancel/Save heights. The builder and new-item popover restore native Light colours. No navigation item was saved during these visual checks.
+
+All **51 Node tests** pass, including late-root mounting, duplicate-load handling, and native Light restoration for CP Nav. Changed PHP passes syntax checking; Composer validation passes with its existing version advisory; `git diff --check` passes.
+
+Automated verification: all **50 Node tests** pass; the changed PHP asset bundle passes syntax checking; Composer validation passes with the existing explicit-version advisory; `git diff --check` passes. Independent stored-data checks confirm 24 comments, eight submissions/16 reviews, six lists/24 items with notes, nine unique demo navigation nodes, and the Sherlock scan.
+
+Browser verification is separate: Comments threads, Wishlist lists/items, the demo navigation layout, Sherlock report, Workflow pending/rejected/approved histories, and the actual native draft-merge notice were inspected. Wishlist border and Workflow cards were checked in Dark and Light; dropdown keyboard focus remains visible. Checks included vertical text/icon alignment, centered timeline glyphs, centered metadata arrows, and native control heights. The picker itself was unchanged. These are focused installation/fixture and reported-surface checks, not a complete compatibility audit of the five plugins.
+
 ## Installed plugins
 
 | Handle | Version | Edition |
@@ -193,3 +221,62 @@ Hyper 3.0.5 on `craft5.test`, entry **12982**, **QA Freeform Link Integration**:
 Chrome browser checks covered Content and Advanced panels, the Settings menu, the compact tab dropdown at a 500px viewport, and restoration of native Light colours. Header tabs retain their 31px height; adjacent action buttons remain 24×24px with vertically centred icons. The temporary viewport was reset and the user's Dark preference restored. No entry save or discard action was used.
 
 Automated: all 49 Node tests passed; Composer validation passed with the existing explicit-version advisory; whitespace checks passed. No PHP files changed.
+
+
+## Additional plugin review — 2026-11-17
+
+Installed Comments 3.0.26, Workflow 3.0.27, Control Panel Nav 6.0.5, Sherlock 5.3.1 and Wishlist 3.0.28 on `craft5.test`. Backups and idempotent QA seed/verification tools are stored on the site under `backups/` and `storage/qa-fixtures/tools/`. Initial fixtures include 24 threaded comments with moderation states/votes/flags, eight workflow submissions with 16 review actions, six Wishlist lists with 24 items and custom notes, a separate nine-node CP Nav demo layout, and a real Sherlock scan. An additional six unpublished QA articles and 96 comments bring the seeded comment total to 120. No QA emails were sent or live drafts applied.
+
+Scoped adapters cover Wishlist's item-table border and transparent metadata selector; Workflow's statistics, timelines, review/comparison cards and status paints; Comments' status control, Replies heading/frame/text, rounded clipping and distinct unselected-row hover; and CP Nav's three known builder roots, shadow-root controls, action cells, menus, editor popovers, subdued footer dividers, outlined arrows, informational banner and new badges. Craft's native draft-merge metadata warning now uses semantic warning paint.
+
+Six SVGs in the existing `@webroot/cpnav-icons/qa-review/` path populate CP Nav's icon grid. The compass selection was saved only on the demo layout's QA Review hub and verified after reload. Search filtering, no-result state, selected state and image loading were checked. The picker uses a bordered dark overlay, semantic input/highlight fills, and neutral raised filename tooltips with matching arrows; authored SVG image colours are unchanged by the adapter. The nested tooltip correction uses the image browser's public show event and tooltip parts.
+
+Browser verification covered representative Workflow pending/rejected/approved histories, Wishlist list/item forms, Comments status/replies, CP Nav menus/editor/icon picker and Light restoration. Checked centered icons, matching adjacent button heights, and compact toggle geometry: 28×18px track, 14×14px knob, matching Craft's small control. Toggle paint now uses Craft's dark knob, inset edge and light checkmark. Replies frame is 5px rounded; a hovered row resolves to `rgb(41, 46, 54)` while its neighbor remains unchanged. Popover arrow and frame share `rgb(61, 68, 77)` outlines; footer dividers use `rgb(48, 54, 61)`.
+
+Sherlock's red, yellow and olive result glyphs now use semantic error pink, warning amber and success teal; test-type glyphs use muted ink. Browser inspection confirmed full opacity, centered status/type glyphs beside labels, and unchanged native Light colours.
+
+## Local site updates — 2026-11-17
+
+Backup: `/Users/kmartens/Herd/craft5/backups/before-all-updates-20261117-204741/` contains the database, Composer files, project config and QA icon files. Updated Craft and all ten plugins with available updates; local Freeform and darkMode source links are preserved. Craft remains constrained to 5.x.
+
+| Package | Before | After |
+| --- | --- | --- |
+| Craft CMS | 5.12.0.1 | 5.12.1 |
+| Contact Form | 3.1.0 | 3.2.0 |
+| Multi Translator | 2.31.1 | 2.31.3 |
+| Blitz | 5.14.5 | 5.15.0 |
+| Calendar | 5.0.33 | 5.0.34 |
+| Imager X | 6.2.0 | 6.3.0 |
+| Neo | 5.5.13 | 5.5.14 |
+| Craft MCP | 1.7.1 | 2.0.1 |
+| Formie | 4.0.8 | 4.0.10 |
+| Hyper | 3.0.5 | 3.0.6 |
+| Vizy | 4.0.3 | 4.0.5 |
+
+Composer updated 32 packages (including transitive dependencies), removed one obsolete dependency, and reported no security advisories. MCP's previous 1.7 constraint blocked the updated SDK; reviewed the 2.0 upgrade guide and confirmed all six old token/session/OAuth tables were empty and no custom MCP config existed before raising its constraint to `^2.0@stable`. Ten migrations completed: one Craft, two MCP and seven Formie. MCP's HTTP server remains disabled; its tools register with Craft and its new plugin settings diagnostics load. No clients were connected or new scopes granted. The old `/admin/mcp` screen was removed in MCP 2; use Settings → Plugins → Craft MCP.
+
+Composer reports no outdated direct dependencies, platform requirements pass, and both Composer files validate with their existing advisories. All 51 Node tests pass, changed PHP syntax checks pass, and whitespace checks pass. Browser smoke checks covered Craft 5.12.1, Formie's list/builder, MCP's replacement settings and Sherlock's Dark/Light paints. QA audits verified the initial content and nine named demo navigation nodes; saving CP Nav's builder legitimately persists native rows as overrides too. These smoke checks do not replace the targeted changelog review below.
+
+Suggested quick dark-mode review, inferred from the version-specific changelogs:
+
+1. **Craft MCP / Craft:** new plugin diagnostics and core MCP settings; My Account → Tokens, token creation and authorization screens. MCP 2 replaces its old screens/server. Craft 5.12.1 changes token availability, messages and MCP configuration guidance. [MCP upgrade guide](https://github.com/stimmtdigital/craft-mcp/blob/v2.0.1/UPGRADE.md), [Craft release notes](https://github.com/craftcms/cms/blob/5.12.1/CHANGELOG.md).
+2. **Multi Translator:** the new unapplied-draft warning before translated draft creation is a likely new notice/modal state. [Release notes](https://github.com/digitalpulsebe/craft-multi-translator/blob/2.31.3/CHANGELOG.md).
+3. **Formie:** builder conditions for later fields and Agree checked/unchecked rules; email-notification Attach Assets picker; reports' date bounds, charts and payment summaries. These releases change those controls or data displays. [Release notes](https://github.com/verbb/formie/blob/4.0.10/CHANGELOG.md).
+4. **Vizy:** block-picker group order, Markdown instructions with inline code inside blocks, unsupported-image placeholders and the draft upload notice. [Release notes](https://github.com/verbb/vizy/blob/4.0.5/CHANGELOG.md).
+5. **Craft nested editors / Neo:** slideout date-picker positioning at browser zoom, dropdown-driven nested field conditions, cloned Neo parent/child CKEditor instances and draft editing. [Craft release notes](https://github.com/craftcms/cms/blob/5.12.1/CHANGELOG.md), [Neo release notes](https://github.com/spicywebau/craft-neo/blob/5.5.14/CHANGELOG.md).
+6. **Hyper:** custom link-type configuration after save; this is principally a save-order regression check. [Release notes](https://github.com/verbb/hyper/blob/3.0.6/CHANGELOG.md).
+7. **Imager X:** thumbnails/previews for private volumes now fall back to Craft; new transform-limit failures may expose error states. Do not relax the new safeguards for an appearance check. [Release notes](https://github.com/spacecatninja/craft-imager-x/blob/6.3.0/CHANGELOG.md).
+
+No new control-panel appearance work is indicated by the Contact Form, Calendar or Blitz changes: compatibility/deprecation, GraphQL security, and MCP/cache behavior respectively. These are lower priorities for visual review.
+
+Final runtime audit confirmed all 96 expanded comments and six article bodies remain present, in addition to the initial 24 comments. Refreshed Sherlock scan #3 reports no Craft or plugin updates; its only failure remains the intentional local Dev Mode setting. No notifications were attempted. Native MCP settings were verified at `/admin/settings/mcp` with Public and Authenticated tabs, both servers disabled; account token management loads at `/admin/myaccount/tokens` with no tokens or authorized apps. These were inspected without saving configuration or granting access.
+
+## Formie asset chips and populated usage — 2026-11-17
+
+Formie's notification Attach Assets selections use a hard-coded `rgb(243, 247, 252)` chip fill within its shadow root. The existing scoped Formie adapter now gives only those selected-element chips an overlay fill, semantic border/text, and muted remove control with a clearer hover state. Browser inspection measured a 40px chip and matching vertical centers for its label, status dot, 26px remove control and 15px icon; the remove hover resolved to `rgb(41, 46, 54)` with heading ink. Temporary attachment selections were inspected without applying or saving a notification. Automated verification: all 51 Node tests passed; Composer validation passed with its existing explicit-version advisory; whitespace checks passed. No PHP source changed in the plugin.
+
+The existing Formie Forms field (ID 43, handle `formie`) initially had no field layouts or saved relations; all ten forms had empty relation-based Usage. At the user's request, added an isolated **QA Formie Usage** entry type to the existing non-public QA Plugin Playground section and three entries linked to **QA Customer survey** (form 12590): Customer feedback landing page (13283), Post-workshop feedback (13285), and Membership experience survey (13287). They have no front-end URLs. Browser verification confirmed three rows in the form's Usage tab, each showing Entry / English / Live / Formie (formie).
+
+Site backup: `backups/before-formie-usage-20261117/`. Seed and verification manifest: `storage/qa-fixtures/tools/formie-usage-seed.php` and `formie-usage-verification.json`. The seed is idempotent and preserves other section entry types.
+
+Form Usage follow-up: actual table links now use the standard dark link blue (`rgb(130, 178, 226)`) instead of Formie's fixed `rgb(37, 99, 235)`, with heading ink (`rgb(209, 217, 224)`) on hover. Rules are restricted to the builder Usage panel's table links. Browser checks confirmed all three links, real hover, and vertical centering within 0.25px across the rows; row heights and link line heights are unchanged. All 51 Node tests, Composer validation (existing advisory), and whitespace checks pass.

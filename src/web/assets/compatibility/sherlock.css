@@ -1,0 +1,16 @@
+/* Keep scan outcomes distinct using Craft's dark semantic status colours. */
+:root[data-dark-mode="dark"] .sherlock i.fail {
+    color: var(--error-color) !important;
+}
+
+:root[data-dark-mode="dark"] .sherlock i.warning {
+    color: var(--fg-warning) !important;
+}
+
+:root[data-dark-mode="dark"] .sherlock i.pass {
+    color: var(--fg-success) !important;
+}
+
+:root[data-dark-mode="dark"] .sherlock i.type {
+    color: var(--dm-muted);
+}
